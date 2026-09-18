@@ -1,0 +1,6 @@
+{
+  "parent": "croplite:block/tinted_crop",
+  "textures": {
+    "crop": "croplite:block/crop_stage1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "croplite:block/banana_stalk"
+    },
+    "axis=z": {
+      "model": "croplite:block/banana_stalk_horizontal",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "croplite:block/banana_stalk_horizontal",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

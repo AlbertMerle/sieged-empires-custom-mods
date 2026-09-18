@@ -1,0 +1,64 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:tomato_seeds"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:tomato_crop",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:tomato",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4.0,
+                "max": 6.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:tomato_crop",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:tomato_crop",
+          "properties": {
+            "fruiting": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "croplite:blocks/tomato_crop"
+}

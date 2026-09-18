@@ -1,0 +1,75 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+repositories {
+	mavenCentral()
+	maven { url = 'https://maven.fabricmc.net/' }
+	maven { url = 'https://api.modrinth.com/maven' }
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"voxelmapsync" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Soft deps — compile against local pack jars; optional at runtime
+	// paths are relative to this project (mods/voxelmapsync/) → repo client/mods/
+	compileOnly files("../../client/mods/voxelmap-fabric-26.2-1.16.8.jar")
+	compileOnly files("../../client/mods/siegedempires-1.0.0.jar")
+
+	testImplementation "org.junit.jupiter:junit-jupiter:5.10.2"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+test {
+	useJUnitPlatform()
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName"}
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+}

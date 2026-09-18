@@ -1,0 +1,7 @@
+{
+  "parent": "croplite:block/fruit_leaves",
+  "textures": {
+    "all": "croplite:block/peach_leaves",
+    "fruit": "croplite:block/peach_leaves_fruit"
+  }
+}

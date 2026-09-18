@@ -1,0 +1,43 @@
+{
+  "aspect_ratio": 1.0,
+  "dominant_colors": [
+    {
+      "hex": "#ffffff",
+      "pixels": 607
+    },
+    {
+      "hex": "#782a0a",
+      "pixels": 123
+    },
+    {
+      "hex": "#430000",
+      "pixels": 93
+    },
+    {
+      "hex": "#a3502e",
+      "pixels": 67
+    },
+    {
+      "hex": "#ffdc3d",
+      "pixels": 55
+    },
+    {
+      "hex": "#d79553",
+      "pixels": 42
+    },
+    {
+      "hex": "#fbab15",
+      "pixels": 19
+    },
+    {
+      "hex": "#fee983",
+      "pixels": 18
+    }
+  ],
+  "has_alpha": true,
+  "height": 32,
+  "mode": "RGBA",
+  "path": "/home/albert/** CURSOR WORKSPACES **/img2blockbench/input/coinpile.png",
+  "sha256": "580bee42c4f9142fe27aa53dfbd42167d6c484249767060248003abdc9912d6d",
+  "width": 32
+}

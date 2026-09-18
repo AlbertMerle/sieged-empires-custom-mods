@@ -1,0 +1,24 @@
+{
+	"required": true,
+	"package": "com.weaponsmodaddon.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"AvatarRendererMixin",
+		"HumanoidModelMixin",
+		"AbstractClientPlayerFovMixin",
+		"PlayerIsScopingMixin",
+		"ShoulderSurfingAimFollowMixin",
+		"LivingEntitySwingMixin",
+		"HudMixin",
+		"MinecraftMixin",
+		"MultiPlayerGameModeMixin",
+		"ChannelMixin",
+		"SoundEngineMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

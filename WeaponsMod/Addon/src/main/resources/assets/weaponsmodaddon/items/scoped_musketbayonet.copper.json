@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "weaponmod:reload",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "weaponsmodaddon:item/scoped_musketbayonet.copper"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "weaponsmodaddon:item/scoped_musketbayonet.copper_reload"
+    }
+  }
+}

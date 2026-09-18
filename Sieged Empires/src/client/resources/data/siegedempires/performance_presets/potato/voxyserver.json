@@ -1,0 +1,13 @@
+{
+  "lodStreamRadius": 0,
+  "maxSectionsPerTickPerPlayer": 0,
+  "sectionsPerPacket": 8,
+  "generateOnChunkLoad": false,
+  "tickInterval": 20,
+  "workerThreads": 1,
+  "dirtyTrackingEnabled": false,
+  "dirtyTrackingInterval": 60,
+  "debugTrackingEnabled": false,
+  "debugTrackingInterval": 200,
+  "hashSyncEnabled": false
+}

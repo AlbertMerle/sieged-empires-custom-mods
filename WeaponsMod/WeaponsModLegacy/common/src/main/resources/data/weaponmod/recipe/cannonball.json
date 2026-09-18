@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " X ",
+    "XXX",
+    " X "
+  ],
+  "key": {
+    "X": "minecraft:stone"
+  },
+  "result": {
+    "id": "weaponmod:cannonball",
+    "count": 4
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up required JDKs
+        uses: actions/setup-java@v5
+        with:
+          java-version: |
+            25
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Build with Gradle
+        run: ./gradlew build

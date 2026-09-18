@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:garlic",
+    "minecraft:cooked_salmon"
+  ],
+  "result": {
+    "id": "minecraft:cooked_salmon",
+    "components": {
+      "croplite:has_garlic": {}
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#BSL MINIMUM profile — shadows/AO/shafts/TAA off; WATER_FOG Full; Advanced Materials on (LabPBR gold)
+#Sieged Empires performance preset: Low
+ADVANCED_MATERIALS=true
+WATER_FOG=1
+AO=false
+LIGHT_SHAFT=false
+SHADOW=false
+SHADOW_COLOR=false
+SHADOW_FILTER=false
+TAA=false
+shadowDistance=128.0
+shadowMapResolution=512

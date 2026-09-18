@@ -1,0 +1,18 @@
+{
+  "pack": {
+    "supported_formats": [1, 999],
+    "min_format": 1,
+    "max_format": 999,
+    "pack_format": 15,
+    "description": [
+      {
+        "text": "Terrabiome",
+        "color": "#6ec6ff"
+      },
+      {
+        "text": " — biome placement only\nLoads above Tectonic; Tectonic above Terralith.",
+        "color": "gray"
+      }
+    ]
+  }
+}

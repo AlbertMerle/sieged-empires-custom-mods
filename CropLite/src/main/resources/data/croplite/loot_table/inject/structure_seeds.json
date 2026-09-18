@@ -1,0 +1,209 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0.0,
+        "max": 2.0
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:oats",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 4.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:beans",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 4.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:rice",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 4.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:sweet_potato",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 4.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:tomato_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:pepper_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:eggplant_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:cucumber_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:cantelope_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:basil_seeds",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:peach_sapling",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:lemon_sapling",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "croplite:banana_sapling",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

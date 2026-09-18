@@ -1,0 +1,11 @@
+"api_token_env": "CROWDIN_PERSONAL_TOKEN"
+"project_id_env": "CROWDIN_PROJECT_ID"
+"preserve_hierarchy": true
+"base_path": "common"
+
+"files": [
+  {
+    "source": "src/main/resources/assets/weaponmod/lang/en_us.json",
+    "translation": "src/main/resources/assets/weaponmod/lang/%locale_with_underscore%.json"
+  }
+]

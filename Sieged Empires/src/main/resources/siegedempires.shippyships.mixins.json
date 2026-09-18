@@ -1,0 +1,14 @@
+{
+	"required": false,
+	"plugin": "com.siegedempires.compat.shippyships.ShippyShipsMixinPlugin",
+	"package": "com.siegedempires.compat.shippyships.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"AbstractShipEntityMixin",
+		"CogEntityMixin",
+		"CaravelEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

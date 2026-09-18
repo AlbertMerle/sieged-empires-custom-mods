@@ -1,0 +1,146 @@
+{
+  "music.game.tune1": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune1",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune2": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune2",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune3": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune3",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune4": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune4",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune5": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune5",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune6": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune6",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune7": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune7",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune8": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune8",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.tune9": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/tune9",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong1": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong1",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong2": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong2",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong3": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong3",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong4": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong4",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong5": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong5",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.cavesong6": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/cavesong6",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.war1": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/war1",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.war2": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/war2",
+        "stream": true
+      }
+    ]
+  },
+  "music.game.war3": {
+    "sounds": [
+      {
+        "name": "sieged-music:music/war3",
+        "stream": true
+      }
+    ]
+  }
+}

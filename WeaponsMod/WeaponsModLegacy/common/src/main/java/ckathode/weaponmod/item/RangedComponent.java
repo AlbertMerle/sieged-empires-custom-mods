@@ -1,0 +1,319 @@
+package ckathode.weaponmod.item;
+
+import ckathode.weaponmod.BalkonsWeaponMod;
+import ckathode.weaponmod.ReloadHelper;
+import ckathode.weaponmod.ReloadHelper.ReloadState;
+import ckathode.weaponmod.WMItemTags;
+import ckathode.weaponmod.WMRegistries;
+import ckathode.weaponmod.WeaponModAttributes;
+import ckathode.weaponmod.WeaponModConfig;
+import ckathode.weaponmod.entity.projectile.EntityProjectile;
+import com.mojang.datafixers.util.Pair;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public abstract class RangedComponent extends AbstractWeaponComponent {
+
+    protected static final int MAX_DELAY = 72000;
+    public final RangedSpecs rangedSpecs;
+
+    public static boolean isReloaded(ItemStack itemstack) {
+        return ReloadHelper.getReloadState(itemstack).isReloaded();
+    }
+
+    public static boolean isReadyToFire(ItemStack itemstack) {
+        return ReloadHelper.getReloadState(itemstack) == ReloadState.STATE_READY;
+    }
+
+    public static void setReloadState(ItemStack itemstack, ReloadState state) {
+        ReloadHelper.setReloadState(itemstack, state);
+    }
+
+    public RangedComponent(RangedSpecs rangedspecs) {
+        rangedSpecs = rangedspecs;
+    }
+
+    @Override
+    protected void onSetItem() {
+    }
+
+    @Override
+    public ItemAttributeModifiers.Builder setAttributes(ItemAttributeModifiers.Builder attributeBuilder) {
+        attributeBuilder = attributeBuilder
+                .add(WMRegistries.RELOAD_TIME.asHolder(),
+                        new AttributeModifier(WeaponModAttributes.RELOAD_TIME_ID,
+                                rangedSpecs.getReloadTime(), AttributeModifier.Operation.ADD_VALUE),
+                        EquipmentSlotGroup.MAINHAND);
+        return attributeBuilder;
+    }
+
+    @Override
+    public Properties setProperties(Properties properties) {
+        return properties.durability(rangedSpecs.durability);
+    }
+
+    @Override
+    public float getDamage() {
+        return 0.0f;
+    }
+
+    @Override
+    public float getEntityDamage() {
+        return 0.0f;
+    }
+
+    @Override
+    public boolean mineBlock(ItemStack itemstack, Level world, BlockState block,
+                             BlockPos pos, LivingEntity entityliving) {
+        return false;
+    }
+
+    @Override
+    public void hurtEnemy(@NotNull ItemStack itemstack, @NotNull LivingEntity entityliving,
+                          @NotNull LivingEntity attacker) {
+    }
+
+    @Override
+    public float getAttackDelay(ItemStack itemstack, LivingEntity entityliving,
+                                LivingEntity attacker) {
+        return 0.0f;
+    }
+
+    @Override
+    public float getKnockBack(ItemStack itemstack, LivingEntity entityliving,
+                              LivingEntity attacker) {
+        return 0.0f;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return 1;
+    }
+
+    @Override
+    public boolean onLeftClickEntity(ItemStack itemstack, Player player, Entity entity) {
+        return false;
+    }
+
+    @Override
+    public @NotNull ItemUseAnimation getUseAnimation(ItemStack itemstack) {
+        ReloadState state = ReloadHelper.getReloadState(itemstack);
+        if (state == ReloadState.STATE_READY) {
+            return ItemUseAnimation.BOW;
+        }
+        return ItemUseAnimation.NONE;
+    }
+
+    @Override
+    public int getUseDuration(ItemStack itemstack) {
+        return MAX_DELAY;
+    }
+
+    @Override
+    public @NotNull InteractionResult use(ItemStack itemstack, Level world,
+                                          Player entityplayer, InteractionHand hand) {
+        if (itemstack.isEmpty() || entityplayer.isUsingItem()) {
+            return InteractionResult.FAIL;
+        }
+        if (!hasAmmo(itemstack, world, entityplayer)) {
+            soundEmpty(itemstack, world, entityplayer);
+            setReloadState(itemstack, ReloadState.STATE_NONE);
+            return InteractionResult.FAIL;
+        }
+        if (isReadyToFire(itemstack)) {
+            soundCharge(itemstack, world, entityplayer);
+            entityplayer.startUsingItem(hand);
+            return InteractionResult.SUCCESS;
+        }
+        entityplayer.startUsingItem(hand);
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public void onUsingTick(Level level, LivingEntity livingEntity, ItemStack stack, int remainingUseDuration) {
+        if (ReloadHelper.getReloadState(stack) == ReloadState.STATE_NONE
+            && getUseDuration(stack) - remainingUseDuration >= getReloadDuration(stack)) {
+            effectReloadDone(stack, livingEntity.level(), livingEntity);
+            setReloadState(stack, ReloadState.STATE_RELOADED);
+        }
+    }
+
+    @Override
+    public boolean releaseUsing(ItemStack itemstack, Level world,
+                                LivingEntity entityliving, int i) {
+        if (!isReloaded(itemstack)) {
+            return false;
+        }
+        if (isReadyToFire(itemstack)) {
+            if (hasAmmoAndConsume(itemstack, world, entityliving)) {
+                fire(itemstack, world, entityliving, i);
+            }
+            setReloadState(itemstack, ReloadState.STATE_NONE);
+        } else {
+            setReloadState(itemstack, ReloadState.STATE_READY);
+        }
+        return true;
+    }
+
+    @Override
+    public void inventoryTick(@NotNull ItemStack itemStack, @NotNull ServerLevel serverLevel,
+                              @NotNull Entity entity, @Nullable EquipmentSlot equipmentSlot) {
+    }
+
+    public void soundEmpty(ItemStack itemstack, Level world, Player entityplayer) {
+        world.playSound(null, entityplayer.getX(), entityplayer.getY(), entityplayer.getZ(),
+                SoundEvents.COMPARATOR_CLICK, SoundSource.PLAYERS, 1.0f, 1.25f);
+    }
+
+    public void soundCharge(ItemStack itemstack, Level world, Player entityplayer) {
+    }
+
+    public void postShootingEffects(ItemStack itemstack, LivingEntity entityLiving,
+                                    Level world) {
+        if (entityLiving instanceof Player entityplayer)
+            effectPlayer(itemstack, entityplayer, world);
+        effectShoot(world, entityLiving.getX(), entityLiving.getY(), entityLiving.getZ(), entityLiving.getYRot(),
+                entityLiving.getXRot());
+    }
+
+    public abstract void effectReloadDone(ItemStack stack, Level level, LivingEntity entityliving);
+
+    public abstract void fire(ItemStack stack, Level level, LivingEntity entity, int i);
+
+    public abstract void effectPlayer(ItemStack stack, Player player, Level level);
+
+    public abstract void effectShoot(Level level, double x, double y, double z, float yaw, float pitch);
+
+    public static void applyProjectileEnchantments(EntityProjectile<?> entity, ItemStack itemstack) {
+        Registry<Enchantment> enchRegistry = entity.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+        Holder<Enchantment> infinity = enchRegistry.get(Enchantments.INFINITY).orElse(null);
+        Holder<Enchantment> power = enchRegistry.get(Enchantments.POWER).orElse(null);
+        Holder<Enchantment> flame = enchRegistry.get(Enchantments.FLAME).orElse(null);
+        if (infinity != null && EnchantmentHelper.getItemEnchantmentLevel(infinity, itemstack) > 0) {
+            entity.setPickupStatus(EntityProjectile.PickupStatus.DISALLOWED);
+        }
+        int damage = power == null ? 0 : EnchantmentHelper.getItemEnchantmentLevel(power, itemstack);
+        if (damage > 0) {
+            entity.setExtraDamage(damage);
+        }
+        if (flame != null && EnchantmentHelper.getItemEnchantmentLevel(flame, itemstack) > 0) {
+            entity.igniteForSeconds(100);
+        }
+    }
+
+    public int getReloadDuration(ItemStack itemstack) {
+        return rangedSpecs.getReloadTime();
+    }
+
+    public TagKey<Item> getAmmoTag() {
+        return rangedSpecs.getAmmoTag();
+    }
+
+    protected ItemStack findAmmo(Player entityplayer) {
+        Pair<EquipmentSlot, Integer> slot = WMItem.findAnyItemSlot(entityplayer, getAmmoTag());
+        if (slot == null) return ItemStack.EMPTY;
+        return slot.getFirst() == EquipmentSlot.MAINHAND ? entityplayer.getInventory().getItem(slot.getSecond()) :
+                entityplayer.getItemBySlot(slot.getFirst());
+    }
+
+    protected boolean consumeAmmo(Player entityplayer) {
+        return WMItem.consumeAnyInventoryItem(entityplayer, getAmmoTag());
+    }
+
+    public boolean hasAmmoAndConsume(ItemStack itemstack, Level world, LivingEntity entityliving) {
+        if (!(entityliving instanceof Player entityplayer)) return true;
+        Holder<Enchantment> infinity = entityplayer.registryAccess().lookupOrThrow(Registries.ENCHANTMENT)
+                .get(Enchantments.INFINITY).orElse(null);
+        return entityplayer.isCreative() ||
+               (infinity != null && EnchantmentHelper.getItemEnchantmentLevel(infinity, itemstack) > 0) ||
+               consumeAmmo(entityplayer);
+    }
+
+    public boolean hasAmmo(ItemStack itemstack, Level world, Player entityplayer) {
+        Holder<Enchantment> infinity = entityplayer.registryAccess().lookupOrThrow(Registries.ENCHANTMENT)
+                .get(Enchantments.INFINITY).orElse(null);
+        boolean flag = !findAmmo(entityplayer).isEmpty();
+        return entityplayer.isCreative() ||
+               (infinity != null && EnchantmentHelper.getItemEnchantmentLevel(infinity, itemstack) > 0) ||
+               flag;
+    }
+
+    public float getFOVMultiplier(int ticksInUse) {
+        float f1 = ticksInUse / getMaxAimTimeTicks();
+        if (f1 > 1.0f) {
+            f1 = 1.0f;
+        } else {
+            f1 *= f1;
+        }
+        return 1.0f - f1 * getMaxZoom();
+    }
+
+    protected float getMaxAimTimeTicks() {
+        return 20.0f;
+    }
+
+    protected float getMaxZoom() {
+        return 0.15f;
+    }
+
+    public enum RangedSpecs {
+        BLOWGUN("blowgun", 250, WMItemTags.DARTS),
+        CROSSBOW("crossbow", 250, WMItemTags.BOLTS),
+        MUSKET("musket", 80, WMItemTags.BULLETS),
+        BLUNDERBUSS("blunderbuss", 80, WMItemTags.SHOTS),
+        FLINTLOCK("flintlock", 8, WMItemTags.BULLETS),
+        MORTAR("mortar", 40, WMItemTags.SHELLS);
+
+        private int reloadTime;
+        private final TagKey<Item> ammoTag;
+        public final String reloadTimeTag;
+        public final int durability;
+
+        RangedSpecs(String reloadtimetag, int durability, TagKey<Item> ammoTag) {
+            reloadTimeTag = reloadtimetag;
+            this.durability = durability;
+            this.ammoTag = ammoTag;
+            reloadTime = -1;
+        }
+
+        public int getReloadTime() {
+            if (reloadTime < 0) {
+                reloadTime = WeaponModConfig.get().getReloadTime(reloadTimeTag);
+                BalkonsWeaponMod.LOGGER.debug("Found reload time {} for {} @{}",
+                        reloadTime, reloadTimeTag, this);
+            }
+            return reloadTime;
+        }
+
+        public TagKey<Item> getAmmoTag() {
+            return ammoTag;
+        }
+    }
+
+}

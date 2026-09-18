@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.shiftyocean.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"AbstractBoatMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

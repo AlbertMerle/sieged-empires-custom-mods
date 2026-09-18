@@ -1,0 +1,35 @@
+{
+	"required": true,
+	"package": "com.siegedempires.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ArmorStandBannerVisibilityMixin",
+		"ArmorStandRendererMixin",
+		"ArmorStandRenderStateMixin",
+		"BannerRendererMixin",
+		"BannerRenderStateMixin",
+		"BannerSpecialRendererAccessor",
+		"BannerSpecialRendererMixin",
+		"ClientCommonPacketListenerImplMixin",
+		"ClientPacketListenerMixin",
+		"CustomHeadLayerMixin",
+		"EntityRendererNametagMixin",
+		"ItemStackRenderStateLayerMixin",
+		"LoadingOverlayMixin",
+		"LogoRendererMixin",
+		"MinecraftMixin",
+		"MusicManagerMixin",
+		"PauseScreenMixin",
+		"ScreenAccessor",
+		"SpecialModelWrapperMixin",
+		"SplashRendererMixin",
+		"TitleScreenMixin",
+		"WindowMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

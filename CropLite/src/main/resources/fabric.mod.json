@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "croplite",
+	"version": "${version}",
+	"name": "CropLite",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/croplite/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.croplite.CropLite"
+		],
+		"client": [
+			"com.croplite.client.CropLiteClient"
+		],
+		"fabric-datagen": [
+			"com.croplite.client.CropLiteDataGenerator"
+		]
+	},
+	"accessWidener": "croplite.accesswidener",
+	"mixins": [
+		"croplite.mixins.json",
+		{
+			"config": "croplite.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"sereneseasons": "*",
+		"toughasnails": "*",
+		"homeostatic": "*",
+		"terralith": "*"
+	}
+}

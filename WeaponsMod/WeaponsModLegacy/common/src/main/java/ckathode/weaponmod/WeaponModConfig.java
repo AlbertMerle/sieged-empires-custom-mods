@@ -1,0 +1,131 @@
+package ckathode.weaponmod;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.util.HashMap;
+import java.util.Map;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry.Category;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
+
+import static ckathode.weaponmod.BalkonsWeaponMod.MOD_ID;
+
+@Config(name = MOD_ID)
+@SuppressWarnings("FieldMayBeFinal")
+public class WeaponModConfig implements ConfigData {
+
+    @Category("settings")
+    @Comment("Whether the cannon should do block damage.")
+    public volatile boolean cannonDoesBlockDamage = true;
+    @Category("settings")
+    @Comment("Whether dynamite should do block damage.")
+    public volatile boolean dynamiteDoesBlockDamage = true;
+    @Category("settings")
+    @Comment("Whether the mortar should do block damage.")
+    public volatile boolean mortarDoesBlockDamage = true;
+    @Category("settings")
+    @Comment("Whether the knife can be thrown.")
+    public volatile boolean canThrowKnife = true;
+    @Category("settings")
+    @Comment("Whether the spear can be thrown.")
+    public volatile boolean canThrowSpear = true;
+    @Category("settings")
+    @Comment("Change this to 'false' to allow only the thrower/shooter of the projectile to " +
+             "pick the item up. If set to 'true' everyone can pick the item up.")
+    public volatile boolean allCanPickup = true;
+    @Category("settings")
+    @Comment("Show reload progress in hotbar.")
+    public volatile boolean guiOverlayReloaded = true;
+    @Category("settings")
+    @Comment("Item model for entity (knife, spear, etc).")
+    public volatile boolean itemModelForEntity = true;
+    @Category("settings")
+    @Comment("Changes the cannon to the legacy model from older versions of BWM!")
+    public volatile boolean legacyCannonModel = false;
+    @Category("settings")
+    @Comment("Weapons can sometimes be found in loot chests.")
+    public volatile boolean enableLootTables = true;
+    @Category("settings")
+    @Comment("Zombies sometimes hold this mod's weapons when they spawn.")
+    public volatile boolean zombiesSpawnWithWeapons = true;
+
+    @Category("enable")
+    @StringBooleanMap
+    @Comment("Enable/disable recipes for the different weapons.")
+    private volatile Map<String, Boolean> enableSettings = new HashMap<>();
+    @Category("reloadTimes")
+    @StringIntMap
+    @Comment("Change the reload times of the different weapons.")
+    private volatile Map<String, Integer> reloadTimeSettings = new HashMap<>();
+
+    private WeaponModConfig() {
+        addEnableSetting("spear");
+        addEnableSetting("halberd");
+        addEnableSetting("battleaxe");
+        addEnableSetting("knife");
+        addEnableSetting("warhammer");
+        addEnableSetting("flail");
+        addEnableSetting("katana");
+        addEnableSetting("boomerang");
+        addEnableSetting("firerod");
+        addEnableSetting("javelin");
+        addEnableSetting("crossbow");
+        addEnableSetting("blowgun");
+        addEnableSetting("musket");
+        addEnableSetting("blunderbuss");
+        addEnableSetting("flintlock");
+        addEnableSetting("dynamite");
+        addEnableSetting("cannon");
+        addEnableSetting("dummy");
+        addEnableSetting("mortar");
+
+        addReloadTimeSetting("musket", 30);
+        addReloadTimeSetting("crossbow", 15);
+        addReloadTimeSetting("blowgun", 10);
+        addReloadTimeSetting("blunderbuss", 20);
+        addReloadTimeSetting("flintlock", 15);
+        addReloadTimeSetting("mortar", 50);
+    }
+
+    private void addEnableSetting(String weapon) {
+        enableSettings.put(weapon, true);
+    }
+
+    public boolean isEnabled(String weapon) {
+        Boolean enabled = enableSettings.get(weapon);
+        return enabled == null || enabled;
+    }
+
+    private void addReloadTimeSetting(String weapon, int defaultTime) {
+        reloadTimeSettings.put(weapon, defaultTime);
+    }
+
+    public int getReloadTime(String weapon) {
+        Integer time = reloadTimeSettings.get(weapon);
+        return (time == null) ? 0 : time;
+    }
+
+    public static WeaponModConfig get() {
+        return AutoConfig.getConfigHolder(WeaponModConfig.class).getConfig();
+    }
+
+    public static void init() {
+        AutoConfig.register(WeaponModConfig.class, JanksonConfigSerializer::new);
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    public @interface StringBooleanMap {
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    public @interface StringIntMap {
+    }
+
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:tomato"
+  ],
+  "result": {
+    "id": "croplite:tomato_seeds",
+    "count": 4
+  }
+}

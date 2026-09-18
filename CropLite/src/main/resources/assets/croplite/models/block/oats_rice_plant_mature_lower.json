@@ -1,0 +1,7 @@
+{
+  "parent": "croplite:block/crop_with_fruit",
+  "textures": {
+    "crop": "croplite:block/oats_rice_plant_mature_lower",
+    "fruit": "croplite:block/oats_rice_plant_mature_lower_fruit"
+  }
+}

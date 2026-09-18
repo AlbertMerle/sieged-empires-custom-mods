@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CCC",
+    "CBC",
+    "CCC"
+  ],
+  "key": {
+    "C": "croplite:coffee_bean",
+    "B": "minecraft:potion"
+  },
+  "result": {
+    "id": "croplite:bottle_of_coffee"
+  }
+}

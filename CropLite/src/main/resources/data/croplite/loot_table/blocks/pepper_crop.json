@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:pepper_seeds"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:pepper",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4.0,
+                "max": 6.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:pepper_crop",
+          "properties": {
+            "fruiting": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "croplite:blocks/pepper_crop"
+}

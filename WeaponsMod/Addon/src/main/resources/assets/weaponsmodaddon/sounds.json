@@ -1,0 +1,34 @@
+{
+	"musket_fire": {
+		"subtitle": "subtitles.weaponsmodaddon.musket_fire",
+		"sounds": [
+			{
+				"name": "weaponsmodaddon:musket_fire",
+				"attenuation_distance": 96,
+				"volume": 1.0
+			}
+		]
+	},
+	"flintlock_fire": {
+		"subtitle": "subtitles.weaponsmodaddon.flintlock_fire",
+		"sounds": [
+			{
+				"name": "weaponsmodaddon:flintlock_fire",
+				"attenuation_distance": 72,
+				"volume": 1.0
+			}
+		]
+	},
+	"gun_reload": {
+		"subtitle": "subtitles.weaponsmodaddon.gun_reload",
+		"sounds": [
+			"weaponsmodaddon:gun_reload"
+		]
+	},
+	"ear_ring": {
+		"subtitle": "subtitles.weaponsmodaddon.ear_ring",
+		"sounds": [
+			"weaponsmodaddon:ear_ring"
+		]
+	}
+}

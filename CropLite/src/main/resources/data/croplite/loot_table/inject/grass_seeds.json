@@ -1,0 +1,189 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "croplite:beans",
+					"conditions": [
+						{
+							"condition": "croplite:temperature_category",
+							"categories": ["temperate", "tropical"]
+						},
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.125
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:apply_bonus",
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:uniform_bonus_count",
+							"parameters": {
+								"bonusMultiplier": 2
+							}
+						},
+						{
+							"function": "minecraft:explosion_decay"
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": "minecraft:shears"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		},
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "croplite:rice",
+					"conditions": [
+						{
+							"condition": "croplite:temperature_category",
+							"categories": ["tropical"]
+						},
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.125
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:apply_bonus",
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:uniform_bonus_count",
+							"parameters": {
+								"bonusMultiplier": 2
+							}
+						},
+						{
+							"function": "minecraft:explosion_decay"
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": "minecraft:shears"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		},
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "croplite:oats",
+					"conditions": [
+						{
+							"condition": "croplite:temperature_category",
+							"categories": ["temperate"]
+						},
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.125
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:apply_bonus",
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:uniform_bonus_count",
+							"parameters": {
+								"bonusMultiplier": 2
+							}
+						},
+						{
+							"function": "minecraft:explosion_decay"
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": "minecraft:shears"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		},
+		{
+			"rolls": 1.0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:wheat_seeds",
+					"conditions": [
+						{
+							"condition": "croplite:temperature_category",
+							"categories": ["cold", "temperate"]
+						},
+						{
+							"condition": "minecraft:random_chance",
+							"chance": 0.125
+						}
+					],
+					"functions": [
+						{
+							"function": "minecraft:apply_bonus",
+							"enchantment": "minecraft:fortune",
+							"formula": "minecraft:uniform_bonus_count",
+							"parameters": {
+								"bonusMultiplier": 2
+							}
+						},
+						{
+							"function": "minecraft:explosion_decay"
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": "minecraft:shears"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		}
+	]
+}

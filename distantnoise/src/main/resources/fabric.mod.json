@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "distantnoise",
+	"version": "${version}",
+	"name": "Distantnoise",
+	"description": "Relays WeaponsMod musket/flintlock/blunderbuss/mortar and TNT/explosions as quiet, distance-muffled directional sounds out to 800 blocks. Extends Alex's Mobs heavy footstep hearing to 48 blocks with distance-scaled stomps. Best with Sound Physics Remastered on the client.",
+	"authors": [
+		"albert"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"icon": "assets/distantnoise/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.distantnoise.Distantnoise"
+		],
+		"client": [
+			"com.distantnoise.client.DistantnoiseClient"
+		]
+	},
+	"mixins": [
+		"distantnoise.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"weaponmod": "*",
+		"weaponsmodaddon": "*",
+		"alexsmobs": "*",
+		"sound_physics_remastered": "*"
+	}
+}

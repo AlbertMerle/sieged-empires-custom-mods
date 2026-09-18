@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:eggplant_seeds"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:eggplant",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 4.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:eggplant_crop",
+          "properties": {
+            "fruiting": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "croplite:blocks/eggplant_crop"
+}

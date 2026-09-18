@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice",
+    "croplite:cantelope_slice"
+  ],
+  "result": {
+    "id": "croplite:cantelope"
+  }
+}

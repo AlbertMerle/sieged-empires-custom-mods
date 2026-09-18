@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "randomspawn",
+  "version": "${version}",
+  "name": "RandomSpawn",
+  "description": "",
+  "author": "ThebigTijn",
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/randomspawn/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "nl.ThebigTijn.randomspawn.Randomspawn"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

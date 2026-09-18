@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:cucumber"
+  ],
+  "result": {
+    "id": "croplite:cucumber_seeds",
+    "count": 4
+  }
+}

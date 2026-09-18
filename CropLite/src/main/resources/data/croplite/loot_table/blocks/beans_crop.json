@@ -1,0 +1,88 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:beans"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "croplite:beans_crop",
+            "properties": {
+              "age": "7"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:beans",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 4.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:beans_crop",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:hay",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:beans_crop",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "croplite:blocks/beans_crop"
+}

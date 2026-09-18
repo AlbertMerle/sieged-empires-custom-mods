@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "age=0,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=0,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=0,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=0,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=1,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=1,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=1,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=1,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=2,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=2,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=2,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=2,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=4,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=4,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=4,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=4,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=false,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=false,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=true,half=lower": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=true,half=upper": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=7,fruiting=false,half=lower": {
+      "model": "croplite:block/tomato_plant_mature"
+    },
+    "age=7,fruiting=false,half=upper": {
+      "model": "croplite:block/tomato_plant_mature"
+    },
+    "age=7,fruiting=true,half=lower": {
+      "model": "croplite:block/tomato_plant_fruiting"
+    },
+    "age=7,fruiting=true,half=upper": {
+      "model": "croplite:block/tomato_plant_fruiting"
+    }
+  }
+}

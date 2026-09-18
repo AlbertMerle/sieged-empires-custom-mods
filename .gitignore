@@ -1,0 +1,32 @@
+# Gradle / Loom
+**/.gradle/
+**/build/
+**/run/
+**/out/
+**/.idea/
+**/*.iml
+**/.classpath
+**/.project
+**/.settings/
+
+# Agent memory (never commit)
+**/aidata/
+
+# Nested repos
+**/.git/
+
+# Local Minecraft / server junk
+**/world/
+**/libraries/
+**/logs/
+**/versions/
+**/crash-reports/
+server.jar
+fabric-server-launch.jar
+
+# Oversized / proprietary local deps (keep path empty if missing)
+shiftyocean/libs/physics-mod-pro-*.jar
+
+# OS
+.DS_Store
+Thumbs.db

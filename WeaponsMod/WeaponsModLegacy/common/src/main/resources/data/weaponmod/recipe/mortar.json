@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "key": {
+    "X": "weaponmod:mortar-ironpart",
+    "#": "weaponmod:gun-stock"
+  },
+  "result": {
+    "id": "weaponmod:mortar"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "mortar"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "mortar"
+    }
+  ]
+}

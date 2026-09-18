@@ -1,0 +1,14 @@
+{
+	"required": false,
+	"plugin": "com.siegedempires.compat.fzmm.FzmmMixinPlugin",
+	"package": "com.siegedempires.compat.fzmm.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"BannerEditorScreenMixin",
+		"BaseFzmmScreenMixin",
+		"EBooleanButtonAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

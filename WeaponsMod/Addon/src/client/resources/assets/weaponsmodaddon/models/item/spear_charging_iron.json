@@ -1,0 +1,6 @@
+{
+  "parent": "weaponsmodaddon:item/spear_charging",
+  "textures": {
+    "layer0": "weaponmod:item/spear.iron"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "X",
+    "#"
+  ],
+  "key": {
+    "X": "weaponmod:musket-ironpart",
+    "#": "weaponmod:gun-stock"
+  },
+  "result": {
+    "id": "weaponmod:musket"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "musket"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "musket"
+    }
+  ]
+}

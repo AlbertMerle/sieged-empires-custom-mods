@@ -1,0 +1,137 @@
+package ckathode.weaponmod.entity.projectile;
+
+import ckathode.weaponmod.WMDamageSources;
+import ckathode.weaponmod.WMRegistries;
+import ckathode.weaponmod.WeaponModConfig;
+import ckathode.weaponmod.item.RangedComponent;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class EntityBlunderShot extends EntityProjectile<EntityBlunderShot> {
+
+    public static final String ID = "shot";
+    public static final EntityType<EntityBlunderShot> TYPE = WMRegistries.createEntityType(
+            ID, EntityDimensions.fixed(0.5f, 0.5f).withEyeHeight(0.0f), EntityBlunderShot::new);
+
+    public EntityBlunderShot(EntityType<EntityBlunderShot> entityType, Level world) {
+        super(entityType, world);
+        setPickupStatus(PickupStatus.DISALLOWED);
+    }
+
+    public EntityBlunderShot(Level world, double x, double y, double z, @Nullable ItemStack firedFromWeapon) {
+        super(TYPE, world, firedFromWeapon);
+        setPos(x, y, z);
+    }
+
+    public EntityBlunderShot(Level world, LivingEntity shooter, @Nullable ItemStack firedFromWeapon) {
+        this(world, shooter.getX(), shooter.getEyeY() - 0.1, shooter.getZ(), firedFromWeapon);
+        setOwner(shooter);
+    }
+
+    @Override
+    protected boolean isDisabled() {
+        return !WeaponModConfig.get().isEnabled("blunderbuss");
+    }
+
+    @Override
+    public void shootFromRotation(Entity entity, float f, float f1, float f2, float f3,
+                                  float f4) {
+        float x = -Mth.sin(f1 * 0.017453292f) * Mth.cos(f * 0.017453292f);
+        float y = -Mth.sin(f * 0.017453292f);
+        float z = Mth.cos(f1 * 0.017453292f) * Mth.cos(f * 0.017453292f);
+        shoot(x, y, z, f3, f4);
+        Vec3 entityMotion = entity.getDeltaMovement();
+        setDeltaMovement(getDeltaMovement().add(entityMotion.x, entity.onGround() ? 0 : entityMotion.y,
+                entityMotion.z));
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (ticksInAir > 4) {
+            remove(RemovalReason.DISCARDED);
+        }
+    }
+
+    @NotNull
+    @Override
+    public DamageSource getDamageSource(@Nullable Entity entity) {
+        return damageSources().source(WMDamageSources.WEAPON, this, getDamagingEntity());
+    }
+
+    @Override
+    public float getDamage(@Nullable Entity entity) {
+        return 4.0f + extraDamage;
+    }
+
+    @Override
+    public void onHitEntity(EntityHitResult result) {
+        Entity entity = result.getEntity();
+        int prevhurtrestime = entity.invulnerableTime;
+        if (hurtOrSimulate(entity)) {
+            entity.invulnerableTime = prevhurtrestime;
+            applyEntityHitEffects(entity);
+            playHitSound();
+            remove(RemovalReason.DISCARDED);
+        }
+    }
+
+    @Override
+    public boolean aimRotation() {
+        return false;
+    }
+
+    @Override
+    public int getMaxLifetime() {
+        return 200;
+    }
+
+    @Override
+    public int getMaxArrowShake() {
+        return 0;
+    }
+
+    @Override
+    public double getDefaultGravity() {
+        return (getTotalVelocity() < 2.0) ? 0.04f : 0.0f;
+    }
+
+    @NotNull
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return new ItemStack(WMRegistries.ITEM_BLUNDER_SHOT.get());
+    }
+
+    public static void fireSpreadShot(Level world, LivingEntity entityliving,
+                                      RangedComponent item, ItemStack itemstack) {
+        for (int i = 0; i < 10; ++i) {
+            EntityBlunderShot entity = new EntityBlunderShot(world, entityliving, itemstack);
+            entity.shootFromRotation(entityliving, entityliving.getXRot(), entityliving.getYRot(),
+                    0.0f, 5.0f, 15.0f);
+            if (item != null && !itemstack.isEmpty()) {
+                RangedComponent.applyProjectileEnchantments(entity, itemstack);
+            }
+            world.addFreshEntity(entity);
+        }
+    }
+
+    public static void fireFromDispenser(Level world, double d, double d1, double d2,
+                                         int i, int j, int k) {
+        for (int i2 = 0; i2 < 10; ++i2) {
+            EntityBlunderShot entityblundershot = new EntityBlunderShot(world, d, d1, d2, null);
+            entityblundershot.shoot(i, j, k, 5.0f, 15.0f);
+            world.addFreshEntity(entityblundershot);
+        }
+    }
+
+}

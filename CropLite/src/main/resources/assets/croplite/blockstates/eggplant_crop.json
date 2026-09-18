@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0,fruiting=false": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=0,fruiting=true": {
+      "model": "croplite:block/crop_stage0"
+    },
+    "age=1,fruiting=false": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=1,fruiting=true": {
+      "model": "croplite:block/crop_stage1"
+    },
+    "age=2,fruiting=false": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=2,fruiting=true": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=false": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=3,fruiting=true": {
+      "model": "croplite:block/crop_stage2"
+    },
+    "age=4,fruiting=false": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=4,fruiting=true": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=false": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=5,fruiting=true": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=false": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=6,fruiting=true": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=7,fruiting=false": {
+      "model": "croplite:block/crop_stage3"
+    },
+    "age=7,fruiting=true": {
+      "model": "croplite:block/eggplant_plant_fruiting"
+    }
+  }
+}

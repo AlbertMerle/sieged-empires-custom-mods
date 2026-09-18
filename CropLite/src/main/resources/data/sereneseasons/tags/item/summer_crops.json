@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "croplite:tomato_seeds",
+    "croplite:pepper_seeds",
+    "croplite:eggplant_seeds",
+    "croplite:cucumber_seeds",
+    "croplite:cantelope_seeds",
+    "croplite:coffee_bean",
+    "croplite:beans",
+    "croplite:rice",
+    "croplite:oats",
+    "croplite:garlic",
+    "croplite:peach_sapling",
+    "croplite:lemon_sapling",
+    "croplite:banana_sapling"
+  ]
+}

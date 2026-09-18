@@ -1,0 +1,576 @@
+package ckathode.weaponmod.entity.projectile;
+
+import ckathode.weaponmod.WMUtil;
+import ckathode.weaponmod.WeaponModConfig;
+import com.mojang.serialization.Codec;
+import dev.architectury.extensions.network.EntitySpawnExtension;
+import dev.architectury.injectables.annotations.ExpectPlatform;
+import dev.architectury.networking.NetworkManager;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerEntity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class EntityProjectile<T extends EntityProjectile<T>> extends AbstractArrow
+        implements EntitySpawnExtension {
+    private static final EntityDataAccessor<Byte> WEAPON_CRITICAL = SynchedEntityData.defineId(EntityProjectile.class,
+            EntityDataSerializers.BYTE);
+    protected int xTile;
+    protected int yTile;
+    protected int zTile;
+    @Nullable
+    protected BlockState inBlockState;
+    protected boolean inGround;
+    public PickupStatus pickupStatus;
+    protected int ticksInGround;
+    protected int ticksInAir;
+    public boolean beenInGround;
+    public float extraDamage;
+    private Entity shooter;
+    @Nullable
+    private ItemStack firedFromWeapon = null;
+
+    public EntityProjectile(EntityType<T> type, Level world) {
+        super(type, world);
+        xTile = -1;
+        yTile = -1;
+        zTile = -1;
+        inBlockState = null;
+        inGround = false;
+        shakeTime = 0;
+        ticksInAir = 0;
+        pickupStatus = PickupStatus.DISALLOWED;
+        extraDamage = 0.0f;
+    }
+
+    public EntityProjectile(EntityType<T> type, Level level, @Nullable ItemStack firedFromWeapon) {
+        this(type, level);
+        if (firedFromWeapon != null && level instanceof ServerLevel serverLevel) {
+            this.firedFromWeapon = firedFromWeapon.copy();
+            if (this.firedFromWeapon.isEmpty()) {
+                throw new IllegalArgumentException("Invalid weapon firing an arrow");
+            }
+            EnchantmentHelper.onProjectileSpawned(serverLevel, this.firedFromWeapon, this,
+                    _ -> this.firedFromWeapon = null);
+        }
+    }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(WEAPON_CRITICAL, (byte) 0);
+    }
+
+    @Override
+    public void saveAdditionalSpawnData(FriendlyByteBuf buf) {
+        Entity shooter = getOwner();
+        buf.writeInt(shooter != null ? shooter.getId() : -1);
+    }
+
+    @Override
+    public void loadAdditionalSpawnData(FriendlyByteBuf buf) {
+        int shooterId = buf.readInt();
+        if (shooterId >= 0) setOwner(level().getEntity(shooterId));
+    }
+
+    @Override
+    public void setOwner(@Nullable Entity shooter) {
+        this.shooter = shooter;
+        super.setOwner(shooter);
+    }
+
+    @Nullable
+    @Override
+    public Entity getOwner() {
+        if (shooter != null) return shooter;
+        return super.getOwner();
+    }
+
+    protected boolean isDisabled() {
+        return false;
+    }
+
+    protected void setPickupStatusFromEntity(LivingEntity entityliving) {
+        if (entityliving instanceof Player player) {
+            if (player.isCreative()) {
+                setPickupStatus(PickupStatus.CREATIVE_ONLY);
+            } else {
+                setPickupStatus(WeaponModConfig.get().allCanPickup ? PickupStatus.ALLOWED : PickupStatus.OWNER_ONLY);
+            }
+        } else {
+            setPickupStatus(PickupStatus.DISALLOWED);
+        }
+    }
+
+    public Entity getDamagingEntity() {
+        Entity shooter = getOwner();
+        return shooter != null ? shooter : this;
+    }
+
+    @NotNull
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket(@NotNull ServerEntity serverEntity) {
+        return NetworkManager.createAddEntityPacket(this, serverEntity);
+    }
+
+    @Override
+    public void shoot(double x, double y, double z, float speed, float deviation) {
+        Vec3 v = new Vec3(x, y, z).normalize()
+                .add(random.nextGaussian() * 0.0075 * deviation,
+                        random.nextGaussian() * 0.0075 * deviation,
+                        random.nextGaussian() * 0.0075 * deviation)
+                .scale(speed);
+        setDeltaMovement(v);
+        double f2 = v.horizontalDistance();
+        float n = (float) (Mth.atan2(v.x, v.z) * 180.0 / Math.PI);
+        setYRot(n);
+        yRotO = n;
+        float n2 = (float) (Mth.atan2(v.y, f2) * 180.0 / Math.PI);
+        setXRot(n2);
+        xRotO = n2;
+        ticksInGround = 0;
+    }
+
+    @Override
+    public void lerpMotion(Vec3 vec3) {
+        setDeltaMovement(vec3);
+        if (aimRotation() && xRotO == 0.0f && yRotO == 0.0f) {
+            double f = vec3.horizontalDistance();
+            float n = (float) (Mth.atan2(vec3.x, vec3.z) * 180.0 / Math.PI);
+            setYRot(n);
+            yRotO = n;
+            float n2 = (float) (Mth.atan2(vec3.y, f) * 180.0 / Math.PI);
+            setXRot(n2);
+            xRotO = n2;
+            snapTo(getX(), getY(), getZ(), getYRot(), getXRot());
+            ticksInGround = 0;
+        }
+    }
+
+    @Override
+    public void tick() {
+        if (isDisabled()) {
+            remove(RemovalReason.DISCARDED);
+            return;
+        }
+        baseTick();
+    }
+
+    @Override
+    public void baseTick() {
+        super.baseTick();
+        Vec3 motion = getDeltaMovement();
+        if (aimRotation() && xRotO == 0.0f && yRotO == 0.0f) {
+            double f = motion.horizontalDistance();
+            setYRot((float) (Mth.atan2(motion.x, motion.z) * 180.0 / Math.PI));
+            setXRot((float) (Mth.atan2(motion.y, f) * 180.0 / Math.PI));
+            yRotO = getYRot();
+            xRotO = getXRot();
+        }
+        BlockPos blockpos = new BlockPos(xTile, yTile, zTile);
+        BlockState iblockstate = level().getBlockState(blockpos);
+        if (!iblockstate.isAir()) {
+            VoxelShape voxelShape = iblockstate.getCollisionShape(level(), blockpos);
+            if (!voxelShape.isEmpty() && voxelShape.bounds().move(blockpos).contains(
+                    new Vec3(getX(), getY(), getZ()))) {
+                inGround = true;
+            }
+        }
+        if (shakeTime > 0) {
+            --shakeTime;
+        }
+
+        if (isInWaterOrRain()) {
+            clearFire();
+        }
+
+        if (inGround) {
+            if (!iblockstate.equals(inBlockState) &&
+                level().noCollision(getBoundingBox().inflate(0.06))) {
+                inGround = false;
+                setDeltaMovement(motion.multiply(random.nextFloat() * 0.2f, random.nextFloat() * 0.2f,
+                        random.nextFloat() * 0.2f));
+                ticksInGround = 0;
+                ticksInAir = 0;
+            } else if (!level().isClientSide()) {
+                ++ticksInGround;
+                int t = getMaxLifetime();
+                if (t != 0 && ticksInGround >= t) {
+                    remove(RemovalReason.DISCARDED);
+                }
+            }
+            ++inGroundTime;
+            return;
+        }
+        inGroundTime = 0;
+        ++ticksInAir;
+        Vec3 vec3d = position();
+        Vec3 vec3d2 = vec3d.add(getDeltaMovement());
+        HitResult raytraceresult = level().clip(new ClipContext(vec3d, vec3d2,
+                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, this));
+        if (raytraceresult.getType() != HitResult.Type.MISS) {
+            vec3d2 = raytraceresult.getLocation();
+        }
+
+        while (isAlive()) {
+            EntityHitResult entityraytraceresult = findHitEntity(vec3d, vec3d2);
+            if (entityraytraceresult != null) {
+                raytraceresult = entityraytraceresult;
+            }
+            if (raytraceresult instanceof EntityHitResult ehr) {
+                final Entity entity = ehr.getEntity();
+                final Entity entity2 = getOwner();
+                if (entity instanceof Player player && entity2 instanceof Player player2 && !player2.canHarmPlayer(player)) {
+                    raytraceresult = null;
+                    entityraytraceresult = null;
+                }
+            }
+            if (raytraceresult != null && raytraceresult.getType() != HitResult.Type.MISS
+                && !onProjectileImpact(this, raytraceresult)) {
+                onHit(raytraceresult);
+                needsSync = true;
+            }
+            if (entityraytraceresult == null) {
+                break;
+            }
+            if (getPierceLevel() <= 0) {
+                break;
+            }
+            raytraceresult = null;
+        }
+
+        if (isCritArrow()) {
+            Vec3 motion2 = getDeltaMovement();
+            for (int i1 = 0; i1 < 2; ++i1) {
+                Vec3 pos = position().add(motion2.scale(i1 / 4.0));
+                if (level().isClientSide()) {
+                    level().addParticle(ParticleTypes.CRIT, pos.x, pos.y, pos.z, -motion2.x,
+                            -motion2.y + 0.2, -motion2.z);
+                }
+            }
+        }
+        Vec3 newPos = position().add(getDeltaMovement());
+        setPos(newPos.x, newPos.y, newPos.z);
+        if (aimRotation()) {
+            Vec3 motion2 = getDeltaMovement();
+            double f2 = motion2.horizontalDistance();
+            float n3 = (float) (Mth.atan2(motion2.x, motion2.z) * 180.0 / Math.PI);
+            setYRot(n3);
+            yRotO = n3;
+            float n4 = (float) (Mth.atan2(motion2.y, f2) * 180.0 / Math.PI);
+            xRot = n4;
+            xRotO = n4;
+        }
+        float res = getAirResistance();
+        double grav = getGravity();
+        if (isInWater()) {
+            Vec3 motion2 = getDeltaMovement();
+            beenInGround = true;
+            for (int i2 = 0; i2 < 4; ++i2) {
+                float f3 = 0.25f;
+                Vec3 pos = position().subtract(motion2.scale(f3));
+                if (level().isClientSide()) {
+                    level().addParticle(ParticleTypes.CRIT, pos.x, pos.y, pos.z, motion2.x,
+                            motion2.y + 0.2, motion2.z);
+                }
+            }
+            res *= 0.6f;
+        }
+        setDeltaMovement(getDeltaMovement().scale(res).subtract(0, isNoGravity() ? 0 : grav, 0));
+        setPos(getX(), getY(), getZ());
+        applyEffectsFromBlocks();
+    }
+
+    @ExpectPlatform
+    public static boolean onProjectileImpact(EntityProjectile<?> projectile, HitResult hitResult) {
+        return false; // Will get replaced at run time
+    }
+
+    @Override
+    public void onHit(@NotNull HitResult result) {
+        if (result instanceof EntityHitResult ehr) {
+            onHitEntity(ehr);
+        } else if (result instanceof BlockHitResult bhr) {
+            onHitBlock(bhr);
+        }
+    }
+
+    @Override
+    public void onHitEntity(EntityHitResult result) {
+        bounceBack();
+        applyEntityHitEffects(result.getEntity());
+    }
+
+    @NotNull
+    public DamageSource getDamageSource(@Nullable Entity entity) {
+        return damageSources().arrow(this, shooter);
+    }
+
+    public float getDamage(@Nullable Entity entity) {
+        return 0;
+    }
+
+    public boolean hurtOrSimulate(@NotNull Entity entity) {
+        return WMUtil.hurtOrSimulate(entity, getDamageSource(entity), getDamage(entity));
+    }
+
+    public void applyEntityHitEffects(Entity entity) {
+        if (isOnFire() && !(entity instanceof EnderMan)) {
+            entity.igniteForSeconds(5);
+        }
+        if (entity instanceof LivingEntity livingEntity) {
+            doKnockback(livingEntity, getDamageSource(entity));
+            if (level() instanceof ServerLevel serverLevel) {
+                EnchantmentHelper.doPostAttackEffectsWithItemSource(serverLevel, livingEntity,
+                        getDamageSource(entity), getWeaponItem());
+            }
+            Entity shooter = getOwner();
+            if (shooter instanceof ServerPlayer sp && !entity.equals(getOwner()) && entity instanceof Player) {
+                sp.connection.send(new ClientboundGameEventPacket(
+                        ClientboundGameEventPacket.PLAY_ARROW_HIT_SOUND, 0.0f));
+            }
+        }
+    }
+
+    @Override
+    public void onHitBlock(BlockHitResult result) {
+        BlockPos blockpos = result.getBlockPos();
+        xTile = blockpos.getX();
+        yTile = blockpos.getY();
+        zTile = blockpos.getZ();
+        inBlockState = level().getBlockState(blockpos);
+        setDeltaMovement(result.getLocation().subtract(position()));
+        double f1 = getDeltaMovement().length();
+        Vec3 pos = position().subtract(getDeltaMovement().scale(0.05 / f1));
+        setPos(pos.x, pos.y, pos.z);
+        inGround = true;
+        beenInGround = true;
+        setCritArrow(false);
+        shakeTime = getMaxArrowShake();
+        playHitSound();
+        if (inBlockState != null) {
+            inBlockState.entityInside(level(), blockpos, this, InsideBlockEffectApplier.NOOP, true);
+        }
+    }
+
+    protected void bounceBack() {
+        setDeltaMovement(getDeltaMovement().scale(-0.1));
+        setYRot(getYRot() + 180.0f);
+        yRotO += 180.0f;
+        ticksInAir = 0;
+    }
+
+    public double getTotalVelocity() {
+        return getDeltaMovement().length();
+    }
+
+    public boolean aimRotation() {
+        return true;
+    }
+
+    public int getMaxLifetime() {
+        return 1200;
+    }
+
+    public float getAirResistance() {
+        return 0.99f;
+    }
+
+    public double getDefaultGravity() {
+        return 0.05;
+    }
+
+    public int getMaxArrowShake() {
+        return 7;
+    }
+
+    @NotNull
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return new ItemStack(Items.ARROW);
+    }
+
+    @NotNull
+    @Override
+    protected ItemStack getPickupItem() {
+        return getDefaultPickupItem();
+    }
+
+    @Nullable
+    @Override
+    public ItemStack getPickResult() {
+        return getPickupItem();
+    }
+
+    public void playHitSound() {
+    }
+
+    public boolean canBeCritical() {
+        return false;
+    }
+
+    @Override
+    public void setCritArrow(boolean flag) {
+        if (canBeCritical()) {
+            entityData.set(WEAPON_CRITICAL, (byte) (flag ? 1 : 0));
+        }
+    }
+
+    @Override
+    public boolean isCritArrow() {
+        return canBeCritical() && entityData.get(WEAPON_CRITICAL) != 0;
+    }
+
+    public void setExtraDamage(float f) {
+        extraDamage = f;
+    }
+
+    @Override
+    protected void doKnockback(@NotNull LivingEntity livingEntity, @NotNull DamageSource damageSource) {
+        float f;
+        Level level = this.level();
+        if (firedFromWeapon != null && level instanceof ServerLevel serverLevel) {
+            f = EnchantmentHelper.modifyKnockback(serverLevel, firedFromWeapon, livingEntity, damageSource, 0.0f);
+        } else {
+            f = 0.0f;
+        }
+        double d = f;
+        if (d > 0.0) {
+            double e = Math.max(0.0, 1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+            Vec3 vec3 = this.getDeltaMovement().multiply(1.0, 0.0, 1.0).normalize().scale(d * 0.6 * e);
+            if (vec3.lengthSqr() > 0.0) {
+                livingEntity.push(vec3.x, 0.1, vec3.z);
+            }
+        }
+    }
+
+    public void setPickupStatus(PickupStatus i) {
+        pickupStatus = i;
+    }
+
+    public PickupStatus getPickupStatus() {
+        return pickupStatus;
+    }
+
+    public boolean canPickup(Player entityplayer) {
+        if (pickupStatus == PickupStatus.ALLOWED) {
+            return true;
+        }
+        if (pickupStatus == PickupStatus.CREATIVE_ONLY) {
+            return entityplayer.isCreative();
+        }
+        return pickupStatus == PickupStatus.OWNER_ONLY && entityplayer.equals(getOwner());
+    }
+
+    @Override
+    public void playerTouch(@NotNull Player entityplayer) {
+        if (inGround && shakeTime <= 0 && canPickup(entityplayer) && !level().isClientSide()) {
+            ItemStack item = getPickupItem();
+            if (item.isEmpty()) return;
+            if ((pickupStatus == PickupStatus.CREATIVE_ONLY && entityplayer.isCreative()) ||
+                entityplayer.getInventory().add(item)) {
+                playSound(SoundEvents.ITEM_PICKUP, 0.2f,
+                        ((random.nextFloat() - random.nextFloat()) * 0.7f + 1.0f) * 2.0f);
+                onItemPickup(entityplayer);
+                remove(RemovalReason.DISCARDED);
+            }
+        }
+    }
+
+    protected void onItemPickup(Player entityplayer) {
+        entityplayer.take(this, 1);
+    }
+
+    @Nullable
+    @Override
+    public ItemStack getWeaponItem() {
+        return firedFromWeapon;
+    }
+
+    @Override
+    protected void addAdditionalSaveData(ValueOutput valueOutput) {
+        super.addAdditionalSaveData(valueOutput);
+        valueOutput.putInt("xTile", xTile);
+        valueOutput.putInt("yTile", yTile);
+        valueOutput.putInt("zTile", zTile);
+        if (inBlockState != null) {
+            valueOutput.store("inBlockState", BlockState.CODEC, inBlockState);
+        }
+        valueOutput.putByte("shake", (byte) shakeTime);
+        valueOutput.putBoolean("inGround", inGround);
+        valueOutput.putBoolean("beenInGround", beenInGround);
+        valueOutput.putByte("pickup", (byte) pickupStatus.ordinal());
+        if (firedFromWeapon != null) {
+            valueOutput.store("weapon", ItemStackTemplate.CODEC, ItemStackTemplate.fromStack(firedFromWeapon));
+        }
+    }
+
+    @Override
+    protected void readAdditionalSaveData(ValueInput valueInput) {
+        super.readAdditionalSaveData(valueInput);
+        xTile = valueInput.getIntOr("xTile", (int) getX());
+        yTile = valueInput.getIntOr("yTile", (int) getY());
+        zTile = valueInput.getIntOr("zTile", (int) getZ());
+        inBlockState = valueInput.read("inBlockState", BlockState.CODEC).orElse(null);
+        shakeTime = (valueInput.getByteOr("shake", (byte) 0) & 0xFF);
+        inGround = valueInput.getBooleanOr("inGround", false);
+        beenInGround = valueInput.getBooleanOr("beenInGround", false);
+        pickupStatus = valueInput.read("pickup", PickupStatus.CODEC).orElse(PickupStatus.DISALLOWED);
+        firedFromWeapon = valueInput.read("weapon", ItemStackTemplate.CODEC)
+                .map(ItemStackTemplate::create).orElse(null);
+    }
+
+    public enum PickupStatus {
+        DISALLOWED,
+        ALLOWED,
+        CREATIVE_ONLY,
+        OWNER_ONLY;
+
+        public static final Codec<PickupStatus> CODEC = Codec.BYTE.xmap(PickupStatus::getByOrdinal,
+                status -> (byte) status.ordinal());
+
+        public static PickupStatus getByOrdinal(int ordinal) {
+            if (ordinal < 0 || ordinal > values().length) {
+                ordinal = 0;
+            }
+
+            return values()[ordinal];
+        }
+    }
+
+}

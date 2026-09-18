@@ -1,0 +1,31 @@
+{
+  "values": [
+    "moremeatmilk:raw_fowl",
+    "moremeatmilk:raw_gator",
+    "moremeatmilk:raw_monkey",
+    "moremeatmilk:raw_shark",
+    "moremeatmilk:raw_snake",
+    "moremeatmilk:raw_anteater",
+    "moremeatmilk:raw_raccoon",
+    "moremeatmilk:raw_wolf_meat",
+    "moremeatmilk:raw_feline",
+    "moremeatmilk:raw_bear_meat",
+    "moremeatmilk:raw_panda_meat",
+    "moremeatmilk:raw_fox_meat",
+    "moremeatmilk:raw_frog_leg",
+    "moremeatmilk:cooked_fowl",
+    "moremeatmilk:cooked_gator",
+    "moremeatmilk:cooked_monkey",
+    "moremeatmilk:cooked_shark",
+    "moremeatmilk:cooked_snake",
+    "moremeatmilk:cooked_anteater",
+    "moremeatmilk:cooked_raccoon",
+    "moremeatmilk:cooked_wolf_meat",
+    "moremeatmilk:cooked_feline",
+    "moremeatmilk:cooked_bear_meat",
+    "moremeatmilk:cooked_panda_meat",
+    "moremeatmilk:cooked_fox_meat",
+    "moremeatmilk:cooked_frog_leg",
+    "moremeatmilk:cooked_egg"
+  ]
+}

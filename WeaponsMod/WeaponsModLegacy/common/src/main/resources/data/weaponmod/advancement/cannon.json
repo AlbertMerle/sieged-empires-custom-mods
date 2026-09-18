@@ -1,0 +1,72 @@
+{
+  "parent": "weaponmod:root",
+  "rewards": {
+    "recipes": [
+      "weaponmod:cannon"
+    ]
+  },
+  "criteria": {
+    "has_c_ingots/iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:ingots/iron"
+          }
+        ]
+      }
+    },
+    "has_c_tools/igniter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:tools/igniter"
+          }
+        ]
+      }
+    },
+    "has_minecraft_logs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:logs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponmod:cannon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_c_ingots/iron",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_tools/igniter",
+      "has_the_recipe"
+    ],
+    [
+      "has_minecraft_logs",
+      "has_the_recipe"
+    ]
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ]
+}

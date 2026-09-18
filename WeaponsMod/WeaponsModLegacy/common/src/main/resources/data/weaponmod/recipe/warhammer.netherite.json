@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "weaponmod:warhammer.diamond",
+  "result": {
+    "count": 1,
+    "id": "weaponmod:warhammer.netherite"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "warhammer"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "warhammer"
+    }
+  ]
+}

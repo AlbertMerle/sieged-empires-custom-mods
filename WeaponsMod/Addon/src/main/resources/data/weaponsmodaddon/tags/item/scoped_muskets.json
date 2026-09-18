@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "weaponsmodaddon:scoped_musket",
+    "weaponsmodaddon:scoped_musketbayonet.wood",
+    "weaponsmodaddon:scoped_musketbayonet.stone",
+    "weaponsmodaddon:scoped_musketbayonet.copper",
+    "weaponsmodaddon:scoped_musketbayonet.iron",
+    "weaponsmodaddon:scoped_musketbayonet.gold",
+    "weaponsmodaddon:scoped_musketbayonet.diamond",
+    "weaponsmodaddon:scoped_musketbayonet.netherite"
+  ]
+}

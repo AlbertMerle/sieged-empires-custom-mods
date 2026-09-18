@@ -1,0 +1,21 @@
+{
+	"required": true,
+	"package": "com.distantnoise.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"plugin": "com.distantnoise.mixin.DistantNoiseMixinPlugin",
+	"mixins": [
+		"LivingEntityMixin",
+		"PlayerMixin",
+		"EntityMixin",
+		"ServerExplosionMixin",
+		"weaponmod.RangedComponentGunRelayMixin",
+		"weaponmod.AdvancedExplosionMixin",
+		"weaponsmodaddon.GunFireEffectsMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

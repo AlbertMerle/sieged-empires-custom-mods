@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "weaponmod:halberd.diamond",
+  "result": {
+    "count": 1,
+    "id": "weaponmod:halberd.netherite"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "halberd"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "halberd"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "terratonicbiomes",
+	"version": "${version}",
+	"name": "Terrabiome",
+	"description": "Biome placement only for Terralith + Tectonic: latitude zones + whitelist. Forces datapack order terralith < tectonic < terrabiome so Tectonic owns terrain.",
+	"authors": [
+		"albert"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"icon": "assets/terratonicbiomes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tertonbiome.Terratonicbiomes"
+		],
+		"client": [
+			"com.tertonbiome.client.TerratonicbiomesClient"
+		]
+	},
+	"mixins": [
+		"terratonicbiomes.mixins.json",
+		{
+			"config": "terratonicbiomes.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"terralith": "*",
+		"tectonic": "*",
+		"lithostitched": "*"
+	},
+	"custom": {
+		"fabric:resource_load_order": {
+			"before": [
+				"terralith",
+				"tectonic"
+			]
+		}
+	},
+	"breaks": {}
+}

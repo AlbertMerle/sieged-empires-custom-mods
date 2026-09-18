@@ -1,0 +1,7 @@
+{
+  "parent": "croplite:block/crop_with_fruit",
+  "textures": {
+    "crop": "croplite:block/coffee_plant_fruiting",
+    "fruit": "croplite:block/coffee_plant_fruiting_fruit"
+  }
+}

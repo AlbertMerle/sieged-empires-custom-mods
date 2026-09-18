@@ -1,0 +1,24 @@
+{
+  "item.weaponsmodaddon.scoped_musket": "Scoped Musket",
+  "item.weaponsmodaddon.scoped_musketbayonet.wood": "Scoped Musket with Wood Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.stone": "Scoped Musket with Stone Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.copper": "Scoped Musket with Copper Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.iron": "Scoped Musket with Iron Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.gold": "Scoped Musket with Gold Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.diamond": "Scoped Musket with Diamond Bayonet",
+  "item.weaponsmodaddon.scoped_musketbayonet.netherite": "Scoped Musket with Netherite Bayonet",
+  "hud.weaponsmodaddon.reloading": "Reloading",
+  "subtitles.weaponsmodaddon.musket_fire": "Musket fires",
+  "subtitles.weaponsmodaddon.flintlock_fire": "Flintlock fires",
+  "subtitles.weaponsmodaddon.gun_reload": "Gun reloading",
+  "subtitles.weaponsmodaddon.ear_ring": "Ears ringing",
+
+  "item.weaponmod.spear.wood": "Wooden Javelin",
+  "item.weaponmod.spear.stone": "Stone Javelin",
+  "item.weaponmod.spear.iron": "Iron Javelin",
+  "item.weaponmod.spear.gold": "Golden Javelin",
+  "item.weaponmod.spear.copper": "Copper Javelin",
+  "item.weaponmod.spear.diamond": "Diamond Javelin",
+  "item.weaponmod.spear.netherite": "Netherite Javelin",
+  "entity.weaponmod.spear": "Javelin"
+}

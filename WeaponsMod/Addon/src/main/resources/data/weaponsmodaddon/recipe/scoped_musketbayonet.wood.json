@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "weaponmod:musketbayonet.wood",
+    "minecraft:spyglass"
+  ],
+  "result": {
+    "id": "weaponsmodaddon:scoped_musketbayonet.wood"
+  }
+}

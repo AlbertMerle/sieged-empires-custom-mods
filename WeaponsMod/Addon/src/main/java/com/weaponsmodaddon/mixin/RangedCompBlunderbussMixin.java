@@ -1,0 +1,59 @@
+package com.weaponsmodaddon.mixin;
+
+import ckathode.weaponmod.item.RangedCompBlunderbuss;
+import com.weaponsmodaddon.gun.GunRecoil;
+import com.weaponsmodaddon.sound.GunFireEffects;
+import com.weaponsmodaddon.sound.ModSounds;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+/**
+ * Blunderbuss fire → {@link ModSounds#MUSKET_FIRE}; drop door-close on reload done;
+ * fire knockback {@link GunRecoil#BLUNDERBUSS} (no pitch kick).
+ */
+@Mixin(RangedCompBlunderbuss.class)
+public abstract class RangedCompBlunderbussMixin {
+
+	@Inject(method = "effectShoot", at = @At("HEAD"), cancellable = true)
+	private void weaponsmodaddon$customBlunderFire(
+			Level world,
+			double x,
+			double y,
+			double z,
+			float yaw,
+			float pitch,
+			CallbackInfo ci
+	) {
+		GunFireEffects.playBang(world, x, y, z, yaw, pitch, ModSounds.MUSKET_FIRE);
+		ci.cancel();
+	}
+
+	@Inject(method = "effectPlayer", at = @At("HEAD"), cancellable = true)
+	private void weaponsmodaddon$blunderRecoil(
+			ItemStack itemstack,
+			Player entityplayer,
+			Level world,
+			CallbackInfo ci
+	) {
+		GunRecoil.apply(entityplayer, GunRecoil.BLUNDERBUSS);
+		ci.cancel();
+	}
+
+	@Inject(method = "effectReloadDone", at = @At("HEAD"), cancellable = true)
+	private void weaponsmodaddon$noDoorOnReloadDone(
+			ItemStack itemstack,
+			Level world,
+			LivingEntity entityliving,
+			CallbackInfo ci
+	) {
+		entityliving.swing(InteractionHand.MAIN_HAND);
+		ci.cancel();
+	}
+}

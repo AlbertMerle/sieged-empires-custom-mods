@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "#",
+    "X",
+    "O"
+  ],
+  "key": {
+    "#": "minecraft:gravel",
+    "X": "minecraft:gunpowder",
+    "O": "minecraft:paper"
+  },
+  "result": {
+    "id": "weaponmod:shot",
+    "count": 8
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "blunderbuss"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "blunderbuss"
+    }
+  ]
+}

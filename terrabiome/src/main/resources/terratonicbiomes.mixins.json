@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "com.tertonbiome.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"MultiNoiseBiomeSourceMixin",
+		"PackRepositoryMixin",
+		"StructureMixin",
+		"ChunkGeneratorStructureStateMixin",
+		"GeodeFeatureMixin",
+		"SkylandFeatureMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

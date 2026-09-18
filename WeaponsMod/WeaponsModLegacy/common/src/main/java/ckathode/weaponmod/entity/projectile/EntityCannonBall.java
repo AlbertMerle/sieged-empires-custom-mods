@@ -1,0 +1,152 @@
+package ckathode.weaponmod.entity.projectile;
+
+import ckathode.weaponmod.PhysHelper;
+import ckathode.weaponmod.WMDamageSources;
+import ckathode.weaponmod.WMRegistries;
+import ckathode.weaponmod.WeaponModConfig;
+import ckathode.weaponmod.entity.EntityCannon;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class EntityCannonBall extends EntityProjectile<EntityCannonBall> {
+
+    public static final String ID = "cannonball";
+    public static final EntityType<EntityCannonBall> TYPE = WMRegistries.createEntityType(
+            ID, EntityDimensions.fixed(0.5f, 0.5f).withEyeHeight(0.0f), EntityCannonBall::new);
+
+    public EntityCannonBall(EntityType<EntityCannonBall> entityType, Level world) {
+        super(entityType, world);
+    }
+
+    public EntityCannonBall(Level world, double d, double d1, double d2, @Nullable ItemStack firedFromWeapon) {
+        super(TYPE, world, firedFromWeapon);
+        setPos(d, d1, d2);
+    }
+
+    public EntityCannonBall(Level world, EntityCannon entitycannon, float f, float f1,
+                            boolean superPowered, @Nullable ItemStack firedFromWeapon) {
+        this(world, entitycannon.getX(), entitycannon.getY() + 1.0, entitycannon.getZ(), firedFromWeapon);
+        Entity entityPassenger = entitycannon.getPassengers().isEmpty() ? null :
+                entitycannon.getPassengers().getFirst();
+        setOwner(entitycannon);
+        if (entityPassenger instanceof LivingEntity livingEntity) {
+            setPickupStatusFromEntity(livingEntity);
+        } else {
+            setPickupStatus(PickupStatus.ALLOWED);
+        }
+        float x = -Mth.sin(f1 * 0.017453292f) * Mth.cos(f * 0.017453292f);
+        float y = -Mth.sin(f * 0.017453292f);
+        float z = Mth.cos(f1 * 0.017453292f) * Mth.cos(f * 0.017453292f);
+        shoot(x, y, z, superPowered ? 4.0f : 2.0f, superPowered ? 0.1f : 2.0f);
+        Vec3 cannonMotion = entitycannon.getDeltaMovement();
+        setDeltaMovement(getDeltaMovement().add(cannonMotion.x, 0, cannonMotion.z));
+        setCritArrow(superPowered);
+    }
+
+    @Override
+    protected boolean isDisabled() {
+        return !WeaponModConfig.get().isEnabled("cannon");
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        double speed = getDeltaMovement().length();
+        double amount = 8.0;
+        if (speed > 1.0) {
+            Vec3 motion = getDeltaMovement();
+            for (int i1 = 1; i1 < amount; ++i1) {
+                Vec3 pos = position().add(motion.scale(i1 / amount));
+                if (level().isClientSide()) {
+                    level().addParticle(ParticleTypes.SMOKE, pos.x, pos.y, pos.z, 0.0, 0.0, 0.0);
+                }
+            }
+        }
+    }
+
+    public void createCrater() {
+        if (!(level() instanceof ServerLevel serverLevel) || !inGround || isInWater()) {
+            return;
+        }
+        remove(RemovalReason.DISCARDED);
+        float f = isCritArrow() ? 5.0f : 2.5f;
+        PhysHelper.createAdvancedExplosion(serverLevel, this, position(), f,
+                WeaponModConfig.get().cannonDoesBlockDamage, true, false,
+                Explosion.BlockInteraction.DESTROY);
+    }
+
+    @NotNull
+    @Override
+    public DamageSource getDamageSource(@Nullable Entity entity) {
+        return damageSources().source(WMDamageSources.WEAPON, this, getDamagingEntity());
+    }
+
+    @Override
+    public float getDamage(@Nullable Entity entity) {
+        return 30.0f;
+    }
+
+    @Override
+    public void onHitEntity(EntityHitResult result) {
+        if (hurtOrSimulate(result.getEntity())) {
+            playSound(SoundEvents.PLAYER_HURT, 1.0f, 1.2f / (random.nextFloat() * 0.4f + 0.7f));
+        }
+    }
+
+    @Override
+    public void onHitBlock(BlockHitResult result) {
+        BlockPos blockpos = result.getBlockPos();
+        xTile = blockpos.getX();
+        yTile = blockpos.getY();
+        zTile = blockpos.getZ();
+        inBlockState = level().getBlockState(blockpos);
+        setDeltaMovement(result.getLocation().subtract(position()));
+        double f1 = getDeltaMovement().length();
+        Vec3 pos = position().subtract(getDeltaMovement().scale(0.05 / f1));
+        setPos(pos.x, pos.y, pos.z);
+        inGround = true;
+        if (inBlockState != null) {
+            inBlockState.entityInside(level(), blockpos, this, InsideBlockEffectApplier.NOOP, true);
+        }
+        createCrater();
+    }
+
+    @Override
+    public boolean canBeCritical() {
+        return true;
+    }
+
+    @Override
+    public float getAirResistance() {
+        return 0.98f;
+    }
+
+    @Override
+    public double getDefaultGravity() {
+        return 0.04f;
+    }
+
+    @NotNull
+    @Override
+    protected ItemStack getDefaultPickupItem() {
+        return new ItemStack(WMRegistries.ITEM_CANNON_BALL.get());
+    }
+
+}

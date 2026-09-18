@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "croplite:cucumber",
+    "croplite:pepper",
+    "croplite:eggplant",
+    "croplite:tomato",
+    "croplite:basil",
+    "croplite:cactus_flesh"
+  ]
+}

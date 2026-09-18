@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "croplite:block/cantelope_top",
+    "side": "croplite:block/cantelope_side"
+  }
+}

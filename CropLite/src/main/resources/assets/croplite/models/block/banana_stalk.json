@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "croplite:block/banana_stalk_top",
+    "side": "croplite:block/banana_stalk"
+  }
+}

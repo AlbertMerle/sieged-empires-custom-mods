@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "weaponmod:spear.diamond",
+  "result": {
+    "count": 1,
+    "id": "weaponmod:spear.netherite"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "spear"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "spear"
+    }
+  ]
+}

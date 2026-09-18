@@ -1,0 +1,12 @@
+{
+	"required": false,
+	"package": "com.voxmapsync.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"plugin": "com.voxmapsync.client.mixin.VoxelMapSyncMixinPlugin",
+	"client": [
+		"GuiPersistentMapMixin"
+	],
+	"injectors": {
+		"defaultRequire": 0
+	}
+}

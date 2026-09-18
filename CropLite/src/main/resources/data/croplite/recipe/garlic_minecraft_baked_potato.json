@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:garlic",
+    "minecraft:baked_potato"
+  ],
+  "result": {
+    "id": "minecraft:baked_potato",
+    "components": {
+      "croplite:has_garlic": {}
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "HH"
+  ],
+  "key": {
+    "H": "croplite:hay"
+  },
+  "result": {
+    "id": "minecraft:paper",
+    "count": 2
+  }
+}

@@ -1,0 +1,19 @@
+{
+	"required": true,
+	"package": "com.distantnoise.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"plugin": "com.distantnoise.mixin.DistantNoiseClientMixinPlugin",
+	"client": [
+		"ChannelAccessor",
+		"ExplosionChannelMixin",
+		"SoundEngineMixin",
+		"SoundManagerMixin",
+		"weaponsmodaddon.GunAimClientRelayMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

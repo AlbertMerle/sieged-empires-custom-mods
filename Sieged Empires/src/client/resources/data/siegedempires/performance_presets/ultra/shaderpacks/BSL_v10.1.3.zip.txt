@@ -1,0 +1,12 @@
+#BSL ULTRA profile — 3072 shadows / 512 distance; WATER_FOG Full; Advanced Materials on (LabPBR gold)
+#Sieged Empires performance preset: Ultra
+ADVANCED_MATERIALS=true
+WATER_FOG=1
+AO=true
+LIGHT_SHAFT=true
+SHADOW=true
+SHADOW_COLOR=true
+SHADOW_FILTER=true
+TAA=true
+shadowDistance=512.0
+shadowMapResolution=3072

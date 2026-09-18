@@ -1,0 +1,58 @@
+{
+  "parent": "weaponmod:root",
+  "rewards": {
+    "recipes": [
+      "weaponmod:javelin"
+    ]
+  },
+  "criteria": {
+    "has_minecraft_flint": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:flint"
+          }
+        ]
+      }
+    },
+    "has_c_rods/wooden": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:rods/wooden"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponmod:javelin"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_minecraft_flint",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_rods/wooden",
+      "has_the_recipe"
+    ]
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "javelin"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "javelin"
+    }
+  ]
+}

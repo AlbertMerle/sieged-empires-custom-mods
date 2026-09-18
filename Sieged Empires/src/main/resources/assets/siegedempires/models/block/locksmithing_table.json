@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "siegedempires:block/locksmithing_table_front",
+    "north": "siegedempires:block/locksmithing_table_front",
+    "south": "siegedempires:block/locksmithing_table_side",
+    "east": "siegedempires:block/locksmithing_table_side",
+    "west": "siegedempires:block/locksmithing_table_side",
+    "up": "siegedempires:block/locksmithing_table_top",
+    "down": "siegedempires:block/locksmithing_table_bottom"
+  }
+}

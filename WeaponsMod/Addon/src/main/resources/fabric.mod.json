@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "weaponsmodaddon",
+	"version": "${version}",
+	"name": "WeaponsMod Addon",
+	"description": "Sieged Empires companion for Balkon's WeaponMod: Legacy — mechanics tweaks and animations.",
+	"authors": [
+		"albert"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.weaponsmodaddon.WeaponsModAddon"
+		],
+		"client": [
+			"com.weaponsmodaddon.client.WeaponsModAddonClient"
+		]
+	},
+	"mixins": [
+		"weaponsmodaddon.mixins.json",
+		{
+			"config": "weaponsmodaddon.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"weaponmod": "*"
+	},
+	"suggests": {
+		"perspective_api": "*",
+		"shouldersurfing": "*",
+		"forgeconfigapiport": "*",
+		"sound_physics_remastered": "*"
+	}
+}

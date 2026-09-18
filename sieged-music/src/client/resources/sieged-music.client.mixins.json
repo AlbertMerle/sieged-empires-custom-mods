@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.siegedmusic.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"MinecraftMixin",
+		"MusicManagerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

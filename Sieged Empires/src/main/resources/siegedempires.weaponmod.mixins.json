@@ -1,0 +1,12 @@
+{
+	"required": false,
+	"package": "com.siegedempires.compat.weaponmod.mixin",
+	"plugin": "com.siegedempires.compat.weaponmod.WeaponModMixinPlugin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"AdvancedExplosionMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

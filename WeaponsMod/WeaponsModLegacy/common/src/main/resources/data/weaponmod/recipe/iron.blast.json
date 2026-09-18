@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    "weaponmod:spear.iron",
+    "weaponmod:halberd.iron",
+    "weaponmod:knife.iron",
+    "weaponmod:battleaxe.iron",
+    "weaponmod:warhammer.iron",
+    "weaponmod:flail.iron",
+    "weaponmod:boomerang.iron",
+    "weaponmod:katana.iron"
+  ],
+  "result": {
+    "id": "minecraft:iron_nugget"
+  }
+}

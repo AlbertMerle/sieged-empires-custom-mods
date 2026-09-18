@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "##X",
+    "  #",
+    "##O"
+  ],
+  "key": {
+    "#": "#c:ingots/iron",
+    "X": "#c:tools/igniter",
+    "O": "#minecraft:logs"
+  },
+  "result": {
+    "id": "weaponmod:cannon"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "cannon"
+    }
+  ]
+}

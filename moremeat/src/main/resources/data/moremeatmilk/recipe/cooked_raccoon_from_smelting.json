@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "experience": 0.35,
+  "ingredient": "moremeatmilk:raw_raccoon",
+  "result": {
+    "id": "moremeatmilk:cooked_raccoon"
+  }
+}

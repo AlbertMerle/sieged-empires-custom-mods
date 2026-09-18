@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:hay",
+    "croplite:hay",
+    "croplite:hay",
+    "croplite:hay"
+  ],
+  "result": {
+    "id": "minecraft:string"
+  }
+}

@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "voxelmapsync",
+	"version": "${version}",
+	"name": "VoxelMapSync",
+	"description": "Server-shared VoxelMap terrain cache (Chunky/explored MCA) plus Sieged Empires claim overlays. Companion addon — does not modify VoxelMap.",
+	"authors": [
+		"albert"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"icon": "assets/voxelmapsync/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.voxmapsync.VoxelMapSync"
+		],
+		"client": [
+			"com.voxmapsync.client.VoxelMapSyncClient"
+		]
+	},
+	"mixins": [
+		"voxelmapsync.mixins.json",
+		{
+			"config": "voxelmapsync.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"voxelmap": "*",
+		"siegedempires": "*"
+	}
+}

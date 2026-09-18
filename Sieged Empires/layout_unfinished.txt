@@ -1,0 +1,244 @@
+This is my basic framework for how i want the sieged empires mod to be made.
+
+
+- Here are Some Rules. Set a HARD rule. ALWAYS read aidata folder upon new agent creation and when needing to refer to anything about how to work the code. Always save all conversations and changes in code to aidata folder, and if you are lost or need information, use it. If you are able to save line locations of specific things to make it faster for you, do so. In this folder, you can put anything you want or think a future ai agent will need in order to work on this project, include also a description of its base logic, how everything works, where everything is going. This is mostly for the AI, not for me, but i will peak into it to see how things are working. 
+Ill give you some rules to take note of before you begin doing anything, Simply take note of these to remember when giving you future prompts.
+One other rule, when i say "town" or "nation" that should be interchangeable. with this minecraft mod, all a nation is, is a town that got big enough to be re-considered a nation (100 chunks) it has the exact same functionality, but instead to be displayed in game as a nation after reaching 100 chunks. Its just a game-play thing. not to confuse you. Take note of this also: "No empire or town should have symbols or numbers in their name. For example, No Towns should have 1234 or !@#$ in their town or empire name. for example "Ruslaquiasia" is appropriate, but "Ruslaq1" is NOT. no numbers or symbols, only letters. However, allow spaces in the names. The description can have numbers and symbols. I will use the terms "Nation" and "Town" Interchangeably to mean the same thing. an Empire is a collection of towns/nations under one banner who surrender their diplomatic autonomy to the empire.
+
+- This mod is a fabric mod that runs on a server, that lets players create towns, claim chunks of land, and to raid each others land to take it from them, and to create Empires which are just collections of towns and nations under one alliance. People can form these empires and go to war with each other. I want to use minecraft banners as my method of claiming, and raiding land. Players can either create or join a town, and a town can become part of an "Empire". Towns in the same empire should not be able to fight each other, only Empires that are at war with each other. Or if a town is empire-less, allow it the ability to ally or war with anyone as its own individual "empire" even tho nowhere in the game it should say empire, just town, since its only one town. First, i will layout the GUI, how it works, and what information it stores, collects, and how it functions, then some rules. dont be confused if you dont have enough information. im going to be giving you multiple prompts i pre-wrote. Work on what you can as you go. I want every player to have full interactibility and access to any chunk that isnt claimed, just like vanilla. I dont want anything to change about the land outside of claims, however i will give you rules a lot later on to suggest what is and isnt allowed to be done by what player on which claim. I will first focus on GUI, and logging the data, and then show you how to use that data to affect the gameplay. As i say again, Any land that is unclaimed by a town, i was players to have full access of just like vanilla. I do not want the wilderness to be effected at all by this mod.
+
+Config Setup:
+- Let the Mod create a new folder within the config folder called "SiegedEmpires" and i want a very basic layout for the config. Make a folder called "TownsNations" within SiegedEmpires. In this folder i want every new town or nation and its information to be saved. So for instance, if somebody makes a town called "Bayland" then i want you to create a file within TownsNations called "BayLand.json" which contains all of the information about the nation/town. Include in the Config whether or not the Town is a Town or Nation. all a Nation is, is a town that owns more than 100 chunks, however, it has all the same exact functionalities as a town.
+
+
+Some Rules and Notes:
+- Players Should always be able to pvp with each other.
+
+GUI:
+
+- There should be a custom GUI that all players can access that updates to the server. A Hotkey to access it. for now, let this be "`". The GUI should have a button that says "Create Town (5 Diamonds)" and it should check if there are 5 diamonds in the players inventory, if there are, allow them to create a new town. If there are not enough diamonds in their Inventory, Create a Pop up message on the bottom of the GUI that says "Can't Afford This!". More Later on how this gui functions. Create an "X" at the top right of the GUI that persists throughout the entirety of this menu, that allows the players to close out of the gui at any time." They should be able to scroll through every menu to be able to see and select all the options. The hotkey setting for this GUI should be accessable through the control panel. Name the control "Sieged Empires GUI", again it should be the "`" key. "`/~".
+
+Create Town:
+- Upon Clicking "Create Town" (if player is able to afford it) then bring up a new menu with "Create Town" listed on the top. First, i want a text input box, just above it put "Town Name" and i want them to be able to type out their town name. I want the character limit to be 40 for the town name. Then, under the town name typing box, i want them to have a gui that will let them create a banner. I want you to display a preview of the banner to the right, and to the left i want a color pallet, all the banner symbols, and a "+" sign to add the banner pattern to the display, and an undo button to undo the last addition. I want the banner preview on the right to update whenever they add a new pattern, with the right color. Then, below the banner creation slot, i want another text input box, with the text above it saying "Town Description (Optional)" That allows players to put a town description. This is important for later, i want you to take note of this: "When other players hover over the town name in the Join Town menu, i want the description to display only while hovering." More on this new "Join Town/Nation" button in another prompt. Add the ability to scroll through the GUI, and at the very bottom add a "Create Town" button. upon clicking, create a new pop up that says "Are you sure you want to Create a town? (Costs 5 diamonds)" with a yes and no option, if they click no, go back to the "Create Town" GUI, and make sure you cache the information, town name, description, and banner, and go back to it. If they click "Yes" Create the town, and Create a new config file in the TownsNations folder, with the name of their town. When a player Creates a town, THEN i want you to remove 5 diamonds from their inventory. If they do not have enough Diamonds just say "Can't Afford This!" without creating the town (they shouldnt even be able to access this gui anyways without enough diamonds, but just in case put a second check). When a town is created, i want you to save the player who created the town as "Monarch" of the town. I want the Monarch to have full access to the town, able to do anything. If a town is larger than 100 chunks, i want it to be called a "Nation" however it has ALL the same functionality as a town. However this wont really matter or make a difference at all until i add a way for players to tell the difference. 
+
+How Banners work:
+- I want you to save the banner design that a town (or empire later) makes in its json file somehow, whatever is the easiest way to compile banner information. I basically want to give banners 2 new data values that it checks for. the Town and Empire it belongs to, and what Type of banner it is. the only type im about to layout for you soon is the Claim Banner. Any time a banner is placed that has the data value of the town name, i want you to update the banner design to the design that is saved in the town config file. If in any way the banner design is changed in the config file, i want any banner that is in the world to change also. as long as it shares the data value, matching it with the town/empire
+
+
+
+Claim Banner:
+- I want to create a configured version of a vanilla item, The Banner. Upon Creating a town, i want the player to be given 18 banners. The banners should be their Town Banner Design. I want the item name of these banners in the inventory to be named "CLAIM BANNER" and i want the text to be Light Green. Upon Placing a banner, i want you to register the chunk the banner was placed in, i want you to save the chunk id in the towns json file under a category of "Claimed Land" and as soon as they place the banner, i want the banner to disappear, and i want the perimeter of the chunk to have green particles on the surface of the y axis, so it chooses the further up block it can find, so that when a player claims land, the banner disappears, and the area is surrounded on the grass/ground with particles to indicate where the chunk is. I want these particles to last 8 seconds, and i want you to display a minecraft title on the screen that says in "Chunk claimed by" then their town name. so here is an example. a play create a down called bayland and wants a white flag with a green dot in the middle. thats how he makes the banner in the Create Town gui. Upon clicking create town, 5 diamonds are removed from his inventory, and he recieved 18 banners called "Claim Banner" with his custom flag with a green dot, when he places the banner, it instantly vanished and green partciles surround the chunk, as well as a title text that indicates the land was claimed. Each Claim banner claims 1 chunk, and is designated to only one town. For instance, if a claim banner for a town is created by the monarch, it can be given to other players for them to place and to claim a chunk for the town. So the banner holds data, showing which town it is, and that its a special claim banner and functions as such. The banner design of the item should ALWAYS match the banner of the town. Save the town banner design in the towns json file as well, If the banner is ever updated or changed in the json files, i want all banners for that town or empire to change with it. So The Banner itself should have the ability to claim a chunk and give it to the town its desired by.
+
+Joining Towns:
+- I want another button in the GUI that says "Join Town/Nation". This should be of no cost to the player, does not require any diamonds. Upon clicking, i want you to have a list of every empire in the game. Upon clicking the empire, i want you to List every town and nation that is part of that empire. If a town is not part of an empire, then i want you to list it under "No Empire". If the town has Public set to true, let the player join the town, if the town has public to false, Dont let the player join, an instead display a message at the bottom saying "Can't Join Town. Town has Private Citizenship." Any towns that may have invited that player, i want you to list at the top of the list outside of the categories without having to open any categories, with a Mail Icon next to the town name. Upon Clicking, the invited player should be able to bypass the town not being public, and join it anyways.
+
+Leave Town:
+- i want another button that says "Leave Town" and i want it to be in red letters. Let it prompt a short "Are you sure you want to leave your Town?" prompt, with a yes and no option. Upon clicking no, just rewind the the previous screen in the menu, if they click yes, remove that player from the town in the town files, now making that player townless. 
+
+Manage Town:
+-Create a new button in the Sieged Empires "`" menu. called "Manage Town" I want this button to be darkend out for any player who isnt in a town, or is not the monarch, only the Monarch of a town should have the ability to click this button. Upon clicking, you are given a menu that lets you configure things about your town. Create one at the top that says "Invite Player" and upon inviting a player, i want to allow the invited player to join the town in the "Join Town" menu that i will create later, take note of this. Create another button that is a toggle button that says "Town Public:" True or False. make it set to false by default upon making a town. however, if it is set to false, let any player who was invited to the town bypass this and join the town, becoming a "Citizen" of the town. Save all citizens, playername, or their player id in case they change their in game name. Save them to the towns json file. Create another button in Manage Town system that says "Evict Player" (Make text Red) Which upon clicking, lists every player in the town. When the monarch clicks on a player, i want it to display a "Are you sure you want to evict [player name]?" with the players name in it, with a yes or no option. if they click no, go back to the player list without removing anyone from the town, if they click yes, remove the selected player from the town, so that they can no longer break or place blocks, and have the same access to the town as anyone else who isnt part of the town. So for example, if bayland had a citizen, the monarch decides to evict him, the monarch can evict him without notice, and he can no longer access his house anymore, without notice.
+- When sending a player an invite, i want it to list all the players who are currently online on the server, and make a search bar with the ability to search a players name, and be able to use the TAB key to finish their name or skim through player names just like you can in chat.
+
+
+Empire GUI:
+Rules for joining an empire: You no longer can decide who your ally/enemy is, the empire does, and your town flag changes to the empire flag, unless you leave the empire, then it reverts to normal.
+- Create 3 new buttons inside of Manage Town, "Create Empire (32 diamonds)", "Join Empire" Joining an empire is no cost. and a button that says "Leave Empire". If a town is not in an empire, i want "Leave Empire" to be darkened and unselectable, If they ARE in an empire, i want "Join Empire" to be darkened and unselectable instead, and have "Leave Empire" selectable, however in red letters. If the player clicks "Create Empire", check if they have 32 diamonds in their inventory, if they don't, display a message at the bottom saying "Can't Afford This!"
+
+
+Creating Empire
+- When Creating an empire, it brings up a screen just like the town creation screen, however this time its for an empire, still with a banner design, but this time with an extra button that says "Use Town Banner Design" upon clicking it, it imports the town banner sign into the GUI. the town of the monarch who is in the "manage town" menu creating an empire in the "Create Empire" sub-menu. Instead of "Town Name" i want "Empire Name" and instead of "Town Description" i want "Empire Description". at the bottom, i want another "Create Empire (32 diamonds)" button. Prompt another "Are you sure?" message with yes and no just like the other options in the mod, saying "Are you sure you want to create an Empire? (32 Diamonds)" and if they click yes, remove 32 diamonds from the players inventory. if they do not have enough diamonds, display a message that says "Can't Afford This!" even though they shouldnt be able to open it anyways without the proper diamonds, i just want a double-measure to make sure they cant if they don't have enough. After clicking Yes, Go to a new menu with 2 choices. Create Text saying "Congrats! You have created a new Empire! Now, Are you an Emperor, or an Empress?" Allow the player to select between the two choices. Once selected, their empire is created and should be saved and go back to the game. Create the GUI and ill tell you where to save it in the next prompt.
+
+Joining Empire: In the Manage Town Menu, if a monarch clicks "Join Empire" i want you to list all the empires in the game. no categories, and include their banners to the left of their name. If anyone has invited a town to an empire, list the empire at the top with a mail icon to the right of the name. Same look and usability as the join town menu. However, Before clicking on an empire, i want you to bring up another "Are you sure?" window, however this time, i want you to say "Are you sure you want to join the Empire of [empire name]?" then another line below that, in bold letters saying "You will no longer have autonomy over allies/enemies, and you will adopt the empire flag. Your flag will be Changed!" if this needs multiple lines to make it fit on the screen, do so. Just want to make sure thats clear to players before they join an empire.
+
+Empire Config:
+- Create a new folder in the "SiegedEmpires" config folder called "Empires" which has json files named after the different nations in the game. For instance, if PlayerA in town "dof" creates an Empire called "Ha" then create a new file in the "Empires" folder called Ha.json. When creating an empire, Save the player who is creating the empire as the the owner of the Empire. In creating a new empire, they should have had a choice whether to pick emperor or empress. Make sure you save whether or not the owner of the empire is an Emperor or Empress. (For the sake of words im just going to refer to the emeror/empress as emperor) The Emporer should be the top, be able to access all the restricted zones in each town that is under his empire. "Dof" for example, should be saved as the capitol town/nation of the empire. and it should also save any other towns who join the empire.
+
+
+
+STOPED HERE
+
+
+Manage Empire Menu:
+For EMPERORS AND EMPRESSES ONLY! Create a new button that is darkened for all players except for emperors, In this menu i want you create some buttons. "Invite Town/Nation to Empire", "Disannex Nation/Town from Empire". Inviting a town to an empire, same logic as a town, for the reciever, he should get an invite and it should be listed in the top. for the player who is being invited. Create another option in the menu called "Public Empire" with a true or false value. If it is true, any town can join this empire, if it is false, then they can only join with an invite. Clicking "Disannex Nation/Town from Empire" should bring up a list of all nations/towns in the empire EXCEPT for the capitol (the town who created the empire) and upon clicking one, bring up an "Are you sure you want to remove [town name] from the Empire?" with a yes and no option, no brings you back, but yes removes that town/nation from the empire list, and it should update in the empire's json config file as well. 
+
+
+Trusted Citizens:
+- I want you to add another button to Manage Town called "Trust Citizens" and in the menu, i want you to list all the players of the town, and upon clicking one, i want you to have another "Are you sure you want to trust [playername]?" pop up with yes and no, same as last time. So when they say yes, i want you to add a check mark next to the player. All trusted players should have a check mark next to their name. "Trusted" Should be its own role, so now there should be 3 within a town. citizen, trusted citizen, and monarch. Add another line in bold saying "They will be able to break/place blocks in your town, EXCEPT FOR Restricted Zones". can you make "EXCEPT FOR" red.
+
+
+Lords:
+- i want you to add another button to Manage Town called "Make a Citizen a Lord" and in the menu i want you to list all the players, just like for trusted citizens, except for this menu its for flagging which citizens of a town are Lords. and i want it to say "Are you Sure you want to make [playername] a Lord?" and another line in bold saying "They will be able to break/place blocks in your town, INCLUDING Restricted Zones, and Invite / Give Citizens Land.". can you make "INCLUDING" Red. Then when the player is added, add them to the Lords in the town config file.
+- Lords Should now be able to click the "Manage Town" button in the GUI, however, it is going to be a different menu than what the monarch has. i want you to give the Lord the ability to invite players to the town in their Menu, just like the monarch can.
+
+
+
+
+
+
+
+
+
+
+
+Player/Claim Interaction:
+-this is how the players should interact with the chunks that are claimed, how their roles affect what they can do, and the rules for the land.
+Take note of this: "There is going to be a Lock mechanic added later to this project. i want the lock mechanic to have priority over what the players can do. For example, even tho the emporer as full autonomy over his empire's towns, he still cant open or break doors and chests that are locked, even if he can break the blocks around them. There will be a way to break locked things in the future, with explosions or lockpicks only, so thats the only way theyll be able to. However, if there is no lock, let players that are allowed to via player/claim interaction rules, open it."
+
+-The Emporer/Empress has full interactibility, breaking, and placing autonomy over every town/nation that is in his/her empire.
+-The Monarch of Each town has full autonomy over the entirety of the TOWN that they town, however are treated like a non-citizen when trying to interact with other towns, even ones in the same empire as them, they arent emporer.
+-The Trusted Citizen has the ability to break and place blocks all over the town, and to interact with chests, doors, buttons, everything (as long as they arent locked.) Except for Restricted Chunks (more on that later)
+-The Lord has the same ability as a trusted citizen, however they are allowed to go into restricted chunks.
+-The Citizen Should have full autonomy over the chunk/chunks that they are given by the monarch or Lords
+
+
+- Here is a list of Blocks i want citizens to be able to break, place, and interact with anywhere in the town. Ladders, scaffolding, lanterns, torch, soul torch, all candles, campfires, flowerpots, banners, minecarts, enderchests, boats, rails. Exclude TNT Minecarts, until further notice, Crafting Tables, Grindstones, Smithing Tables, Stonecutters, Cartography Tables, Loom, Furnaces, Blast Furnaces, Smokers, Brewing Stands, Composter, Crafter, Enchanting Tables, Jukeboxes, Chiseled Bookshelves, Any villager workstation tables, and noteblocks
+but only place or interact with:
+signs, hanging signs.
+and only be able to interact (not break or place) with:
+all doors, trapdoors, fence gates, hoppers, Any redstone component including buttons and levers, anvils, dispensers, droppers
+
+- For Non-Citizens, Enemies, Citizen Allies, or Anyone non-affiliated with the town, this is how i want them to be able to interact with the town:
+I want them to be able to break and place campfires, torches, and lanterns, as well as interact with them.
+and i want them to be able to interact with but not break and place: any redstone component including buttons and levers, hoppers, fencegates, boats, minecarts, enderchests, Crafting Tables, Grindstones, Smithing Tables, Stonecutters, Cartography Tables, Loom, Furnaces, Blast Furnaces, Smokers, Brewing Stands, Composter, Crafter, Enchanting Tables, Jukeboxes, Chiseled Bookshelves, Droppers, Dispensers, Anvils, Any villager workstation tables, and noteblocks
+
+
+
+Giving Citizens Land:
+- For both the Lord and Monarch "Manage Town" Menu, i want you to add a button called "Give Citizen Land" and upon clicking, it will ask you to enter the players name, Make it the same sort of menu as the invite menu, where you can type the player name, and tab to it, however this time, ONLY list players who are in that town, even if they are offline. Once you type the players name, i want you to have a "Create Citizen Banner" button, upon clicking, give a yes or no choice with the text "Are you sure you want to create a banner giving [playername] Land?" no bring you back, but if you click yes, it gives the Lord or monarch a banner. on the banner should have some more data values, the type of banner is gonna be called a "CitizenGiveLandBanner" but the item name should be called "[playername] Land Claim" holding the player id in the banner also. Whatever chunk the banner is placed in, that chunk now belongs to the person who the Lord typed in, giving them full autonomy. and the banner is broken.
+-Here is an example: Lord Josh invites Ally to the town as a citizen. Ally wants to build a home, so Josh finds a chunk for her. Josh opens the "`" menu and navigates to the Manage Town menu, he clicks "Give Citizen Land" types "Ally" into the name, and clicks create banner. it create a banner with the design of the town/empire. However this time, the item is called "Ally Land Claim" and Wherever Lord Josh places it, Ally now owns that Chunk, and she can break, place, and interact with every block just like she would outside of the town, however when it comes to the rest of the town, she is still a citizen and has to follow the interaction rules for citizens unless her position is changed. In the towns config file, save which chunks are owned by which citizen.
+
+-For both the Lord and Monarch i want you to create a new button in "Manage Town" menu called "Revoke Land" and upon clicking it will show you a list of all the players in town/nation. When clicking on a player, it should list the players name, and give you options. 2 options. "Revoke All Land" and "Create Land Revoke Banner". If you click "Revoke all land" it should bring up a message saying "Are you sure you want to revoke all land deeds from [playername]?" the playername being the one who they selected. and if they hit no, go back, if they hit yes, then in the town config file, remove all land ownership from the player. For the "Create Land Revoke Banner" button, upon clicking it should have another message saying "Are you sure you want to create a Land Revoking Banner?" and a yes and no option. upon yes, create another town banner, this time it should be in purple letters and say "Land Revoke Banner" unlike the other banners, this banner doesn't save the playername, just the town and its design ect. If you use this banner on any chunk, it will check to see if that chunk is owned by a player, and if it is, it will revoke that players land rights to that land. upon placing the banner, display a chat message only for the player who placed it, listing Which chunk in the world was revoked, and Who owned it.
+
+
+
+
+
+
+
+
+
+
+
+LOCK SYSTEM
+- I want you to create 3 new items. a "Key" a "Lock" and a "Lockpick" This is that exception i was talking about earlier. I want you to also add 1 new block called "Locksmithing Table" 
+
+Create a lock smithing table.
+Put a key or lock into the locksmithing table, In the locksmithing table, i want a text input box, and an input and output. in the text input, above it let it says "Key password" so that you can create a new password for the lock or key. Save this password into the item info, and when a lock in placed on a door, i want the data to be in the door, until the lock is taken off the door. When the door is broken, i want it to drop both the door, and the lock, with the password still saved onto it. I want the password character legnth to have a maximum of 40 characters.
+
+For the key, when you put a key into the locksmithing table, i want you to still be able to put a password into it, however, when a password is put into a key, i want that data saved onto the key. When that key is used on a lock, i want you to check the passwords of both, if they match, Let the player be able to interact with the door, chest, whatever is locked, as long as they are using the key to open and close it. If they arent using a key, or if the passwords on the key and lock do not match, Do not let the character interact with the block. For example, If PlayerA creates a door and locks it with the password "gee" then PlayerB tries making a key with the password "wof" then when PlayerB tries to use his key on PlayerA's door, it will not let him open it, because the passwords do not match, however PlayerA has a key with the password "gee" in it, and when he uses it on the door, it opens and closes, however if PlayerA does not have the key equiped, do not let him interact with the door. If PlayerA ever looses the key, he will need to make another key with the password "gee" on it and use it on the door.
+In the Locksmithing table, also let the character rename the item just like an anvil. I have a GUI made for the locksmithing table in textures. locksmithingtablegui.png. I want it to work sort of like an anvil, Where you can rename the key at the top, and enter the password at the bottom where it says password. I do not want the password of the lock or key to show in the item information in the inventory at all. however, if a key or lock is found, and placed into a locksmithing table, i want it to update and reveal the password of the key or lock in the password input in the locksmithing table, also giving you the ability to click and change it by typing, or scroll through it using the arrow keys.
+- I want to be able to put a lock on all chests, barrels, doors, trapdoors, and fence gates.
+- go into textures folder in the project workspace, and look for lock_overlay_door_bottom.png that is a lock overlay texture you can use for the bottom of doors, front and back of fence-gates, and the front of chests as sort of a texture overlay to indicate that it is locked. also, do it for the top and bottom of a barrel too- however when the barrel is opened, and it changes texture, that texture doesnt need a lock overlay, only when its closed. the same isnt said for doors
+
+
+Player Prefixes:
+- When a player creates a new town, i want you to display a new gui option that says "What type of Monarch are you?" with the option "King" or "Queen" if they select King, Could you add a prefix to their player name that says "[King of (townname)]" and add a few spaces between their name/message, and the prefix. If they pick queen, make it "[Queen of (townname)]" and where i have "(townname)" put the name of their town/nation.
+- If a King or Queen joins an empire (one that they did not create) i want to rename their title. instead of "King" make it say "Duke" and instead of "Queen" make it say "Duchess".
+- If a King of Queen CREATES an empire, meaning they are the owner and emperor/empress of the empire. then i want you to change their title completely. if they picked Emperor, make it say "[Emperor of (EmpireName)]" and if they picked Empress, change it to "[Empress of (EmpireName)]" and where i have "(EmpireName)" i want you to put the name of their empire.
+- For Dukes and Duchess', i dont want you to change their townname. keep it the same.
+- I want these prefixes to be totally controled by the data in the SiegedEmpires config folder. which empire/town they are. if they are a citizen, monarch, emperor. If a town joins an empire and is not the capitol, i basically want the King/Queen to become a Duke/Duchess.
+- For Lords, i want you to basically do the same functionality [Lord of (townname)]
+- For Trusted Citizens i want you to do [Nobel of (townname)]
+- for normal Citizens i want you to do [Citizen of (town name)]
+- If the town in part of an empire, i want you to display the empire name instead of the town name.
+Prefixes: Make ONLY the prefix colored, reset colors once it gets to their player name and chat.
+- For Emperors/Empresses i want you to make their prefix Gold
+- For Monarchs, Purple
+- For Lords, Red
+- For Nobels, Green
+- For Citizens, Grey.
+
+
+
+
+
+
+
+WAR/DIPLOMACY SYSTEM
+
+- Create a new folder within the "siegedempires" folder called "Diplomacy" in it, i want you to create a new json, or multiple if theres a way to organize it better. but essentially, this is where i want all diplomacy data to be stored, who is allied with who, who is enemies with who, ect.
+- In the Manage Town (ONLY for Monarch, not for Lord), AND Manage Empire Menu for emperors, i want you to create a button Called, Diplomacy, and put it at the very top. and make the letters Purple.
+If a town has joined an empire and is not the leader of the empire, then Darken this button. However, If a town is not part of an empire, Let them have access to this menu.
+- In the Diplomacy Menu at the top, i want you to List the Name and Flag of the Town or Empire at the top, of the player who is using the menu, their home empire/town. Then below that, i want you to create a box, with its own scroll wheel on the left side, that lists all the Empires that you are allied with, as well as their flag, and make their town/empire-names green. For Enemies, i want you to create a identical scroll gui for them to the right though, and make their Town/empire-names Red, still displaying their banner. Then below that box, i want a few buttons. i want one button saying "Allies", another saying "Enemies"
+- refer to "image.png" to see a really sloppy drawing of how i want it to sort of look, nice and neat of course.
+- and just like image.png could you display allies and enemies on the left and right in the main GUI as well?
+
+
+
+- Make it so that PVP in disabled in towns. There will be future exceptions to this rule, so take note of that. so add a "enable and disable for certain players upon check"
+i want citizens, lords, monarchs, emporers, citizens of different towns that are part of the same Empire, to be able to pvp with each other within the towns.
+- I want non-citizens of the town/empire theyre in, (random player) or enemies of the town/empire, i want you to allow them to pvp within town claims for 30 seconds. If non-citizen players are attacked within the town, i want you to add a Raid bossbar with a 30 secound timer (add this value to settings.json to be configurable. name it "non-citizen-pvp-cooldown" that changes the secods) and i want this timer to allow the non-citizen to have pvp access for 30 seconds. (30 should just be the default. make it changeable). Name the raid bar "PVP ACTIVE IN TOWN" After the 30 second timer is up, remove the raid boss bar, and no longer allow that player to pvp in the town/empire they dont belong to or are enemies to.
+
+Allies Menu:
+- In the allies menu i want you to List all of the Towns/Empires (Flag and Name) that the empire is allied with. I want another Button below the list that says "Request Alliance" in green letters. and upon clicking, allow for them to search through all the Empires in the game, then at the bottom of the Empires List, Create a "Find Town" button that brings up another list, that instead finds all the towns in the server. Upon clicking on either a town or empire, It will ask you "Do you wish you become Allies with [Empire/Town]?" and a yes and no question, no brings u back, and yes sends them an Ally Request. Add an ingame notification saying "You sent (town/empire name) an Ally Invite!" Add this to the config to the empire or town that is managing them, and add to the config of the town who was sent the invite that they have a pending invite.
+- If any empire/town in Diplomacy menu has an invite, display it at the very top as like a notification that doesnt go away that you can scroll past, that has a mail Icon saying "[empire/town] wishes to be allies with you!" at the very top of their diplomacy list.
+upon clicking the notification, it should ask them "Do you wish to be allies with [empire/town]?" yes or no. clicking No, brings them back, and removes the notification at the top, essentially declining the invite. If they say yes, they are added as allies to each other.
+- In the allies gui, i want you to have the ability to click on any allies in the list, and it brings up Options for your alliance, i want you to create 3 buttons. "Request Trade Agreement" "Request Open Borders" and another one in red that says "Remove Ally". 
+requesting trade and open borders are just for show. for them to see. I may impliment some things later to these options, but for now, this is just a way for towns/nations to communicate to each other diplomatic intent.
+for "Request Trade Agreement" i want you to send an invite to the allied nation in their town gui, saying "(Townname) has requested to Trade with you". with a yes and no option. and if they accept it, then for both of them, in the allies list, i want it to also say "Trade" in green right next to the allies town/empire name.
+- For the "Request Open Borders" i want you to send an invite that lets the reciever see it, and open it and it says "(Town/Empire name) has requested to have Open Borders with you" with a yes and no option, if they accept it, display "Open Borders" next to where it says "Trade" in green, make it green too. and if they have open borders with each other, then also enable "Trade" as well.
+- I DO NOT want "add ally" or any of these buttons in the MAIN gui. in the MAIN gui, simply list the allied and enemy towns with no extra buttons, also displaying their banner to the left, and to the right a count of how many are online.
+
+[END OF ALLIES MENU]
+
+
+
+War System:
+
+- In the Diplomacy Menu under the enemies tab, i want you to add a button in Bold, and in Purple, that says "DECLARE WAR!" in bold
+- Upon clicking, i want you to bring up a list of all the empires, and below all the empires, put all the towns without an empire. Upon clicking an empire or town, It will ask you "Are you SURE? you want to Declare war on this Empire?" or "Town/Nation" instead of empire if its a town or nation. If click no, bring back, if they click yes, Then Add the nation they declared war on to the enemies list for them. For the empire/town they declared war on, i want Them now to see the attackers empire/town in the enemies list, There is no "Invite" for enemies/war, its just immediate. 
+- In the Diplomacy Menu, add a button at the very bottom, that is only clickable if you have enemies or an active war. The Button should be "Start Invasion!"
+- In Start Invasion, It should list all of your enemies, as well as how many players are online in the town. At the very right on where the town is listed, add a button, and make the button say "Invade!"
+- Do not allow the invasion button to be clickable unless there are 3 people online in a town/empire.
+
+- Make a config file for adjustable settings, make an adjustable setting for "How many players need to be online for an invasion to start" make this 3 by default as per the last prompt, but if they wish to change this number they should be able to in config. I also want to add a diamond cost for starting an invasion, Make it 8 diamonds. Make an invasion-price value on settings.json in the "siegedempires" folder in config. 8 by default
+
+Invasion:
+- During an invasion, all pvp bans are lifted in the town being invaded. any player can hit any player.
+
+
+- Once an invasion is started against a town, i want you to create Custom Raid bar at the Top of every players screen who is in the town/empire that is invading, and in the town/empire that is being attacked. for the invader make it say "Active Siege" and for the town/empires people who is being invaded, make it say "Active Invasion". I want each invasion event to last 20 minutes, and after those 20 minutes are up, i want to create a 1 hour cooldown. When an invasion starts, i want you to play the "Goat Horn Sound 6" noise at 1.0 volume, and 0.65 pitch. for everyone in the empire/town that is being invaded. For everyone in the town/empire that is doing the invading, i want you to play the "Raid Horn" noise at 0.7 volume and 1.0 pitch. 
+
+(When i type INVADED in call caps, it means the town/empire that is being invaded by the invadors. when i say INVADING, that means the town that is doing the offensive invading.)
+Invasion/Battle Functionality:
+- Upon Starting an invasion, Give the Monarch/Emperor who is starting the invasion 2 War Banners (new item).
+Here is what War banners are:
+- War banners, item name should display in all red "WAR BANNER!" also in bold.
+- They can only be placed during an active invasion, and only against the town that the invasion is against.
+- Once the 30 minute invasion is over, All War banners are removed from inventories, and every war banner placed is deleted in the town that was being invaded.
+- Anyone in the town can hold a War Banner. Not just the monarch or emperor.
+
+- Instead of giving the player 2 war banners, Only give them 1.
+What banners Do:
+- When an invader places a banner on a chunk of the town they are invading during an active invasion, i want the banner to stay. create another boss bar at the top that says "War Flag"
+- When a War Banner is placed, it doesnt act like a banner block, instead, it is an entity, that needs to be hit with a sword. Give it 120 hp (also make this configureable in settings.json)
+- The Boss Bar for the flag will also act as a timer for how much health the War Banner has.
+What if the War banner is killed?:
+- The town/empire that was INVADING looses, and the town/empire that was BEING INVADED, wins.
+- If the war banner is killed, make the invasion come to an end, and do 1 hp of damage to everyone on the invading team who is within the town claims on the invaded town who won, by killing the war banner entity.
+- Upon the banner death, everyone in the invaded town/empire (the town who won) town will hear "minecraft:item.goat_horn.sound.1" sound, pitch 1 volume 1. and display a title saying "You Defended Your Land!" in all Green, for 10 seconds!
+- Upon the banner death, everyone in the town/empire who was doing the invading (the town whose banner died and lost) play "minecraft:entity.blaze.death" at volume 1, pitch 0.5. Display a title saying "Your Invasion has Failed!" in all red letters for 10 seconds
+
+- Create a new type of town that doesn't show up in the GUI at all. this will be called a "wartown".
+a wartown belongs to only an empire. it cannot be traced back to any particular town, besides the capitol of the empire.
+- When an INVADING empire captures a chunk belonging to an INVADED town/empire, Simply make that chunk belong to the empire. It has the same functionality as belonging to the capitol of that empire, however, when entering and exiting, and for any other manner of display, i want a wartown to only name the empire. not the capitol name.
+
+What if the War banner isn't killed before the timer?:
+- The town/empire that was INVADING wins, and the town/empire that was BEING INVADED, looses.
+- The chunk that the banner was placed in is removed from land ownership of INVADED town, and INVADING town now owns that chunk. If an Emporer Engages the war, make that chunk a wartown chunk belonging to INVADING empire. if its a town, simply make that chunk now belong to the town who invaded.
+- Claims needing to be connected is overriden for invasions. The INVADING does not need previous chunks connected to their town/empire in order to now own the chunk in 
+
+Rules:
+- The INVADED town cannot invade the INVADING town during or for 1 hour after the invasion.
+
+Here are some Rules for active invasions:
+- PVP in enabled in the whole town for everyone, even people not part of either town.
+- INVADING now has the ability to place/break/interact with any block they want ONLY inside of the Chunk they have placed a banner in.
+- INVADING now have the same access a citizen has to any chunk in the whole town.
+- INVADING can Lockpick locks in any chunk in the town
+- INVADING can place tnt, tnt minecarts in a 1 chunk radius from the War Banner (9 chunks, with the banner chunk in the middle)
+
+
+Take note that: 
+- Claims needing to be connected is overriden for invasions. The INVADING does not need previous chunks connected to their town/empire in order to now own the chunk in. Chunk Connection is not yet implimentented, so we will do that now.
+- Any "Claim Banner" action, the chunks need to be connected by other previous town chunks by at least one side, UNLESS it is the FIRST chunk claim of a town. Detect when it is the First claim banner a town is ever placing.

@@ -1,0 +1,55 @@
+{
+	"schemaVersion": 1,
+	"id": "siegedempires",
+	"version": "${version}",
+	"name": "siegedempires",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/siegedempires/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.siegedempires.Siegedempires"
+		],
+		"client": [
+			"com.siegedempires.client.SiegedempiresClient"
+		],
+		"fabric-datagen": [
+			"com.siegedempires.client.SiegedempiresDataGenerator"
+		]
+	},
+	"mixins": [
+		"siegedempires.mixins.json",
+		"siegedempires.shippyships.mixins.json",
+		"siegedempires.weaponmod.mixins.json",
+		{
+			"config": "siegedempires.fzmm.mixins.json",
+			"environment": "client"
+		},
+		{
+			"config": "siegedempires.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"libgui": "*",
+		"cloth-config": "*"
+	},
+	"suggests": {
+		"shippy-ships": "*",
+		"squaremap": "*",
+		"weaponmod": "*",
+		"fzmm": "*"
+	}
+}

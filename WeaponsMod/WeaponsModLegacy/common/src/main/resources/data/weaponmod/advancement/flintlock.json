@@ -1,0 +1,86 @@
+{
+  "parent": "weaponmod:root",
+  "rewards": {
+    "recipes": [
+      "weaponmod:flintlock"
+    ]
+  },
+  "criteria": {
+    "has_minecraft_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:planks"
+          }
+        ]
+      }
+    },
+    "has_c_rods/wooden": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:rods/wooden"
+          }
+        ]
+      }
+    },
+    "has_c_ingots/iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:ingots/iron"
+          }
+        ]
+      }
+    },
+    "has_c_tools/igniter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:tools/igniter"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponmod:flintlock"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_minecraft_planks",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_rods/wooden",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_ingots/iron",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_tools/igniter",
+      "has_the_recipe"
+    ]
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "flintlock"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "flintlock"
+    }
+  ]
+}

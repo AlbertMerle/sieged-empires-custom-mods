@@ -1,0 +1,194 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "croplite:basil",
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "0"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 1.0
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croplite:basil",
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "1"
+                      }
+                    },
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "2"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 2.0
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croplite:basil",
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "3"
+                      }
+                    },
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "4"
+                      }
+                    },
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "5"
+                      }
+                    },
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "6"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 4.0
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croplite:basil",
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:block_state_property",
+                      "block": "croplite:basil_crop",
+                      "properties": {
+                        "age": "7"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 6.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:basil_seeds"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "croplite:basil_crop",
+            "properties": {
+              "age": "7"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "croplite:basil_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 4.0
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "croplite:basil_crop",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "croplite:blocks/basil_crop"
+}

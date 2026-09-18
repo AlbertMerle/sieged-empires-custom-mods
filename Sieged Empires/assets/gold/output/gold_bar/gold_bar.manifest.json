@@ -1,0 +1,62 @@
+{
+  "artifacts": [
+    {
+      "bytes": 5647,
+      "path": "gold_bar.model-spec.json",
+      "sha256": "6f92bf6d1d5bd668ea08c2af68aa30d818b2e353c9b53fdb4dd2fb235eb1162c"
+    },
+    {
+      "bytes": 567,
+      "path": "gold_bar.png",
+      "sha256": "5b5dce7304d3c7c00aa947c75406d026adbc8cb4ef879cf8a7d9ee748af15968"
+    },
+    {
+      "bytes": 6545,
+      "path": "gold_bar.bbmodel",
+      "sha256": "ecf193a92a4354d474a4bc0181224c4985dd69c23baf151cf0e66f5406cbe548"
+    },
+    {
+      "bytes": 6181,
+      "path": "gold_bar.geo.json",
+      "sha256": "b51f7ca85d1bdf9d7f7d6470fcd1a8fe1b37128a1025f81bca9785050d9d709b"
+    },
+    {
+      "bytes": 150,
+      "path": "gold_bar.audit.json",
+      "sha256": "ff0707f05b54f8de3aeaf304328b84d66ffa65b887061339c15741d5c2513967"
+    },
+    {
+      "bytes": 665486,
+      "path": "gold_bar.reference.png",
+      "sha256": "bb6a564b10fc737e09deb7872476eb24ff77a6a6be20cd2ec3878d0294d333ef"
+    },
+    {
+      "bytes": 448,
+      "path": "gold_bar_e.png",
+      "sha256": "8af1c62753cb23f6e6cddd352e5f2b63626d96481d05dd31f33840f3a13108d2"
+    },
+    {
+      "bytes": 448,
+      "path": "gold_bar.emissive.png",
+      "sha256": "8af1c62753cb23f6e6cddd352e5f2b63626d96481d05dd31f33840f3a13108d2"
+    }
+  ],
+  "collision": {
+    "eye_height": 0.2,
+    "height": 0.3125,
+    "width": 1.0
+  },
+  "generator": {
+    "lane": "direct",
+    "name": "img2blockbench",
+    "version": "0.1.0"
+  },
+  "model_id": "gold_bar",
+  "reference": {
+    "height": 896,
+    "image": "gold_bar.reference.png",
+    "sha256": "bb6a564b10fc737e09deb7872476eb24ff77a6a6be20cd2ec3878d0294d333ef",
+    "width": 896
+  },
+  "schema_version": 1
+}

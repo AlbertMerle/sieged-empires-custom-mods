@@ -1,0 +1,19 @@
+{
+	"required": true,
+	"package": "com.croplite.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"CocoaMixin",
+		"CropBlockMixin",
+		"SaplingBlockMixin",
+		"StemBlockMixin",
+		"SugarCaneMixin",
+		"SweetBerryBushMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

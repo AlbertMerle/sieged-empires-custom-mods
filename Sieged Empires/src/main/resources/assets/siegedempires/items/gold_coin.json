@@ -1,0 +1,41 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "minecraft:count",
+    "normalize": false,
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "siegedempires:item/gold_coin"
+    },
+    "entries": [
+      {
+        "threshold": 2,
+        "model": {
+          "type": "minecraft:model",
+          "model": "siegedempires:item/gold_coin_pile_small"
+        }
+      },
+      {
+        "threshold": 17,
+        "model": {
+          "type": "minecraft:model",
+          "model": "siegedempires:item/gold_coin_pile_medium"
+        }
+      },
+      {
+        "threshold": 33,
+        "model": {
+          "type": "minecraft:model",
+          "model": "siegedempires:item/gold_coin_pile_large"
+        }
+      },
+      {
+        "threshold": 49,
+        "model": {
+          "type": "minecraft:model",
+          "model": "siegedempires:item/gold_coin_pile_xlarge"
+        }
+      }
+    ]
+  }
+}

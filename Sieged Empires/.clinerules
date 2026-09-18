@@ -1,0 +1,53 @@
+# HARD RULE - Sieged Empires AI Agents
+
+This file MUST be obeyed by every AI agent (Cline, Cursor, Claude Code, etc.) that opens this project.
+
+## 1. ALWAYS READ AIDATA FIRST
+
+Before doing ANY work, reading code, making changes, or answering questions, read the entire `aidata/` folder:
+
+1. `aidata/README.md`
+2. `aidata/PROJECT_OVERVIEW.md`
+3. `aidata/ARCHITECTURE.md`
+4. `aidata/FILE_STRUCTURE.md`
+5. `aidata/PROGRESS_LOG.md`
+6. All files in `aidata/CONVERSATION_LOGS/`
+
+Do NOT skip this. The context in `aidata/` is essential to avoid breaking existing design decisions.
+
+## 2. ALWAYS SAVE CONVERSATIONS AND CODE CHANGES
+
+At the end of EVERY session, create or update the following:
+
+- Add a new dated markdown file to `aidata/CONVERSATION_LOGS/` summarizing:
+  - What the user asked for
+  - What you did
+  - What files were modified or created
+  - Any decisions, blockers, or next steps
+- Update `aidata/PROGRESS_LOG.md` if any feature status changed.
+- Update `aidata/FILE_STRUCTURE.md` if new files or packages were added.
+- Update `aidata/ARCHITECTURE.md` if the technical design changed.
+
+## 3. WHAT TO LOG
+
+Log everything the next agent would need to know:
+
+- New files, deleted files, renamed files
+- Changes to existing code (summary, not full diff)
+- New dependencies or build changes
+- Bugs discovered or workarounds applied
+- Incomplete work or TODOs
+- User preferences or explicit rules
+
+## 4. PROJECT-SPECIFIC RULES
+
+- Town/Nation names: letters and spaces ONLY (`^[a-zA-Z\\s]+$`)
+- Descriptions can have numbers and symbols
+- Wilderness must behave exactly like vanilla Minecraft
+- Use the existing package `com.siegedempires`
+- Follow the MC 26.2 (1.21.x) Fabric API patterns already used in this codebase
+- Do NOT create placeholder code. Provide complete, functional implementations.
+
+## 5. IF THIS FILE CONFLICTS WITH A USER REQUEST
+
+The user request wins, but still log the override in `aidata/CONVERSATION_LOGS/`.

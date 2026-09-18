@@ -1,0 +1,194 @@
+[in bold and large "Welcome to the Sieged Empire's Detailed Guide on Everything you'll need to know how this Server/Modpack!"]
+Upon Joining, You will be greeted with a new menu displaying your town, alliances, and current wars.
+[add a few blank lines with an iron sword in the middle]
+[new page]
+[section "locking" "Locking / Keeping your Items Safe"]
+Locking / Keeping your Items Safe:
+First, You will need to Keep your items safe! You will Want to get some iron, and Craft a Locksmithing Table, Lock, and Key!
+The Locksmithing Table will let you set a password to your lock and key, so that you can open your door/chest/fence ect.!
+Locks can only be broken by either a lockpick, or explosion!
+You can create a lockpick! but.. it can be quite ineffective.. and noisy.
+See Crafting Recipes in the Index for all lock crafting grids.
+[new page]
+[section "caves" "Collapsing Caves"]
+[in bold and large "Collapsing Caves"]
+[blank line]
+BEWARE! Caves now COLLAPSE!
+I always thought the progession from wood to diamond is rather quick,
+so to balance this and give this more realism, i added “Collapsing Caves”.
+Caves now COLLAPSE, so be careful where you mine. Your way back might just collapse in on itself.
+[new page]
+[section "weapons" "More Weapons! and Balanced Muskets!"]
+[in bold and large "More Weapons! and Balanced Muskets!"]
+[blank line]
+More Weapons!
+[blank line]
+There are a lot of new weapons added to the game!, including Javelins which you can throw, knifes, battleaxes, and more!
+[blank line]
+There are also now Muskets, 17th Century Styled Guns, with Balanced reloading times.
+Flintlock Pistol = 6s
+Muskets (+ bayonets) = 10s
+Blunderbuss (Shotgun) = 10s
+Scoped Musket (+ bayonet) = 16s
+Hand Mortar (Bomb) = 16s
+[blank line]
+Musket Fire can be heard up to 800 blocks away. so be careful!
+[new page]
+[in bold and large "Headshots!"]
+[blank line]
+Headshots deal twice as much damage with arrows and bullets when the target has a helmet. Gunshots to the head without a helmet instantly kill. And while a lot of animals are one-shot with guns, some animals like Bears must be shot in the front in order to one-shot them. A gun is a useful thing that isn't hard to craft, that will make encounters with dangerous mobs a lot more manageable head-on.
+[new page]
+[section "currency" "Currency"]
+{{section_header:siegedempires:gold_coin:64|Gold is the Currency}}
+[blank line]
+You will need this to Create Towns/Empires, and to Claim/Invade Land. It is also divisible into Gold Coins, which you also can use, and trade with other players for things!
+[blank line]
+{{recipe_block}}
+{{crafting:.,minecraft:gold_ingot,.,.,cycle:minecraft:wooden_pickaxe+minecraft:stone_pickaxe+minecraft:copper_pickaxe+minecraft:iron_pickaxe+minecraft:golden_pickaxe+minecraft:diamond_pickaxe+minecraft:netherite_pickaxe,.,.,.;siegedempires:gold_coin*16}}
+{{/recipe_block}}
+[blank line]
+You can also smelt your Gold Coins back into Ingots
+[new page]
+[section "towns" "Towns & Empires"]
+[in bold and large "Towns & Empires"]
+[blank line]
+Once you have settled down are want to create a Town, you can do so by pressing "J" for the Town/Empires GUI!
+[blank line]
+Creating a Town Costs "5" Gold Bars. You get 18 claim banners when you create a town!
+Each Claim banner lets you claim 1 chunk of land.
+After that, each claim banner after that costs 1 Gold Bar each to buy.
+And Don't Worry, Non-Citizens can't lockpick your things now :) unless.. you're being invaded..
+You can now access the Manage Town menu, where you can buy more claim banners, and give citizens plots of land to build their houses!
+You can also Invite, Evict, or Elect players in your town!
+[new line. anytime i put "" down, i want you to search config for the value and change it in the book to make it match config if config ever changes. check upon opening the book]
+There are 4 Ranks in any given town! a Monarch, Lord, Trusted, and Citizen.
+a Monarch is the ruler and owner of a town, overseeing it!
+a Lord is the highest rank a Monarch can bestow upon somebody, granted them access to invite and give players land!
+a Trusted is a citizen who can be trusted to break/build around the town!
+[new page]
+[section "diplomacy" "Alliances/Trades/Enemies/Empires"]
+[in bold and large "Alliances/Trades/Enemies/Empires"]
+You may also Ally a town, and have peace with them! through an invite system, you can adjust your diplomatic status with them!
+Since there is no teleportation, Trade must be done by Horse or Ship! But, before making such a large journey, you can indicate your intent to them! You can also request to have Open Borders, which lets each town's citizens merge and allow access to each other's town!
+[blank line]
+You can also declare WAR on a Town or Empire! This is of no cost to you, but, be warned, as this allows invasion to occur on BOTH ends!
+After Declaring War, you may start an Invasion if there are "3" players online! It costs "2" Gold Bars to Start an Invasion!
+Upon Beginning, You can given a WAR Banner, Place this on the enemies Land. Each War banner has "80"hp and needs to be killed in order to defend from an invasion! Protect/Capture the Flag!
+Upon a Flag being placed, the Invaders can place/break blocks anywhere in the chunk it was placed, and place tnt/explosives in a 1 chunk radius around the Chunk that's being invaded.
+During an invasion, the Invader can lock-pick ANY lock in the whole town!
+If you declare war on an Empire, they wont know Which town until you're already there!
+If your banner stands the "20" minute timer, then you will officially CLAIM THEIR LAND!
+[new line]
+Note that. If you Join an Empire, you forfeit all diplomatic immunity, that is, that you no longer will have the ability to choose allies, and choose your battles. So make sure you pick a Good empire who will care about you!
+[new page]
+[section "distant" "Distant Sounds!"]
+[in bold and large "Distant Sounds!"]
+[blank line]
+Distant Noises is a Custom Mod that allows you to hear sounds from very far away!
+As previously mentioned, you can hear guns and explosions up to 800 blocks away! As you get further away from noises
+they will get quieter and more muffled, and it creates a more inter-connected world!
+You can also hear certain Animals stomping around from distances, most of them dangerous, some not.
+65 blocks: Iron Golem, Ravager, Warden
+50 blocks: Grizzly Bear, Polar Bear, Panda, Dropbear, Sea Bear, Gorilla, Bison, Elephant
+35 blocks: Camel, Moose, Crocodile, Caiman, Tiger, Snow Leopard, Tusklin
+20 blocks: Tasmanian Devil
+You can also hear Animals make noises, like sheep and such up to 48 blocks away.
+and there are a lot of other features, that give you a more immersive experience!
+You can hear animals running from further away, and be able to hear the world further, as well as see!
+[blank line]
+[in bold "YOU are Loud. Not just with guns,"]
+Your Voice can be heard up to 60 blocks away
+Sprinting in a cave can be heard up to 50 blocks away. Beware of rushing through a cave when
+other players may be around.
+Sprinting above ground can be heard up to 28 blocks away!
+Walking in caves can be heard up to 30 blocks away, which is better.
+However, Taking fall damage in a cave is the real killer. it will echo for 90 blocks.
+So, just be careful how you play. These are just Maximum ranges, so someone 50 blocks away could mistake
+a short sprint for any other in-game noise.
+[blank line]
+You also can be heard when moving through brush. However, it's a bit more complex
+We wanted to fully impliment a sneaking mechanic, so Sprinting will still broadcast the same 28 blocks
+However, Sneaking and Crawling through grass is very quiet, and only broadcasts for 6 blocks, and only plays at 25% volume!
+[new page]
+[section "food" "New Food for you!... Maybe."]
+[in bold and large "New Food for you!... Maybe."]
+[blank line]
+There are SEVERAL new crops Added! and with All the new animals added, i thought it was only fair to added corresponding meats to each!
+Crops are not only season dependent, but climate dependent now! You cannot grow bananas in snow, nor Sweet berries or Garlic in the desert.
+It is Jam-Packed with new foods for you to try! As well as 2 special foods that give you special buffs according to your Climate!
+[blank line]
+{{item:moremeatmilk:cooked_frog_leg}} {{item:croplite:garlic}}
+[blank line]
+Garlic, Grows only in Cold biomes (Or Temperate during winter) and will give players Strength to fight off beasts and survive the harsh cold.
+[blank line]
+Coffee, which grows not only in jungles but in deserts too, will give you Speed! letting you escape snakes, and other players more easily!
+[blank line]
+There are several new (and controversial) Meats that have been added
+Snake, Anteater, Raccoon, Monkey... yeah you'll find out, and question whether you should truly eat it or not.
+Your Welcome! or.. i'm sorry.
+[new page]
+[section "ships" "Ships! Shippy Ships!"]
+[large and bold: "Ships! Shippy Ships!"]
+[blank line]
+Utilizing the "Shippy Ships!" mod, we integrate them beautifully into Sieged Empires!
+Warning!: DO NOT try to cross the Ocean in a normal Boat! You will Sink! Who knows where the waves might take you.
+[blank line]
+You can now build a Sailboat, Cog, or Caravel! 3 very different sizes!
+The Larger the Boat the Better!
+You can now Craft Cannons! and put them onto your ships, Which do small amounts of explosion damage!
+When you get into a ship for the first time, your Empire's or Town's Flag will appear above it,
+Beware that on the waters, you will be recognized because of this!
+Unless, you drink an Invisibility potion! or steal someone else's vessel!
+See Crafting Recipes for builder crafts and material costs per ship.
+[new page]
+[section "animals" "New Animals"]
+[large and bold "You will see New Animals! Although, Not many Monsters!"]
+[blank line]
+Minecraft is full of zombies, skeletons, and all sorts of monsters! You won't see very many of those here, some, but not many.
+Instead, You will be faced with a much greater danger which lurks in the darkness, or the bushes, or the water.
+Bears, Snakes, Anacondas, Crocodiles, Leopards, Tigers, Wolves and many more beasts that you will have to fend off.
+as well as many New Animals to hunt, tame, and discover, all to the thanks of Alex's Mobs!
+[Display icons of a Bear, Rattlesnake, Gorilla, Gazelle, and Tiger]
+[new page]
+[section "wild" "Wild Behavior!"]
+[large and bold "Wild Behavior!"]
+[blank line]
+The Owner of this server also likes to make things as u can see :) Utilizing one of our Own creations, we bring Animals to LIFE!
+We have OVERHAULED the AI behavior of animals in Minecraft!
+They now Flee from you, or attack you, and have new behavior mechanics making them
+feel a lot more realistic, also making hunting a lot more thrilling!
+[new page]
+[section "crops" "New Crops & Growing Zones"]
+[large and bold "New Crops, and Growing Zones! Food Scarcity"]
+[blank line]
+You will now see many new crops throughout the world, and notice that they grow differently depending on where you are!
+In the Cold places, youll find berries, carrots, beets, lots of meat animals, wheat, and more!
+In Temperate Places, youll find your potatos, carrots, as well as apples, peaches, lemons, and more!
+In Tropical places youll find many new crops such as Tomatos, Peppers, Coffee, Bananas, and More!
+In Hot Deserts, you can craft Cactus Flesh for some hydration! Coffee, Peppers, a few other dryer plants survive here, but water in the desert exceeds expectations!
+You will find that depending on where you are, and what season it is, you will end up growing very different foods than other players living in other climates around the world!
+Be aware of seed rot! Which occurs when you place the wrong plant in the wrong season/climate!
+[new page]
+[section "world" "World Info, Conclusion"]
+[large and bold "World Info, Conclusion"]
+[blank line]
+We utilize VoxyServer to let you see as far as we can possibly generate in this MASSIVE world!
+Now.. GO OUT THERE. and MAKE A NAME FOR YOURSELF!
+[new page]
+[section "controls" "Controls"]
+[in bold and large "Controls"]
+[blank line]
+Control + Shift - Lets you crawl
+[blank line]
+Crawling in grass or sneaking in tall grass disguises you from animals unless they run into you
+[blank line]
+You cannot see gamertags behind blocks or when someone is crawling or in cover.
+[blank line]
+J - Opens Sieged Empires Menu
+[blank line]
+Up and Down arrow Keys - Zoom Ship, or Scoped Musket
+[blank line]
+V - Voicechat Menu
+[blank line]
+M - World Map
+[ending of book]

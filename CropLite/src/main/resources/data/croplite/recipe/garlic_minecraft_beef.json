@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "croplite:garlic",
+    "minecraft:beef"
+  ],
+  "result": {
+    "id": "minecraft:beef",
+    "components": {
+      "croplite:has_garlic": {}
+    }
+  }
+}

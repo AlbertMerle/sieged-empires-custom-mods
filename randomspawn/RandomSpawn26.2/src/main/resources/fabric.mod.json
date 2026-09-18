@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "randomspawn",
+	"version": "${version}",
+	"name": "RandomSpawn",
+	"description": "Randomly teleports players to dry land within a configured coordinate range on first join and respawn.",
+	"authors": [
+		"ThebigTijn"
+	],
+	"contact": {
+		"sources": "https://github.com/ThebigTijn/RandomSpawn"
+	},
+	"license": "All-Rights-Reserved",
+	"icon": "assets/randomspawn/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"com.randomspawn.Randomspawn"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"siegedempires": "*"
+	}
+}

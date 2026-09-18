@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "croplite:oats_crop",
+    "croplite:garlic_crop",
+    "croplite:peach_sapling",
+    "croplite:lemon_sapling",
+    "croplite:banana_sapling"
+  ]
+}

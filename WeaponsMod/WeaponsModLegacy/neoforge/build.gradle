@@ -1,0 +1,78 @@
+plugins {
+    id 'com.gradleup.shadow'
+}
+
+architectury {
+    platformSetupLoomIde()
+    neoForge()
+}
+
+loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
+    neoForge {
+        convertAccessWideners(tasks.named('shadowJar'), accessWidenerPath.get().asFile.name)
+    }
+}
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentNeoForge.extendsFrom common
+}
+
+repositories {
+    maven {
+        name = 'NeoForged'
+        url = 'https://maven.neoforged.net/releases'
+    }
+    if (rootProject.neoforge_pr != "") {
+        maven {
+            name = "NeoForged PR $rootProject.neoforge_pr"
+            url = "https://prmaven.neoforged.net/NeoForge/pr$rootProject.neoforge_pr"
+            content {
+                includeModule('net.neoforged', 'neoforge')
+            }
+        }
+    }
+}
+
+dependencies {
+    neoForge("net.neoforged:neoforge:$rootProject.neoforge_version")
+    api("dev.architectury:architectury-neoforge:$rootProject.architectury_version")
+    api("me.shedaniel.cloth:cloth-config-neoforge:${rootProject.cloth_config_version}")
+    common(project(path: ":common")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
+}
+
+processResources {
+    var replaceProperties = [
+            minecraft_version          : minecraft_version, minecraft_version_range: minecraft_version_range,
+            minecraft_version_condition: minecraft_version_condition,
+            neoforge_version           : neoforge_version, neoforge_version_range: neoforge_version_range,
+            loader_version_range       : loader_version_range, mod_update_json: mod_update_json,
+            architectury_version       : architectury_version, cloth_config_version: cloth_config_version,
+            mod_id                     : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors                : mod_authors, mod_authors_list: mod_authors_list, mod_description: mod_description,
+            mod_issues_url             : mod_issues_url, mod_sources_url: mod_sources_url, mod_home_url: mod_home_url,
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+jar {
+    archiveClassifier = "raw"
+}
+
+shadowJar {
+    dependsOn(jar)
+    mainSpec.sourcePaths.clear()
+    from(zipTree(jar.archiveFile))
+
+    configurations = [project.configurations.shadowCommon]
+    archiveClassifier = null
+}

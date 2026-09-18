@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "croplite:block/basil_stage0"
+    },
+    "age=1": {
+      "model": "croplite:block/basil_stage1"
+    },
+    "age=2": {
+      "model": "croplite:block/basil_stage1"
+    },
+    "age=3": {
+      "model": "croplite:block/basil_stage2"
+    },
+    "age=4": {
+      "model": "croplite:block/basil_stage2"
+    },
+    "age=5": {
+      "model": "croplite:block/basil_stage2"
+    },
+    "age=6": {
+      "model": "croplite:block/basil_stage2"
+    },
+    "age=7": {
+      "model": "croplite:block/basil_stage3"
+    }
+  }
+}

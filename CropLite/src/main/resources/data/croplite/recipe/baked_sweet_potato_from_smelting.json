@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "croplite:sweet_potato",
+  "result": {
+    "id": "croplite:baked_sweet_potato"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "shippy-ships",
+	"version": "1.0.16",
+	"name": "Shippy Ships",
+	"description": "It's time to sail for new adventures!",
+	"authors": [
+		"Caesius_Leo"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/shippy-ships",
+		"sources": "https://modrinth.com/mod/shippy-ships"
+	},
+	"license": "Custom License - Limited Rights Granted",
+	"icon": "assets/shippy-ships/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.caesiusleo.shippyships.ShippyShips"
+		],
+		"client": [
+			"com.caesiusleo.shippyships.client.ShippyShipsClient"
+		],
+		"modmenu": [
+   		 	"com.caesiusleo.shippyships.client.modmenu.ShippyShipsModMenu"
+  		]
+	},
+	"mixins": [
+		"shippy-ships.mixins.json",
+		{
+			"config": "shippy-ships.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": ">=26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"ingeniumapi": ">=1.0.0"
+	}
+}

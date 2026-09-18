@@ -1,0 +1,43 @@
+{
+  "aspect_ratio": 1.0,
+  "dominant_colors": [
+    {
+      "hex": "#000000",
+      "pixels": 10486
+    },
+    {
+      "hex": "#7c3d05",
+      "pixels": 2086
+    },
+    {
+      "hex": "#ffe079",
+      "pixels": 1836
+    },
+    {
+      "hex": "#ca9d5b",
+      "pixels": 1004
+    },
+    {
+      "hex": "#d8a304",
+      "pixels": 493
+    },
+    {
+      "hex": "#ffffff",
+      "pixels": 229
+    },
+    {
+      "hex": "#525251",
+      "pixels": 211
+    },
+    {
+      "hex": "#83858b",
+      "pixels": 39
+    }
+  ],
+  "has_alpha": true,
+  "height": 896,
+  "mode": "RGBA",
+  "path": "/home/albert/** CURSOR WORKSPACES **/img2blockbench/input/goldbar.png",
+  "sha256": "bb6a564b10fc737e09deb7872476eb24ff77a6a6be20cd2ec3878d0294d333ef",
+  "width": 896
+}

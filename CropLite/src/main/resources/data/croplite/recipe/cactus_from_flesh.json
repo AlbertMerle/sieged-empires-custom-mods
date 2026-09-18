@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "croplite:cactus_flesh",
+    "croplite:cactus_flesh",
+    "croplite:cactus_flesh",
+    "croplite:cactus_flesh"
+  ],
+  "result": {
+    "id": "minecraft:cactus"
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"required": true,
+	"package": "com.weaponsmodaddon.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"LivingEntityMixin",
+		"ItemJavelinMixin",
+		"MeleeCompSpearMixin",
+		"MeleeComponentMixin",
+		"WeaponModConfigMixin",
+		"WMRegistriesMixin",
+		"RangedComponentMixin",
+		"RangedCompMusketMixin",
+		"RangedCompFlintlockMixin",
+		"RangedCompBlunderbussMixin",
+		"RangedCompMortarMixin",
+		"EntityMusketBulletMixin",
+		"EntityProjectileHeadshotMixin",
+		"AbstractArrowHeadshotMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

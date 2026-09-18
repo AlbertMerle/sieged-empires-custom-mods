@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "weaponsmodaddon:spear_charging",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "weaponmod:item/spear.wood"
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "weaponsmodaddon:item/spear_charging_wood"
+    }
+  }
+}

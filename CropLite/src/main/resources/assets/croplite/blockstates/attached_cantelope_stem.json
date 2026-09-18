@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "croplite:block/attached_cantelope_stem",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "croplite:block/attached_cantelope_stem",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "croplite:block/attached_cantelope_stem",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "croplite:block/attached_cantelope_stem"
+    }
+  }
+}

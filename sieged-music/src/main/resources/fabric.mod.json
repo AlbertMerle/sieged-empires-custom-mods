@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "sieged-music",
+	"version": "${version}",
+	"name": "Sieged Music",
+	"description": "Custom in-game background music for Sieged Empires — ambient tunes and war variants near active invasion banners.",
+	"authors": [
+		"albert"
+	],
+	"contact": {},
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.siegedmusic.SiegedMusic"
+		],
+		"client": [
+			"com.siegedmusic.client.SiegedMusicClient"
+		]
+	},
+	"mixins": [
+		"sieged-music.mixins.json",
+		{
+			"config": "sieged-music.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"siegedempires": "*"
+	}
+}

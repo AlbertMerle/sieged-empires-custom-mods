@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "## ",
+    "##X",
+    "  #"
+  ],
+  "key": {
+    "X": "#c:tools/igniter",
+    "#": "#c:ingots/iron"
+  },
+  "result": {
+    "id": "weaponmod:mortar-ironpart"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "mortar"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "mortar"
+    }
+  ]
+}

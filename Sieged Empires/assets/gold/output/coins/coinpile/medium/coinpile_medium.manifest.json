@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "bytes": 9648,
+      "path": "coinpile_medium.model-spec.json",
+      "sha256": "e1d4166f662ca9ea84e3fbc23568ce56ad7f8c78ee41f46a1d46f30e13423107"
+    },
+    {
+      "bytes": 495,
+      "path": "coinpile_medium.png",
+      "sha256": "54903e75aa95f899e3f14fb32ebb69fde3e5ec95084b469b4ac8b6cbb44c45a7"
+    },
+    {
+      "bytes": 24244,
+      "path": "coinpile_medium.bbmodel",
+      "sha256": "a11a18a13fdc4f70906504ac7054ceb22d455e43b8e232d335f41277e017359b"
+    },
+    {
+      "bytes": 28736,
+      "path": "coinpile_medium.geo.json",
+      "sha256": "29b24d15691f2b133a3716df9bb51373545c881b4bd08035285399ab9772871c"
+    },
+    {
+      "bytes": 154,
+      "path": "coinpile_medium.audit.json",
+      "sha256": "4ea0b0cf589795479d101ab46b314a6ac2c550ed609b3e222583d95a6efd9e2f"
+    },
+    {
+      "bytes": 620,
+      "path": "coinpile_medium.reference.png",
+      "sha256": "2f3858045ceafad9884ef71e88d887b78fccc6b114655b9ef28ee1d5430e92bf"
+    }
+  ],
+  "collision": {
+    "eye_height": 0.0625,
+    "height": 0.125,
+    "width": 1.0
+  },
+  "generator": {
+    "lane": "direct",
+    "name": "img2blockbench",
+    "version": "0.1.0"
+  },
+  "model_id": "coinpile_medium",
+  "reference": {
+    "height": 16,
+    "image": "coinpile_medium.reference.png",
+    "sha256": "2f3858045ceafad9884ef71e88d887b78fccc6b114655b9ef28ee1d5430e92bf",
+    "width": 16
+  },
+  "schema_version": 1
+}

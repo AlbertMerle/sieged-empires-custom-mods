@@ -1,0 +1,5 @@
+banana_tree_1=1,0,0
+banana_tree_2=3,0,2
+banana_tree_3=4,0,3
+banana_tree_4=4,0,4
+banana_tree_large=6,0,6

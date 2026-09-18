@@ -1,0 +1,73 @@
+package ckathode.weaponmod.item;
+
+import ckathode.weaponmod.BalkonsWeaponMod;
+import ckathode.weaponmod.ReloadHelper.ReloadState;
+import ckathode.weaponmod.WMItemBuilder;
+import ckathode.weaponmod.WMUtil;
+import ckathode.weaponmod.entity.projectile.EntityCrossbowBolt;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+
+public class RangedCompCrossbow extends RangedComponent {
+
+    public static final String ID = "crossbow";
+    public static final ItemShooter ITEM = WMItemBuilder.createStandardCrossbow(BalkonsWeaponMod.id(ID));
+
+    public RangedCompCrossbow() {
+        super(RangedSpecs.CROSSBOW);
+    }
+
+    @Override
+    public void effectReloadDone(ItemStack itemstack, Level world, LivingEntity entityliving) {
+        entityliving.swing(InteractionHand.MAIN_HAND);
+        world.playSound(null, entityliving.getX(), entityliving.getY(), entityliving.getZ(),
+                SoundEvents.COMPARATOR_CLICK, SoundSource.PLAYERS, 0.8f,
+                1.0f / (entityliving.getRandom().nextFloat() * 0.4f + 0.4f));
+    }
+
+    public void resetReload(Level world, ItemStack itemstack) {
+        RangedComponent.setReloadState(itemstack, ReloadState.STATE_NONE);
+    }
+
+    @Override
+    public void fire(ItemStack itemstack, Level world, LivingEntity entityliving, int i) {
+        int j = getUseDuration(itemstack) - i;
+        float f = j / 20.0f;
+        f = (f * f + f * 2.0f) / 3.0f;
+        if (f > 1.0f) {
+            f = 1.0f;
+        }
+        f += 0.02f;
+        if (!world.isClientSide()) {
+            EntityCrossbowBolt entitybolt = new EntityCrossbowBolt(world, entityliving, itemstack);
+            entitybolt.shootFromRotation(entityliving, entityliving.getXRot(), entityliving.getYRot(),
+                    0.0f, 5.0f, 1.5f / f);
+            applyProjectileEnchantments(entitybolt, itemstack);
+            world.addFreshEntity(entitybolt);
+        }
+        int damage = 1;
+        if (itemstack.getDamageValue() + damage < itemstack.getMaxDamage()) {
+            resetReload(world, itemstack);
+        }
+        itemstack.hurtAndBreak(damage, entityliving, entityliving.getUsedItemHand().asEquipmentSlot());
+        postShootingEffects(itemstack, entityliving, world);
+        resetReload(world, itemstack);
+    }
+
+    @Override
+    public void effectPlayer(ItemStack itemstack, Player entityplayer, Level world) {
+        entityplayer.setXRot(entityplayer.getXRot() - (entityplayer.isShiftKeyDown() ? 4.0f : 8.0f));
+    }
+
+    @Override
+    public void effectShoot(Level world, double x, double y, double z, float yaw, float pitch) {
+        world.playSound(null, x, y, z, SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0f,
+                1.0f / (WMUtil.RANDOM.nextFloat() * 0.4f + 0.8f));
+    }
+
+}

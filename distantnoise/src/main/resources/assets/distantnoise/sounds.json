@@ -1,0 +1,179 @@
+{
+	"explosion": {
+		"subtitle": "subtitles.distantnoise.distant_explosion",
+		"sounds": [
+			"distantnoise:explosion"
+		]
+	},
+	"muffled_explode_t0": {
+		"subtitle": "subtitles.distantnoise.distant_explosion",
+		"sounds": [
+			"distantnoise:explode1_t0",
+			"distantnoise:explode2_t0",
+			"distantnoise:explode3_t0",
+			"distantnoise:explode4_t0"
+		]
+	},
+	"muffled_explode_t1": {
+		"subtitle": "subtitles.distantnoise.distant_explosion",
+		"sounds": [
+			"distantnoise:explode1_t1",
+			"distantnoise:explode2_t1",
+			"distantnoise:explode3_t1",
+			"distantnoise:explode4_t1"
+		]
+	},
+	"muffled_explode_t2": {
+		"subtitle": "subtitles.distantnoise.distant_explosion",
+		"sounds": [
+			"distantnoise:explode1_t2",
+			"distantnoise:explode2_t2",
+			"distantnoise:explode3_t2",
+			"distantnoise:explode4_t2"
+		]
+	},
+	"muffled_explode_t3": {
+		"subtitle": "subtitles.distantnoise.distant_explosion",
+		"sounds": [
+			"distantnoise:explode1_t3",
+			"distantnoise:explode2_t3",
+			"distantnoise:explode3_t3",
+			"distantnoise:explode4_t3"
+		]
+	},
+	"muffled_thunder_t0": {
+		"subtitle": "subtitles.distantnoise.distant_gunshot",
+		"sounds": [
+			"distantnoise:thunder1_t0",
+			"distantnoise:thunder2_t0",
+			"distantnoise:thunder3_t0"
+		]
+	},
+	"muffled_thunder_t1": {
+		"subtitle": "subtitles.distantnoise.distant_gunshot",
+		"sounds": [
+			"distantnoise:thunder1_t1",
+			"distantnoise:thunder2_t1",
+			"distantnoise:thunder3_t1"
+		]
+	},
+	"muffled_thunder_t2": {
+		"subtitle": "subtitles.distantnoise.distant_gunshot",
+		"sounds": [
+			"distantnoise:thunder1_t2",
+			"distantnoise:thunder2_t2",
+			"distantnoise:thunder3_t2"
+		]
+	},
+	"muffled_thunder_t3": {
+		"subtitle": "subtitles.distantnoise.distant_gunshot",
+		"sounds": [
+			"distantnoise:thunder1_t3",
+			"distantnoise:thunder2_t3",
+			"distantnoise:thunder3_t3"
+		]
+	},
+	"bear_step": {
+		"subtitle": "subtitles.distantnoise.bear_step",
+		"sounds": [
+			"distantnoise:bear_step_0",
+			"distantnoise:bear_step_1",
+			"distantnoise:bear_step_2"
+		]
+	},
+	"grass_russling": {
+		"subtitle": "subtitles.distantnoise.grass_russling",
+		"sounds": [
+			{
+				"name": "distantnoise:grass_russling",
+				"stream": true
+			}
+		]
+	},
+	"grass_walk": {
+		"subtitle": "subtitles.distantnoise.grass_walk",
+		"sounds": [
+			"distantnoise:grasswalk/grasswalk_0",
+			"distantnoise:grasswalk/grasswalk_1",
+			"distantnoise:grasswalk/grasswalk_2",
+			"distantnoise:grasswalk/grasswalk_3",
+			"distantnoise:grasswalk/grasswalk_4",
+			"distantnoise:grasswalk/grasswalk_5",
+			"distantnoise:grasswalk/grasswalk_6",
+			"distantnoise:grasswalk/grasswalk_7",
+			"distantnoise:grasswalk/grasswalk_8",
+			"distantnoise:grasswalk/grasswalk_9",
+			"distantnoise:grasswalk/grasswalk_10",
+			"distantnoise:grasswalk/grasswalk_11",
+			"distantnoise:grasswalk/grasswalk_12",
+			"distantnoise:grasswalk/grasswalk_13"
+		]
+	},
+	"horse_run": {
+		"subtitle": "subtitles.distantnoise.horse_run",
+		"sounds": [
+			"distantnoise:horse/run_clips/run_0",
+			"distantnoise:horse/run_clips/run_1",
+			"distantnoise:horse/run_clips/run_10",
+			"distantnoise:horse/run_clips/run_11",
+			"distantnoise:horse/run_clips/run_12",
+			"distantnoise:horse/run_clips/run_13",
+			"distantnoise:horse/run_clips/run_14",
+			"distantnoise:horse/run_clips/run_15",
+			"distantnoise:horse/run_clips/run_16",
+			"distantnoise:horse/run_clips/run_2",
+			"distantnoise:horse/run_clips/run_3",
+			"distantnoise:horse/run_clips/run_4",
+			"distantnoise:horse/run_clips/run_5",
+			"distantnoise:horse/run_clips/run_6",
+			"distantnoise:horse/run_clips/run_7",
+			"distantnoise:horse/run_clips/run_8",
+			"distantnoise:horse/run_clips/run_9"
+		]
+	},
+	"horse_armor_jingle": {
+		"subtitle": "subtitles.distantnoise.horse_armor",
+		"sounds": [
+			"distantnoise:horse/armor_clips/armor_0",
+			"distantnoise:horse/armor_clips/armor_1",
+			"distantnoise:horse/armor_clips/armor_10",
+			"distantnoise:horse/armor_clips/armor_11",
+			"distantnoise:horse/armor_clips/armor_12",
+			"distantnoise:horse/armor_clips/armor_13",
+			"distantnoise:horse/armor_clips/armor_14",
+			"distantnoise:horse/armor_clips/armor_15",
+			"distantnoise:horse/armor_clips/armor_16",
+			"distantnoise:horse/armor_clips/armor_17",
+			"distantnoise:horse/armor_clips/armor_2",
+			"distantnoise:horse/armor_clips/armor_3",
+			"distantnoise:horse/armor_clips/armor_4",
+			"distantnoise:horse/armor_clips/armor_5",
+			"distantnoise:horse/armor_clips/armor_6",
+			"distantnoise:horse/armor_clips/armor_7",
+			"distantnoise:horse/armor_clips/armor_8",
+			"distantnoise:horse/armor_clips/armor_9"
+		]
+	},
+	"horse_neigh": {
+		"subtitle": "subtitles.distantnoise.horse_neigh",
+		"sounds": [
+			"distantnoise:horse/neigh1",
+			"distantnoise:horse/neigh2",
+			"distantnoise:horse/neigh3",
+			"distantnoise:horse/neigh4"
+		]
+	},
+	"horse_snort": {
+		"subtitle": "subtitles.distantnoise.horse_snort",
+		"sounds": [
+			"distantnoise:horse/snort1",
+			"distantnoise:horse/snort2"
+		]
+	},
+	"death": {
+		"subtitle": "subtitles.distantnoise.death",
+		"sounds": [
+			"distantnoise:death"
+		]
+	}
+}

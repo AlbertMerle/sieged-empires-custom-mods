@@ -1,0 +1,7 @@
+{
+  "parent": "croplite:block/crop_with_fruit",
+  "textures": {
+    "crop": "croplite:block/tomato_plant_fruiting",
+    "fruit": "croplite:block/tomato_plant_fruiting_fruit"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "#",
+    "X",
+    "O"
+  ],
+  "key": {
+    "#": "#c:ingots/iron",
+    "X": "minecraft:gunpowder",
+    "O": "minecraft:paper"
+  },
+  "result": {
+    "id": "weaponmod:bullet",
+    "count": 8
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "weaponmod:config_conditional",
+          "weapon": "musket"
+        },
+        {
+          "type": "weaponmod:config_conditional",
+          "weapon": "flintlock"
+        }
+      ]
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:or",
+      "values": [
+        {
+          "condition": "weaponmod:config_conditional",
+          "weapon": "musket"
+        },
+        {
+          "condition": "weaponmod:config_conditional",
+          "weapon": "flintlock"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "moremeatmilk",
+	"version": "${version}",
+	"name": "More Meat & Milk",
+	"description": "Adds custom meat drops, food items, and bucket milking for extra livestock (llama, camel, sheep).",
+	"authors": [
+		"albert"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/moremeatmilk/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.moremeatmilk.Moremeatmilk"
+		],
+		"client": [
+			"com.moremeatmilk.client.MoremeatmilkClient"
+		],
+		"fabric-datagen": [
+			"com.moremeatmilk.client.MoremeatmilkDataGenerator"
+		]
+	},
+	"mixins": [
+		"moremeatmilk.mixins.json",
+		{
+			"config": "moremeatmilk.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"toughasnails": "*",
+		"alexsmobs": "*"
+	}
+}

@@ -1,0 +1,1 @@
+-Dvoxy.geometryBufferSizeOverrideMB=768

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "X  ",
+    " X ",
+    "  X"
+  ],
+  "key": {
+    "X": "#c:crops/sugar_cane"
+  },
+  "result": {
+    "id": "weaponmod:blowgun"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "blowgun"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "blowgun"
+    }
+  ]
+}

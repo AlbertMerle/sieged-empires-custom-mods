@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "croplite:peach",
+    "croplite:lemon",
+    "croplite:banana",
+    "croplite:cantelope_slice"
+  ]
+}

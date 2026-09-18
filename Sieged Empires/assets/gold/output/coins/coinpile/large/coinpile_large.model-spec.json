@@ -1,0 +1,684 @@
+{
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "collision": {
+    "eye_height": 0.0938,
+    "height": 0.1875,
+    "width": 1.0
+  },
+  "cubes": [
+    {
+      "bone": "root",
+      "center": [
+        -6,
+        0.5,
+        -2
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_01",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -2,
+        0.5,
+        -2
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_02",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        2,
+        0.5,
+        -2
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_03",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        6,
+        0.5,
+        -2
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_04",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -6,
+        0.5,
+        1
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_05",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -2,
+        0.5,
+        1
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_06",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        2,
+        0.5,
+        1
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_07",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        6,
+        0.5,
+        1
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_08",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -4,
+        0.5,
+        4
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_09",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        0,
+        0.5,
+        4
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_10",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        4,
+        0.5,
+        4
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_gold",
+      "name": "coin_11",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 0 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -2,
+        1.5,
+        0
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_12",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 1 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        2,
+        1.5,
+        0
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_13",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 1 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        6,
+        1.5,
+        0
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_14",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 1 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        0,
+        1.5,
+        3
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_15",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 1 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        -4,
+        1.5,
+        3
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_16",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 1 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        0,
+        2.5,
+        1
+      ],
+      "faces": {
+        "down": {
+          "material": "coin_shadow"
+        },
+        "up": {
+          "material": "coin_rim"
+        }
+      },
+      "material": "coin_rim",
+      "name": "coin_17",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "layer 2 coin",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3,
+        1,
+        3
+      ]
+    }
+  ],
+  "id": "coinpile_large",
+  "landmarks": [
+    {
+      "center_color": "#ffffff",
+      "center_uv": [
+        0.5,
+        0.45
+      ],
+      "color": "#fff0a0",
+      "cube": "coin_17",
+      "face": "up",
+      "name": "top_glint",
+      "size": [
+        2,
+        1
+      ]
+    }
+  ],
+  "materials": {
+    "coin_gold": {
+      "base": "#c1702a",
+      "highlight": "#ffdc3d",
+      "pattern": "gradient",
+      "pattern_scale": 2,
+      "shade": "#6b210e"
+    },
+    "coin_rim": {
+      "base": "#fbab15",
+      "highlight": "#fee983",
+      "pattern": "dither",
+      "pattern_scale": 2,
+      "shade": "#782a0a"
+    },
+    "coin_shadow": {
+      "base": "#a3502e",
+      "highlight": "#d79553",
+      "pattern": "solid",
+      "pattern_scale": 1,
+      "shade": "#430000"
+    }
+  },
+  "quality_contract": {
+    "complexity": "moderate",
+    "identity_features": [
+      "large coin pile with clean Y stacking",
+      "metallic gold rims",
+      "floor-placeable"
+    ],
+    "required_views": [
+      "front",
+      "back",
+      "left",
+      "right",
+      "isometric"
+    ],
+    "review_targets": [
+      "silhouette",
+      "texture",
+      "stacking"
+    ],
+    "target_cuboids": [
+      15,
+      19
+    ]
+  },
+  "reference": {
+    "height": 16,
+    "image": "coinpile_large.reference.png",
+    "sha256": "79ed37fdc0af4d826a263517908eb671f435bd3c2c0c28c421df016092a93a76",
+    "width": 16
+  },
+  "schema_version": 1,
+  "subject": {
+    "description": "A large gold coin pile matching the bottom-left large variant.",
+    "symmetry": "asymmetric",
+    "type": "placeable_prop",
+    "uncertainties": [
+      "Y layers snap with no vertical gaps or overlap."
+    ]
+  },
+  "texture": {
+    "atlas_size": 64,
+    "density": 1,
+    "gutter": 2,
+    "palette_size": 12
+  }
+}

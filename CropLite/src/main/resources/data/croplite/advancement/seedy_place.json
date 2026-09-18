@@ -1,0 +1,152 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "tomato": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:tomato_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "pepper": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:pepper_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "eggplant": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:eggplant_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "cucumber": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:cucumber_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "cantelope": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:cantelope_stem",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "oats": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:oats_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "beans": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:beans_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "rice": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:rice_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "basil": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:basil_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "coffee": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:coffee_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    },
+    "garlic": {
+      "conditions": {
+        "location": [
+          {
+            "block": "croplite:garlic_crop",
+            "condition": "minecraft:block_state_property"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croplite.seedy_place.description"
+    },
+    "icon": {
+      "id": "croplite:tomato_seeds"
+    },
+    "title": {
+      "translate": "advancements.croplite.seedy_place.title"
+    }
+  },
+  "requirements": [
+    [
+      "tomato",
+      "pepper",
+      "eggplant",
+      "cucumber",
+      "cantelope",
+      "oats",
+      "beans",
+      "rice",
+      "basil",
+      "coffee",
+      "garlic"
+    ]
+  ]
+}

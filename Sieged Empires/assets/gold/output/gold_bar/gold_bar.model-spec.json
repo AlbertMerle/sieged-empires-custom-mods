@@ -1,0 +1,303 @@
+{
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "collision": {
+    "eye_height": 0.2,
+    "height": 0.3125,
+    "width": 1.0
+  },
+  "cubes": [
+    {
+      "bone": "root",
+      "center": [
+        0,
+        1,
+        0
+      ],
+      "faces": {
+        "north": {
+          "material": "gold_shade"
+        },
+        "south": {
+          "material": "gold_bright"
+        },
+        "up": {
+          "material": "gold_polished"
+        }
+      },
+      "material": "gold_shade",
+      "name": "bar_base",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "gold bar base slab",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        16,
+        2,
+        5
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        0,
+        2.5,
+        0
+      ],
+      "faces": {
+        "north": {
+          "material": "gold_shade"
+        },
+        "south": {
+          "material": "gold_bright"
+        }
+      },
+      "material": "gold_polished",
+      "name": "bar_mid",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "gold bar tapered middle",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        15,
+        1,
+        4
+      ]
+    },
+    {
+      "bone": "root",
+      "center": [
+        0,
+        4,
+        0
+      ],
+      "faces": {
+        "east": {
+          "material": "gold_bright"
+        },
+        "north": {
+          "material": "gold_shade"
+        },
+        "south": {
+          "material": "gold_bright"
+        },
+        "up": {
+          "material": "gold_bright"
+        },
+        "west": {
+          "material": "gold_bright"
+        }
+      },
+      "material": "gold_polished",
+      "name": "bar_top",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "role": "gold bar top cap with stamp surface",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        14,
+        2,
+        3
+      ]
+    }
+  ],
+  "id": "gold_bar",
+  "landmarks": [
+    {
+      "center_color": "#8a6000",
+      "center_uv": [
+        0.25,
+        0.35
+      ],
+      "color": "#6a4800",
+      "cube": "bar_top",
+      "face": "up",
+      "name": "stamp_100g",
+      "size": [
+        3,
+        1
+      ]
+    },
+    {
+      "center_color": "#8a6000",
+      "center_uv": [
+        0.5,
+        0.55
+      ],
+      "color": "#6a4800",
+      "cube": "bar_top",
+      "face": "up",
+      "name": "stamp_999",
+      "size": [
+        5,
+        1
+      ]
+    },
+    {
+      "center_color": "#7a5000",
+      "center_uv": [
+        0.5,
+        0.75
+      ],
+      "color": "#5a3800",
+      "cube": "bar_top",
+      "face": "up",
+      "name": "stamp_serial",
+      "size": [
+        6,
+        1
+      ]
+    },
+    {
+      "center_color": "#ffffff",
+      "center_uv": [
+        0.5,
+        0.15
+      ],
+      "color": "#fff8c0",
+      "cube": "bar_top",
+      "face": "up",
+      "name": "top_specular_front",
+      "size": [
+        10,
+        1
+      ]
+    },
+    {
+      "center_color": "#ffffff",
+      "center_uv": [
+        0.5,
+        0.2
+      ],
+      "color": "#fff0a0",
+      "cube": "bar_top",
+      "face": "south",
+      "name": "front_edge_highlight",
+      "size": [
+        12,
+        1
+      ]
+    },
+    {
+      "center_color": "#ffffff",
+      "center_uv": [
+        0.5,
+        0.25
+      ],
+      "color": "#ffe880",
+      "cube": "bar_base",
+      "face": "south",
+      "name": "base_specular",
+      "size": [
+        14,
+        1
+      ]
+    }
+  ],
+  "materials": {
+    "gold_bright": {
+      "base": "#e4ca76",
+      "highlight": "#ffffff",
+      "pattern": "gradient",
+      "pattern_scale": 1,
+      "shade": "#d09f26"
+    },
+    "gold_polished": {
+      "base": "#d09f26",
+      "highlight": "#f3e9b5",
+      "pattern": "gradient",
+      "pattern_scale": 2,
+      "shade": "#824a0c"
+    },
+    "gold_shade": {
+      "base": "#996f27",
+      "highlight": "#e4ca76",
+      "pattern": "dither",
+      "pattern_scale": 2,
+      "shade": "#5f3a1b"
+    },
+    "stamp_dark": {
+      "base": "#8a6000",
+      "highlight": "#b08018",
+      "pattern": "solid",
+      "pattern_scale": 1,
+      "shade": "#4a3000"
+    }
+  },
+  "quality_contract": {
+    "complexity": "simple",
+    "identity_features": [
+      "tapered bullion ingot silhouette sized 16x5x5 for floor stacking",
+      "embossed 999.9 and 100g purity stamps on top face",
+      "polished metallic gold with specular edge highlights",
+      "subtle luminous glow for shader-pack appeal"
+    ],
+    "required_views": [
+      "front",
+      "back",
+      "left",
+      "right",
+      "isometric"
+    ],
+    "review_targets": [
+      "silhouette",
+      "texture",
+      "stacking"
+    ],
+    "target_cuboids": [
+      3,
+      5
+    ]
+  },
+  "reference": {
+    "height": 896,
+    "image": "gold_bar.reference.png",
+    "sha256": "bb6a564b10fc737e09deb7872476eb24ff77a6a6be20cd2ec3878d0294d333ef",
+    "width": 896
+  },
+  "schema_version": 1,
+  "subject": {
+    "description": "A stackable gold bullion bar for floor placement, sized at one-ninth of a block volume (16x5x5 pixels), with tapered ingot silhouette, embossed purity stamps, and subtle luminous metallic sheen.",
+    "symmetry": "bilateral",
+    "type": "placeable_prop",
+    "uncertainties": [
+      "The reference photo shows a single three-quarter view; rear stamp markings and exact side taper are inferred with bilateral symmetry."
+    ]
+  },
+  "texture": {
+    "atlas_size": 64,
+    "density": 1,
+    "gutter": 2,
+    "palette_size": 16
+  }
+}

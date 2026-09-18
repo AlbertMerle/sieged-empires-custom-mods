@@ -1,0 +1,72 @@
+{
+  "parent": "weaponmod:root",
+  "rewards": {
+    "recipes": [
+      "weaponmod:dart"
+    ]
+  },
+  "criteria": {
+    "has_c_rods/wooden": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:rods/wooden"
+          }
+        ]
+      }
+    },
+    "has_minecraft_feather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:feather"
+          }
+        ]
+      }
+    },
+    "has_c_crops/cactus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:crops/cactus"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "weaponmod:dart"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_c_rods/wooden",
+      "has_the_recipe"
+    ],
+    [
+      "has_minecraft_feather",
+      "has_the_recipe"
+    ],
+    [
+      "has_c_crops/cactus",
+      "has_the_recipe"
+    ]
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "blowgun"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "blowgun"
+    }
+  ]
+}

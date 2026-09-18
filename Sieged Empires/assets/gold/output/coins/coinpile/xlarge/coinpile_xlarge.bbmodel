@@ -1,0 +1,2317 @@
+{
+  "elements": [
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            4,
+            42,
+            7
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            4,
+            11,
+            5
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            4,
+            4,
+            5
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            4,
+            21,
+            5
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            4,
+            35,
+            7
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            4,
+            28,
+            5
+          ]
+        }
+      },
+      "from": [
+        -7.5,
+        -0.5,
+        -6.5
+      ],
+      "locked": false,
+      "name": "coin_01",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -4.5,
+        0.5,
+        -3.5
+      ],
+      "type": "cube",
+      "uuid": "dab88061-7f1d-5324-ba11-961fd0f91147",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            4,
+            84,
+            7
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            4,
+            53,
+            5
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            4,
+            46,
+            5
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            4,
+            63,
+            5
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            4,
+            77,
+            7
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            4,
+            70,
+            5
+          ]
+        }
+      },
+      "from": [
+        -3.5,
+        -0.5,
+        -6.5
+      ],
+      "locked": false,
+      "name": "coin_02",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -0.5,
+        0.5,
+        -3.5
+      ],
+      "type": "cube",
+      "uuid": "677dda87-e42f-5136-a166-c6f3372cac03",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            4,
+            126,
+            7
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            4,
+            95,
+            5
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            4,
+            88,
+            5
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            4,
+            105,
+            5
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            4,
+            119,
+            7
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            4,
+            112,
+            5
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        -0.5,
+        -6.5
+      ],
+      "locked": false,
+      "name": "coin_03",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        0.5,
+        -3.5
+      ],
+      "type": "cube",
+      "uuid": "bf7c96a9-b6d7-5fb5-9605-c50df809b450",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            11,
+            42,
+            14
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            11,
+            11,
+            12
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            11,
+            4,
+            12
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            11,
+            21,
+            12
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            11,
+            35,
+            14
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            11,
+            28,
+            12
+          ]
+        }
+      },
+      "from": [
+        -7.5,
+        -0.5,
+        -3.5
+      ],
+      "locked": false,
+      "name": "coin_04",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -4.5,
+        0.5,
+        -0.5
+      ],
+      "type": "cube",
+      "uuid": "8096dfa8-cf95-533d-b918-765abe48c443",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            11,
+            84,
+            14
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            11,
+            53,
+            12
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            11,
+            46,
+            12
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            11,
+            63,
+            12
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            11,
+            77,
+            14
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            11,
+            70,
+            12
+          ]
+        }
+      },
+      "from": [
+        -3.5,
+        -0.5,
+        -3.5
+      ],
+      "locked": false,
+      "name": "coin_05",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "type": "cube",
+      "uuid": "f16b084b-7024-5fd0-8efb-7caca98f4c7d",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            11,
+            126,
+            14
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            11,
+            95,
+            12
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            11,
+            88,
+            12
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            11,
+            105,
+            12
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            11,
+            119,
+            14
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            11,
+            112,
+            12
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        -0.5,
+        -3.5
+      ],
+      "locked": false,
+      "name": "coin_06",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        0.5,
+        -0.5
+      ],
+      "type": "cube",
+      "uuid": "e9aee89f-4fa2-57e6-96f7-0b931f638230",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            18,
+            42,
+            21
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            18,
+            11,
+            19
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            18,
+            4,
+            19
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            18,
+            21,
+            19
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            18,
+            35,
+            21
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            18,
+            28,
+            19
+          ]
+        }
+      },
+      "from": [
+        4.5,
+        -0.5,
+        -3.5
+      ],
+      "locked": false,
+      "name": "coin_07",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        7.5,
+        0.5,
+        -0.5
+      ],
+      "type": "cube",
+      "uuid": "da8b6edc-15cf-57e5-b007-8118b9e52afe",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            18,
+            84,
+            21
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            18,
+            53,
+            19
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            18,
+            46,
+            19
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            18,
+            63,
+            19
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            18,
+            77,
+            21
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            18,
+            70,
+            19
+          ]
+        }
+      },
+      "from": [
+        -7.5,
+        -0.5,
+        -0.5
+      ],
+      "locked": false,
+      "name": "coin_08",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -4.5,
+        0.5,
+        2.5
+      ],
+      "type": "cube",
+      "uuid": "3b213459-0464-525d-a6da-314d81035d2a",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            18,
+            126,
+            21
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            18,
+            95,
+            19
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            18,
+            88,
+            19
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            18,
+            105,
+            19
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            18,
+            119,
+            21
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            18,
+            112,
+            19
+          ]
+        }
+      },
+      "from": [
+        -3.5,
+        -0.5,
+        -0.5
+      ],
+      "locked": false,
+      "name": "coin_09",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -0.5,
+        0.5,
+        2.5
+      ],
+      "type": "cube",
+      "uuid": "68bdd212-2fe5-5f24-8f28-104ee025d3fc",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            25,
+            42,
+            28
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            25,
+            11,
+            26
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            25,
+            4,
+            26
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            25,
+            21,
+            26
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            25,
+            35,
+            28
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            25,
+            28,
+            26
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "locked": false,
+      "name": "coin_10",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        0.5,
+        2.5
+      ],
+      "type": "cube",
+      "uuid": "5cf74728-ec83-5df8-9fa0-979f2709ab2b",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            25,
+            84,
+            28
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            25,
+            53,
+            26
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            25,
+            46,
+            26
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            25,
+            63,
+            26
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            25,
+            77,
+            28
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            25,
+            70,
+            26
+          ]
+        }
+      },
+      "from": [
+        4.5,
+        -0.5,
+        -0.5
+      ],
+      "locked": false,
+      "name": "coin_11",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        7.5,
+        0.5,
+        2.5
+      ],
+      "type": "cube",
+      "uuid": "c0fb45a3-7d8c-5ec5-a477-c97ecb5e3a0e",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            25,
+            126,
+            28
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            25,
+            95,
+            26
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            25,
+            88,
+            26
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            25,
+            105,
+            26
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            25,
+            119,
+            28
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            25,
+            112,
+            26
+          ]
+        }
+      },
+      "from": [
+        -5.5,
+        -0.5,
+        2.5
+      ],
+      "locked": false,
+      "name": "coin_12",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -2.5,
+        0.5,
+        5.5
+      ],
+      "type": "cube",
+      "uuid": "95eab92a-7cfa-5a78-9f17-df005b529fa4",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            32,
+            42,
+            35
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            32,
+            11,
+            33
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            32,
+            4,
+            33
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            32,
+            21,
+            33
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            32,
+            35,
+            35
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            32,
+            28,
+            33
+          ]
+        }
+      },
+      "from": [
+        -1.5,
+        -0.5,
+        2.5
+      ],
+      "locked": false,
+      "name": "coin_13",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        1.5,
+        0.5,
+        5.5
+      ],
+      "type": "cube",
+      "uuid": "95f01478-446f-5909-b1f3-0ebf3e41a51b",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            32,
+            84,
+            35
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            32,
+            53,
+            33
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            32,
+            46,
+            33
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            32,
+            63,
+            33
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            32,
+            77,
+            35
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            32,
+            70,
+            33
+          ]
+        }
+      },
+      "from": [
+        2.5,
+        -0.5,
+        2.5
+      ],
+      "locked": false,
+      "name": "coin_14",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        5.5,
+        0.5,
+        5.5
+      ],
+      "type": "cube",
+      "uuid": "f09de861-6092-5433-a694-3b9721509468",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            32,
+            126,
+            35
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            32,
+            95,
+            33
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            32,
+            88,
+            33
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            32,
+            105,
+            33
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            32,
+            119,
+            35
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            32,
+            112,
+            33
+          ]
+        }
+      },
+      "from": [
+        -3.5,
+        1.5,
+        -4.5
+      ],
+      "locked": false,
+      "name": "coin_15",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -0.5,
+        2.5,
+        -1.5
+      ],
+      "type": "cube",
+      "uuid": "8f87632f-0624-5966-9be4-39089bfc3a97",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            39,
+            42,
+            42
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            39,
+            11,
+            40
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            39,
+            4,
+            40
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            39,
+            21,
+            40
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            39,
+            35,
+            42
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            39,
+            28,
+            40
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        1.5,
+        -4.5
+      ],
+      "locked": false,
+      "name": "coin_16",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        2.5,
+        -1.5
+      ],
+      "type": "cube",
+      "uuid": "4e7e6c83-b822-544e-bcb8-8253dc5400ea",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            39,
+            84,
+            42
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            39,
+            53,
+            40
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            39,
+            46,
+            40
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            39,
+            63,
+            40
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            39,
+            77,
+            42
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            39,
+            70,
+            40
+          ]
+        }
+      },
+      "from": [
+        4.5,
+        1.5,
+        -4.5
+      ],
+      "locked": false,
+      "name": "coin_17",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        7.5,
+        2.5,
+        -1.5
+      ],
+      "type": "cube",
+      "uuid": "3a93743c-50f4-54ba-84bc-1fb2d0c37a5c",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            39,
+            126,
+            42
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            39,
+            95,
+            40
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            39,
+            88,
+            40
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            39,
+            105,
+            40
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            39,
+            119,
+            42
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            39,
+            112,
+            40
+          ]
+        }
+      },
+      "from": [
+        -1.5,
+        1.5,
+        -1.5
+      ],
+      "locked": false,
+      "name": "coin_18",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        1.5,
+        2.5,
+        1.5
+      ],
+      "type": "cube",
+      "uuid": "29902dd0-92de-5bf3-b947-dce61cc91453",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            46,
+            42,
+            49
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            46,
+            11,
+            47
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            46,
+            4,
+            47
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            46,
+            21,
+            47
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            46,
+            35,
+            49
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            46,
+            28,
+            47
+          ]
+        }
+      },
+      "from": [
+        -5.5,
+        1.5,
+        -1.5
+      ],
+      "locked": false,
+      "name": "coin_19",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -2.5,
+        2.5,
+        1.5
+      ],
+      "type": "cube",
+      "uuid": "c95c1d65-c740-5067-99eb-462774f8c11c",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            46,
+            84,
+            49
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            46,
+            53,
+            47
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            46,
+            46,
+            47
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            46,
+            63,
+            47
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            46,
+            77,
+            49
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            46,
+            70,
+            47
+          ]
+        }
+      },
+      "from": [
+        2.5,
+        1.5,
+        -1.5
+      ],
+      "locked": false,
+      "name": "coin_20",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        5.5,
+        2.5,
+        1.5
+      ],
+      "type": "cube",
+      "uuid": "5a079ac0-4d5b-5e58-85bb-a4ce452ae9c8",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            46,
+            126,
+            49
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            46,
+            95,
+            47
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            46,
+            88,
+            47
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            46,
+            105,
+            47
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            46,
+            119,
+            49
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            46,
+            112,
+            47
+          ]
+        }
+      },
+      "from": [
+        -3.5,
+        1.5,
+        1.5
+      ],
+      "locked": false,
+      "name": "coin_21",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        -0.5,
+        2.5,
+        4.5
+      ],
+      "type": "cube",
+      "uuid": "5cfabea7-2e28-5296-b430-008d14cf933c",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            53,
+            42,
+            56
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            53,
+            11,
+            54
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            53,
+            4,
+            54
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            53,
+            21,
+            54
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            53,
+            35,
+            56
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            53,
+            28,
+            54
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        1.5,
+        1.5
+      ],
+      "locked": false,
+      "name": "coin_22",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        2.5,
+        4.5
+      ],
+      "type": "cube",
+      "uuid": "f3b3fb6f-a2f5-516b-9e9e-f051359d9ab4",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            81,
+            53,
+            84,
+            56
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            56,
+            53,
+            53,
+            54
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            49,
+            53,
+            46,
+            54
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            60,
+            53,
+            63,
+            54
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            74,
+            53,
+            77,
+            56
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            67,
+            53,
+            70,
+            54
+          ]
+        }
+      },
+      "from": [
+        -1.5,
+        1.5,
+        -2.5
+      ],
+      "locked": false,
+      "name": "coin_23",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        1.5,
+        2.5,
+        0.5
+      ],
+      "type": "cube",
+      "uuid": "485a8a03-5583-5e01-8aa2-142d28563a44",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            123,
+            53,
+            126,
+            56
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            98,
+            53,
+            95,
+            54
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            91,
+            53,
+            88,
+            54
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            102,
+            53,
+            105,
+            54
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            116,
+            53,
+            119,
+            56
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            109,
+            53,
+            112,
+            54
+          ]
+        }
+      },
+      "from": [
+        0.5,
+        1.5,
+        0.5
+      ],
+      "locked": false,
+      "name": "coin_24",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        3.5,
+        2.5,
+        3.5
+      ],
+      "type": "cube",
+      "uuid": "e50dd8fd-a880-5eb6-b78b-fa2a034670ab",
+      "light_emission": 2
+    },
+    {
+      "allow_mirror_modeling": true,
+      "autouv": 0,
+      "box_uv": false,
+      "color": 0,
+      "faces": {
+        "down": {
+          "texture": 0,
+          "uv": [
+            39,
+            60,
+            42,
+            63
+          ]
+        },
+        "east": {
+          "texture": 0,
+          "uv": [
+            14,
+            60,
+            11,
+            61
+          ]
+        },
+        "north": {
+          "texture": 0,
+          "uv": [
+            7,
+            60,
+            4,
+            61
+          ]
+        },
+        "south": {
+          "texture": 0,
+          "uv": [
+            18,
+            60,
+            21,
+            61
+          ]
+        },
+        "up": {
+          "texture": 0,
+          "uv": [
+            32,
+            60,
+            35,
+            63
+          ]
+        },
+        "west": {
+          "texture": 0,
+          "uv": [
+            25,
+            60,
+            28,
+            61
+          ]
+        }
+      },
+      "from": [
+        -1.5,
+        3.5,
+        -0.5
+      ],
+      "locked": false,
+      "name": "coin_25",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "render_order": "default",
+      "rescale": false,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        1.5,
+        4.5,
+        2.5
+      ],
+      "type": "cube",
+      "uuid": "03677e17-5620-5a11-9d9d-a241c6d814ef",
+      "light_emission": 2
+    }
+  ],
+  "img2blockbench": {
+    "front_axis": "positive_z",
+    "texture_density": 1
+  },
+  "meta": {
+    "box_uv": false,
+    "creation_time": 0,
+    "format_version": "5.0",
+    "model_format": "free"
+  },
+  "model_identifier": "",
+  "name": "coinpile_xlarge",
+  "outliner": [
+    {
+      "autouv": 0,
+      "children": [
+        "dab88061-7f1d-5324-ba11-961fd0f91147",
+        "677dda87-e42f-5136-a166-c6f3372cac03",
+        "bf7c96a9-b6d7-5fb5-9605-c50df809b450",
+        "8096dfa8-cf95-533d-b918-765abe48c443",
+        "f16b084b-7024-5fd0-8efb-7caca98f4c7d",
+        "e9aee89f-4fa2-57e6-96f7-0b931f638230",
+        "da8b6edc-15cf-57e5-b007-8118b9e52afe",
+        "3b213459-0464-525d-a6da-314d81035d2a",
+        "68bdd212-2fe5-5f24-8f28-104ee025d3fc",
+        "5cf74728-ec83-5df8-9fa0-979f2709ab2b",
+        "c0fb45a3-7d8c-5ec5-a477-c97ecb5e3a0e",
+        "95eab92a-7cfa-5a78-9f17-df005b529fa4",
+        "95f01478-446f-5909-b1f3-0ebf3e41a51b",
+        "f09de861-6092-5433-a694-3b9721509468",
+        "8f87632f-0624-5966-9be4-39089bfc3a97",
+        "4e7e6c83-b822-544e-bcb8-8253dc5400ea",
+        "3a93743c-50f4-54ba-84bc-1fb2d0c37a5c",
+        "29902dd0-92de-5bf3-b947-dce61cc91453",
+        "c95c1d65-c740-5067-99eb-462774f8c11c",
+        "5a079ac0-4d5b-5e58-85bb-a4ce452ae9c8",
+        "5cfabea7-2e28-5296-b430-008d14cf933c",
+        "f3b3fb6f-a2f5-516b-9e9e-f051359d9ab4",
+        "485a8a03-5583-5e01-8aa2-142d28563a44",
+        "e50dd8fd-a880-5eb6-b78b-fa2a034670ab",
+        "03677e17-5620-5a11-9d9d-a241c6d814ef"
+      ],
+      "color": 0,
+      "export": true,
+      "isOpen": true,
+      "locked": false,
+      "name": "root",
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "uuid": "2f073d34-dcd7-5127-aa31-ac167b145097",
+      "visibility": true
+    }
+  ],
+  "resolution": {
+    "height": 128,
+    "width": 128
+  },
+  "textures": [
+    {
+      "folder": "",
+      "frame_interpolate": false,
+      "frame_order": "",
+      "frame_order_type": "loop",
+      "frame_time": 1,
+      "id": "0",
+      "internal": true,
+      "name": "coinpile_xlarge.png",
+      "namespace": "",
+      "particle": false,
+      "path": "coinpile_xlarge.png",
+      "render_mode": "default",
+      "render_sides": "auto",
+      "saved": true,
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAACj0lEQVR42u3dsW7TUBQGYKcJC8wFsSMkylSJuSNPQEdegKEzixWhLp07sDNUqlQGnoEXQOpQxN6ldGJoF6AwIIKT0ott4ntv7O+bUkWqj5zj4/vbcVsUwHCNfr/4+HrzR8wNP1g/vfG9w4P7N7735Om4UGe4znJ6Uey+ulOrzjXHwLBpgIGbpNrweGtn9vr7+/1sd1A5vZi9ro7VnDWpM1kDVD/0xXNWrjtzvLWTdbP+1wR49OLDKOaGvx6tt1p0qnO5dVoDWAOkiYFFcdrqnJWyzibjP2WdJgAaAA2ABkAMVKcJQOYxsAl1/rvOJldWTQCLQDQAvdLkyqoGsAgUr8RATIDYsaWcfmp1zhIDl1unCSAF4BSQeVTBBEAMVKcYSH9i4KrEq7Zxte4RGXrWIMbzEiaARSBOAYnl/MhV3+NqsgaYf+hy36HYwUE1c3CUXwx8uXG71/Hq1vZ5zTrL4Lt725diIBFOAVdnu7MOWjwfh57lj/2cf9tOjy11nfOfhT8RgwYg2waoJgIGEgOrawcxMIMGWLtXjtpFlbLVhq/Oio7j1arEwLR1WgOYAL9UL8x0cflz8c5W28i4qjEwdlyurqsePzQB0ABklQLo1vwfi16BBqh794qOJsDeyeUsttS9A9VU9ff2PV5dr7PMsk5rABPgegeFvqHT1bd36t69ih1XYx+RUgAagIE1wFwCYBjXAXwpNN7+DV0Knvw9tiz/7l9oMdcoSoqrYiAdx8DwuG4XkVJEy2UIH8nnq1HnybEJgAYgpxQwefb5zw9f3vgkhtYA397etfczMEq14dCiM/TPjp+/Ox752KwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAnPwHD+zYuFa3R+gAAAABJRU5ErkJggg==",
+      "uuid": "5ba23ba2-5c74-552b-ab25-c5f76f571582",
+      "visible": true
+    }
+  ],
+  "variable_placeholder_buttons": [],
+  "variable_placeholders": "",
+  "visible_box": [
+    1,
+    1,
+    0
+  ]
+}

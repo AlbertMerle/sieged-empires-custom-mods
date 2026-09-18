@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors_list}"
+  ],
+  "contact": {
+    "homepage": "${mod_home_url}",
+    "sources": "${mod_sources_url}",
+    "issues": "${mod_issues_url}"
+  },
+  "license": "${mod_license}",
+  "icon": "bwm_logo_sq.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ckathode.weaponmod.fabric.BalkonsWeaponModFabric"
+    ],
+    "modmenu": [
+      "ckathode.weaponmod.fabric.BalkonsWeaponModModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "weaponmod.mixins.json"
+  ],
+  "depends": {
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version_condition}",
+    "architectury": ">=${architectury_version}",
+    "cloth-config2": ">=${cloth_config_version}"
+  }
+}

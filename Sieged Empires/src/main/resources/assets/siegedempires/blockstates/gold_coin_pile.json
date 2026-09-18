@@ -1,0 +1,196 @@
+{
+  "variants": {
+    "count=1": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=2": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=3": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=4": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=5": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=6": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=7": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=8": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=9": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=10": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=11": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=12": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=13": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=14": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=15": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=16": {
+      "model": "siegedempires:block/gold_coin_pile_small"
+    },
+    "count=17": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=18": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=19": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=20": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=21": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=22": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=23": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=24": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=25": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=26": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=27": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=28": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=29": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=30": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=31": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=32": {
+      "model": "siegedempires:block/gold_coin_pile_medium"
+    },
+    "count=33": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=34": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=35": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=36": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=37": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=38": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=39": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=40": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=41": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=42": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=43": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=44": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=45": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=46": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=47": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=48": {
+      "model": "siegedempires:block/gold_coin_pile_large"
+    },
+    "count=49": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=50": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=51": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=52": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=53": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=54": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=55": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=56": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=57": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=58": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=59": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=60": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=61": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=62": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=63": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    },
+    "count=64": {
+      "model": "siegedempires:block/gold_coin_pile_xlarge"
+    }
+  }
+}

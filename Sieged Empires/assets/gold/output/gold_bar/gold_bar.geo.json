@@ -1,0 +1,283 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "bones": [
+        {
+          "cubes": [
+            {
+              "origin": [
+                -8,
+                0,
+                -2.5
+              ],
+              "pivot": [
+                0,
+                0,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "size": [
+                16,
+                2,
+                5
+              ],
+              "uv": {
+                "down": {
+                  "uv": [
+                    24,
+                    10
+                  ],
+                  "uv_size": [
+                    16,
+                    5
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    24,
+                    4
+                  ],
+                  "uv_size": [
+                    5,
+                    2
+                  ]
+                },
+                "north": {
+                  "uv": [
+                    4,
+                    4
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    33,
+                    4
+                  ],
+                  "uv_size": [
+                    16,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    4,
+                    10
+                  ],
+                  "uv_size": [
+                    16,
+                    5
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    53,
+                    4
+                  ],
+                  "uv_size": [
+                    5,
+                    2
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -7.5,
+                1.5,
+                -2
+              ],
+              "pivot": [
+                0,
+                0,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "size": [
+                15,
+                1,
+                4
+              ],
+              "uv": {
+                "down": {
+                  "uv": [
+                    4,
+                    27
+                  ],
+                  "uv_size": [
+                    15,
+                    4
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    4,
+                    19
+                  ],
+                  "uv_size": [
+                    4,
+                    1
+                  ]
+                },
+                "north": {
+                  "uv": [
+                    44,
+                    10
+                  ],
+                  "uv_size": [
+                    15,
+                    1
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    12,
+                    19
+                  ],
+                  "uv_size": [
+                    15,
+                    1
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    39,
+                    19
+                  ],
+                  "uv_size": [
+                    15,
+                    4
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    31,
+                    19
+                  ],
+                  "uv_size": [
+                    4,
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "origin": [
+                -7,
+                3,
+                -1.5
+              ],
+              "pivot": [
+                0,
+                0,
+                0
+              ],
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "size": [
+                14,
+                2,
+                3
+              ],
+              "uv": {
+                "down": {
+                  "uv": [
+                    29,
+                    35
+                  ],
+                  "uv_size": [
+                    14,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    41,
+                    27
+                  ],
+                  "uv_size": [
+                    3,
+                    2
+                  ]
+                },
+                "north": {
+                  "uv": [
+                    23,
+                    27
+                  ],
+                  "uv_size": [
+                    14,
+                    2
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    48,
+                    27
+                  ],
+                  "uv_size": [
+                    14,
+                    2
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    11,
+                    35
+                  ],
+                  "uv_size": [
+                    14,
+                    3
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    4,
+                    35
+                  ],
+                  "uv_size": [
+                    3,
+                    2
+                  ]
+                }
+              }
+            }
+          ],
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "description": {
+        "identifier": "geometry.gold_bar",
+        "texture_height": 64,
+        "texture_width": 64,
+        "visible_bounds_height": 5,
+        "visible_bounds_offset": [
+          0,
+          2.5,
+          0
+        ],
+        "visible_bounds_width": 16
+      }
+    }
+  ]
+}

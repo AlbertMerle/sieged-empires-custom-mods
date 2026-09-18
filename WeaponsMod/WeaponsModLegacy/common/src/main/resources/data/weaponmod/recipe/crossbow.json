@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "O##",
+    "#X ",
+    "# X"
+  ],
+  "key": {
+    "X": "#minecraft:planks",
+    "#": "#c:ingots/iron",
+    "O": "minecraft:bow"
+  },
+  "result": {
+    "id": "weaponmod:crossbow"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "weaponmod:config_conditional",
+      "weapon": "crossbow"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "weaponmod:config_conditional",
+      "weapon": "crossbow"
+    }
+  ]
+}

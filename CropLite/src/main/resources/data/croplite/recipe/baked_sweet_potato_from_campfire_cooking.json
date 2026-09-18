@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "ingredient": "croplite:sweet_potato",
+  "result": {
+    "id": "croplite:baked_sweet_potato"
+  },
+  "experience": 0.35,
+  "cookingtime": 600
+}

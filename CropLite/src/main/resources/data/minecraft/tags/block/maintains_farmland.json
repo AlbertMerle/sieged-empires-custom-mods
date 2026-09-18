@@ -1,0 +1,17 @@
+{
+  "values": [
+    "croplite:tomato_crop",
+    "croplite:pepper_crop",
+    "croplite:eggplant_crop",
+    "croplite:cucumber_crop",
+    "croplite:sweet_potato_crop",
+    "croplite:basil_crop",
+    "croplite:oats_crop",
+    "croplite:beans_crop",
+    "croplite:rice_crop",
+    "croplite:coffee_crop",
+    "croplite:garlic_crop",
+    "croplite:cantelope_stem",
+    "croplite:attached_cantelope_stem"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "experience": 0.35,
+  "ingredient": "moremeatmilk:raw_frog_leg",
+  "result": {
+    "id": "moremeatmilk:cooked_frog_leg"
+  }
+}

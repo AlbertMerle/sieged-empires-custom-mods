@@ -1,0 +1,88 @@
+{
+  "music.title.adventure": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/adventure",
+        "stream": true
+      }
+    ]
+  },
+  "music.title.marked": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/marked",
+        "stream": true
+      }
+    ]
+  },
+  "music.title.medieval_tavern": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/medievaltavern",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.ocean": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/ocean",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.oceanstorm": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/oceanstorm",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.snowday": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/snowday",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.village": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/village",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.wildernessday": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/wildernessday",
+        "stream": true
+      }
+    ]
+  },
+  "ambient.join.wildernessnight": {
+    "sounds": [
+      {
+        "name": "siegedempires:music/wildernessnight",
+        "stream": true
+      }
+    ]
+  },
+  "item.gold_coin.craft": {
+    "sounds": [
+      {
+        "name": "siegedempires:coin"
+      }
+    ]
+  },
+  "block.gold_bar.place": {
+    "sounds": [
+      {
+        "name": "siegedempires:block/gold_bar_place"
+      }
+    ]
+  }
+}

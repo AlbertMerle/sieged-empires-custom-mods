@@ -1,0 +1,109 @@
+{
+  "variants": {
+    "count=1,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_1"
+    },
+    "count=1,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_1",
+      "y": 90
+    },
+    "count=2,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_2"
+    },
+    "count=2,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_2",
+      "y": 90
+    },
+    "count=3,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_3"
+    },
+    "count=3,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_3",
+      "y": 90
+    },
+    "count=4,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_4"
+    },
+    "count=4,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_4",
+      "y": 90
+    },
+    "count=5,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_5"
+    },
+    "count=5,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_5",
+      "y": 90
+    },
+    "count=6,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_6"
+    },
+    "count=6,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_6",
+      "y": 90
+    },
+    "count=7,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_7"
+    },
+    "count=7,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_7",
+      "y": 90
+    },
+    "count=8,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_8"
+    },
+    "count=8,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_8",
+      "y": 90
+    },
+    "count=9,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_9"
+    },
+    "count=9,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_9",
+      "y": 90
+    },
+    "count=10,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_10"
+    },
+    "count=10,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_10",
+      "y": 90
+    },
+    "count=11,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_11"
+    },
+    "count=11,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_11",
+      "y": 90
+    },
+    "count=12,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_12"
+    },
+    "count=12,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_12",
+      "y": 90
+    },
+    "count=13,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_13"
+    },
+    "count=13,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_13",
+      "y": 90
+    },
+    "count=14,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_14"
+    },
+    "count=14,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_14",
+      "y": 90
+    },
+    "count=15,rotated=false": {
+      "model": "siegedempires:block/gold_bar_pile_15"
+    },
+    "count=15,rotated=true": {
+      "model": "siegedempires:block/gold_bar_pile_15",
+      "y": 90
+    }
+  }
+}

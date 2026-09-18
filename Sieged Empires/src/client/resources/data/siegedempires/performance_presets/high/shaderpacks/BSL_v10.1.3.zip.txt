@@ -1,0 +1,12 @@
+#BSL HIGH profile — shafts+colored shadows+TAA; WATER_FOG Full; Advanced Materials on (LabPBR gold)
+#Sieged Empires performance preset: High
+ADVANCED_MATERIALS=true
+WATER_FOG=1
+AO=true
+LIGHT_SHAFT=true
+SHADOW=true
+SHADOW_COLOR=true
+SHADOW_FILTER=true
+TAA=true
+shadowDistance=256.0
+shadowMapResolution=2048

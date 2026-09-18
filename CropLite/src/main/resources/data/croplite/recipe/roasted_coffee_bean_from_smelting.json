@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": "croplite:coffee_bean",
+  "result": {
+    "id": "croplite:roasted_coffee_bean"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}
